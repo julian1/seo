@@ -6,28 +6,17 @@
 	xmlns:gmd="http://www.isotc211.org/2005/gmd" 
 >
 
-  <!-- xsl:include href="../base-layout.xsl"/>
-  <xsl:template mode="content" match="/">
-    <div data-ng-include="'{$uiResourcesPath}templates/search/search.html'">
-    </div>
-  </xsl:template -->
-	<!-- gmd:fileIdentifier>
-		<gco:CharacterString
-	-->
-
-
-
-	<xsl:template match="mcp:MD_Metadata">
+	<!-- xsl:template match="/mcp:MD_Metadata"-->
+	<xsl:template match="/">
 	<html>
 	<h2>
-		<xsl:value-of select="gmd:fileIdentifier" />
+		<xsl:value-of select="//gmd:fileIdentifier" />
 	</h2>
-
-		<xsl:value-of select="gmd:parentIdentifier" />
-
-
+		<xsl:value-of select="//gmd:parentIdentifier" />
 	</html>
 	</xsl:template>
+
+
 
 
 </xsl:stylesheet>
