@@ -1,12 +1,36 @@
 
+
+- there's two sets of gmd:descriptiveKeywords
+
+xpath -e '//mcp:parameterName/mcp:DP_Term/mcp:term/gco:CharacterString/text()' argo_profiles.xml
+
+
+xpath -e '//gmd:descriptiveKeywords' argo_profiles.xml 2>&1 | less
+
+
+- see how we can hit things, using '//' in the middle of an expression 
+
+xpath -e '//gmd:thesaurusName//gmx:Anchor' argo_profiles_with_water_bodies.mcp  2>&1 | less
+xpath -e '//gmd:thesaurusName//gmx:Anchor/text()' argo_profiles_with_water_bodies.mcp
+
+
 ---
-issue that there's no one-to-one correspondance between collection record and the views because
+(0) how to manage the water bodies  and land mass information collected by Natalia. 
+	- encode it up as another xml dependency.
+	- marked up some dummy records - for proof of concept purposes.
+
+
+TWO ISSUES
+
+(1) issue that there's no one-to-one correspondance between collection record and the views because
 each collection has multiple parameters.
 	- therefore need to make it parametezied (whether static or dynamic)
 
 
 
 ---
+(2) issue that the water bodies, and land masses exist as a spread sheet, and are not 
+
 1. add region (water bodies, land masses) as a keyword associated with each metadata record.
 2. change indexing, so that these are added as region s added as an index
 3. then use the search api, to get data, rather than the metadata record. 
