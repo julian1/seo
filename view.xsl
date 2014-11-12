@@ -9,7 +9,7 @@
 	<!-- eg. xsltproc view.xsl formatter-input.xml --> 
 
 
-	<xsl:template match="root">
+	<xsl:template match="/">
 	  <html>
 	  <body>
 	  <h2>My CD Collection</h2>
@@ -33,6 +33,7 @@
 	<xsl:template match="mcp:MD_Metadata">
 	  <xsl:apply-templates select="gmd:parentIdentifier" />
 	  <xsl:apply-templates select="gmd:fileIdentifier" />
+	  <xsl:apply-templates select="mcp:parameterName" />
 	</xsl:template>
 
 
@@ -48,9 +49,21 @@
 	<xsl:template match="root/mcp:MD_Metadata/gmd:parentIdentifier">
 	<!-- xsl:template match="gmd:parentIdentifier" -->
 	<h2>
-		parentIdentifier:  <xsl:value-of select="gco:CharacterString" />
+		parentIdentifier: <xsl:value-of select="gco:CharacterString" />
 	</h2>
 	</xsl:template>
+
+	<xsl:template match="mcp:parameterName">
+	<h2>
+		parentIdentifier: <xsl:value-of select="mcp:DP_Term/mcp:term/gco:CharacterString" />
+	</h2>
+	</xsl:template>
+
+
+
+     <!-- mcp:dataParameters/mcp:DP_DataParameters/mcp:dataParameter/mcp:DP_DataParameter/mcp:parameterName
+	-->
+
 
 
 
