@@ -16,7 +16,7 @@
 
 	  <xsl:apply-templates select="gmd:parentIdentifier" />
 	  <xsl:apply-templates select="gmd:fileIdentifier" />
-	  <xsl:apply-templates select="mcp:parameterName" />
+	  <xsl:apply-templates select="//mcp:parameterName" />
 
 	  </body>
 	  </html>
@@ -25,23 +25,17 @@
 
 
 	<xsl:template match="gmd:fileIdentifier">
-	<h2>
-		fileIdentifier: <xsl:value-of select="gco:CharacterString" />
-	</h2>
+	<h2> fileIdentifier: <xsl:value-of select="gco:CharacterString" /> </h2>
 	</xsl:template>
 
 
 	<xsl:template match="gmd:parentIdentifier">
 	<!-- xsl:template match="gmd:parentIdentifier" -->
-	<h2>
-		parentIdentifier: <xsl:value-of select="gco:CharacterString" />
-	</h2>
+	<h2> parentIdentifier: <xsl:value-of select="gco:CharacterString" /> </h2>
 	</xsl:template>
 
 	<xsl:template match="mcp:parameterName">
-	<h2>
-		parentIdentifier: <xsl:value-of select="mcp:DP_Term/mcp:term/gco:CharacterString" />
-	</h2>
+	<h2> parameter : <xsl:value-of select="mcp:DP_Term/mcp:term/gco:CharacterString" /> </h2>
 	</xsl:template>
 
 
