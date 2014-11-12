@@ -13,7 +13,7 @@
 	  <html>
 	  <body>
 	  <h2>My CD Collection</h2>
-	  <xsl:apply-templates select="mcp:MD_Metadata/gmd:parentIdentifier" />
+	  <xsl:apply-templates select="mcp:MD_Metadata" />
 	  <!-- xsl:apply-templates select="mcp:MD_Metadata/gmd:parentIdentifier" / -->
 	  </body>
 	  </html>
@@ -28,6 +28,15 @@
 		<xsl:value-of select="gmd:parentIdentifier" />
 	</h2>
 	</xsl:template -->
+
+
+	<xsl:template match="mcp:MD_Metadata">
+	  <xsl:apply-templates select="gmd:parentIdentifier" />
+	  <xsl:apply-templates select="gmd:fileIdentifier" />
+	</xsl:template>
+
+
+
 
 	<xsl:template match="root/mcp:MD_Metadata/gmd:fileIdentifier">
 	<h2>
