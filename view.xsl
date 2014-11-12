@@ -18,6 +18,7 @@
 	  <xsl:apply-templates select="gmd:fileIdentifier" />
 	  <xsl:apply-templates select="//mcp:parameterName" />
 
+	  <xsl:apply-templates select="//gmd:thesaurusName" />
 	  </body>
 	  </html>
 	</xsl:template>
@@ -40,7 +41,24 @@
 
 
 
-     <!-- mcp:dataParameters/mcp:DP_DataParameters/mcp:dataParameter/mcp:DP_DataParameter/mcp:parameterName
+
+
+	<xsl:template match="gmd:thesaurusName">
+	<!-- h2> thesaurus : <xsl:value-of select="gmd:CI_Citation//gmx:Anchor" /> </h2 -->
+	<!-- h2> thesaurus : <xsl:value-of select=".//gmx:Anchor" /> </h2-->
+	<h2> thesaurus : <xsl:value-of select="gmd:CI_Citation/gmd:title/gco:CharacterString" /> </h2>
+	</xsl:template>
+
+
+	
+
+     <!-- 
+
+		gmx:Anchor	
+
+	'//gmd:thesaurusName//gmx:Anchor/text()'
+
+		mcp:dataParameters/mcp:DP_DataParameters/mcp:dataParameter/mcp:DP_DataParameter/mcp:parameterName
 	-->
 
 
