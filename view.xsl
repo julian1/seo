@@ -50,8 +50,9 @@
 	</xsl:template>
 
 
+
 	<xsl:template match="gmx:Anchor">
-		<h2> HERE : <xsl:value-of select="." /> </h2>
+		<h2> HERE : <xsl:value-of select="./ancestor::gmd:thesaurusName" /> </h2>
 	</xsl:template>
 
 
