@@ -13,8 +13,8 @@
 	  <html>
 	  <body>
 	  <h2>My CD Collection</h2>
-	  <xsl:apply-templates select="mcp:MD_Metadata/gmd:fileIdentifier" />
 	  <xsl:apply-templates select="mcp:MD_Metadata/gmd:parentIdentifier" />
+	  <!-- xsl:apply-templates select="mcp:MD_Metadata/gmd:parentIdentifier" / -->
 	  </body>
 	  </html>
 	</xsl:template>
@@ -36,7 +36,8 @@
 	</xsl:template>
 
 
-	<xsl:template match="gmd:parentIdentifier">
+	<xsl:template match="root/mcp:MD_Metadata/gmd:parentIdentifier">
+	<!-- xsl:template match="gmd:parentIdentifier" -->
 	<h2>
 		parentIdentifier:  <xsl:value-of select="gco:CharacterString" />
 	</h2>
