@@ -6,17 +6,27 @@
 	xmlns:gmd="http://www.isotc211.org/2005/gmd" 
 >
 
+	<!-- eg. xsltproc view.xsl formatter-input.xml --> 
+
+
+	<xsl:template match="root">
+	  <html>
+	  <body>
+	  <h2>My CD Collection</h2>
+	  <xsl:apply-templates select="mcp:MD_Metadata" />
+	  </body>
+	  </html>
+	</xsl:template>
+
 	<!-- xsl:template match="/mcp:MD_Metadata"-->
-	<xsl:template match="/">
-	<html>
+
+	<xsl:template match="mcp:MD_Metadata">
 	<h2>
-		<xsl:value-of select="//gmd:fileIdentifier" />
+		<xsl:value-of select="gmd:fileIdentifier" />
+		<xsl:value-of select="gmd:parentIdentifier" />
 	</h2>
-		<xsl:value-of select="//gmd:parentIdentifier" />
-	</html>
 	</xsl:template>
 
 
-
-
 </xsl:stylesheet>
+
