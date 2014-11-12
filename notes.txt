@@ -1,0 +1,48 @@
+
+---
+issue that there's no one-to-one correspondance between collection record and the views because
+each collection has multiple parameters.
+	- therefore need to make it parametezied (whether static or dynamic)
+
+
+
+---
+1. add region (water bodies, land masses) as a keyword associated with each metadata record.
+2. change indexing, so that these are added as region s added as an index
+3. then use the search api, to get data, rather than the metadata record. 
+
+This data should be placed in/associated with record in some way, rather remain for 
+us to have to manage. 
+
+
+alternatively parse it out of the keywords with xpath in some way
+
+-----
+
+https://catalogue-123.aodn.org.au/geonetwork/srv/eng/xml.search.imos?fast=index
+
+hits lucene - and gives the parameter names, keywords platforms etc. 
+
+
+
+
+
+
+<!-- eg. xsltproc  view.xsl  formatter-input.xml --> 
+
+                <mcp:parameterName>
+                  <mcp:DP_Term>
+                    <mcp:term>
+                      <gco:CharacterString>Temperature of the water body</gco:CharacterString>
+
+----
+        <mcp:dataParameters>
+          <mcp:DP_DataParameters>
+            <mcp:dataParameter>
+              <mcp:DP_DataParameter>
+                <mcp:parameterName>
+
+
+     mcp:dataParameters/mcp:DP_DataParameters/mcp:dataParameter/mcp:DP_DataParameter/mcp:parameterName
+
+
