@@ -21,7 +21,7 @@
 
 	  <!-- xsl:apply-templates select="//gmd:thesaurusName" / -->
 
-	  <xsl:apply-templates select="//gmd:CI_Citation/gmd:identifier/gmd:MD_Identifier/gmd:code/gmx:Anchor[text() = 'geonetwork.thesaurus.local.theme.water_bodies' ]" />
+	  <xsl:apply-templates select="//gmd:thesaurusName//gmx:Anchor[text() = 'geonetwork.thesaurus.local.theme.water_bodies' ]" />
 
 	  </body>
 	  </html>
@@ -52,7 +52,7 @@
 
 
 	<xsl:template match="gmx:Anchor">
-		<h2> HERE : <xsl:value-of select="./ancestor::gmd:thesaurusName" /> </h2>
+		<h2> HERE : <xsl:value-of select="./ancestor::gmd:MD_Keywords" /> </h2>
 	</xsl:template>
 
 
