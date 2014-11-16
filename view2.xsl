@@ -11,16 +11,28 @@
 	<xsl:template match="mcp:MD_Metadata">
 	  <html>
 	  <body>
-	  <h2>My CD Collection</h2>
 
 	  <!-- xsl:apply-templates select="//gmd:thesaurusName//gmx:Anchor[text() = 'geonetwork.thesaurus.local.theme.water_bodies' ]" /-->
+		<!-- were going to need commas, which will be nasty -->
 
-	  <xsl:for-each select="//gmd:thesaurusName//gmx:Anchor[text() = 'geonetwork.thesaurus.local.theme.water_bodies' ]/ancestor::gmd:MD_Keywords/gmd:keyword" >
-
-			whoo <xsl:value-of select="." /> 
-
-
+		<h1>	
+		
+		... in the		
+	  <xsl:for-each select="//gmd:thesaurusName//gmx:Anchor[text() = 'geonetwork.thesaurus.local.theme.water_bodies' ]/ancestor::gmd:MD_Keywords/gmd:keyword/gco:CharacterString" >
+			<xsl:value-of select="." />,  
 	  </xsl:for-each> 
+		near the
+		...
+
+
+		</h1>	
+
+		<h2>Scientific Research Data obtained near ... </h2>
+
+		The 
+		<xsl:value-of select="//gmd:identificationInfo//gmd:title/gco:CharacterString" />
+		is collected
+
 
 	  </body>
 	  </html>
