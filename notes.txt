@@ -1,5 +1,8 @@
 
 
+
+<!-- Ok, think we should perhaps be gathering up variables --> 
+
 - there's two sets of gmd:descriptiveKeywords
 
 xpath -e '//mcp:parameterName/mcp:DP_Term/mcp:term/gco:CharacterString/text()' argo_profiles.xml
@@ -20,7 +23,12 @@ xpath -e '//gmd:thesaurusName//gmx:Anchor/text()' argo_profiles_with_water_bodie
 	- marked up some dummy records - for proof of concept purposes.
 
 
+Way to output multiple files - eg for generating static.
+http://www.xml.com/pub/a/2002/04/10/xslt2.html
+
+
 TWO ISSUES
+
 
 (1) issue that there's no one-to-one correspondance between collection record and the views because
 each collection has multiple parameters.
