@@ -23,26 +23,41 @@
       <!-- can we simplify this dynamically? -->
       <xsl:variable name="parameterExists" select="//mcp:DP_DataParameters/mcp:dataParameter/mcp:DP_DataParameter/mcp:parameterName/mcp:DP_Term/mcp:term/gco:CharacterString=$target" />
 
+      <xsl:variable name="waterBodiesList">
+          <xsl:for-each select="$waterBodies" >
+            <xsl:value-of select="." />
+            <xsl:if test="position() != last()">
+              <xsl:text>,</xsl:text>
+            </xsl:if>
+          </xsl:for-each> 
+      </xsl:variable>
+
+      <!-- not used -->
+      <xsl:variable name="parametersList">
+          <xsl:for-each select="$parameters" >
+            <xsl:value-of select="." />
+            <xsl:if test="position() != last()">
+              <xsl:text>,</xsl:text>
+            </xsl:if>
+          </xsl:for-each> 
+      </xsl:variable>
+
+
 
 
     <html>
 
       
     <head>
-      <meta name="parameter">  
+      <meta name="parameters">  
         <xsl:attribute name="content">
-          <xsl:value-of select="$target" />
+          <xsl:value-of select="$parametersList" />
         </xsl:attribute>
       </meta>  
 
       <meta name="water-bodies">  
         <xsl:attribute name="content">
-          <xsl:for-each select="$waterBodies" >
-            <xsl:value-of select="." />
-            <xsl:if test="position() != last()">
-             <xsl:text>,</xsl:text>
-            </xsl:if>
-          </xsl:for-each> 
+          <xsl:value-of select="$waterBodiesList" />
         </xsl:attribute>
       </meta>  
 
