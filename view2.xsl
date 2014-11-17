@@ -34,6 +34,8 @@
 
 
       <xsl:variable name="waterBodies" select="//gmd:thesaurusName//gmx:Anchor[text() = 'geonetwork.thesaurus.local.theme.water_bodies' ]/ancestor::gmd:MD_Keywords/gmd:keyword/gco:CharacterString" />
+      
+      <xsl:variable name="organisation" select="//gmd:identificationInfo//gmd:citedResponsibleParty/gmd:CI_ResponsibleParty/gmd:organisationName/gco:CharacterString" />
 
     <body>
 
@@ -55,7 +57,7 @@
         near
         ...
 
-        <xsl:value-of select="//gmd:identificationInfo//gmd:citedResponsibleParty/gmd:CI_ResponsibleParty/gmd:organisationName/gco:CharacterString" /> scientific research data sets are accessible through the IMOS Portal.
+        <xsl:value-of select="$organisation" /> scientific research data sets are accessible through the IMOS Portal.
 
         <!-- Page Conent -->
 
