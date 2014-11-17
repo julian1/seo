@@ -43,6 +43,7 @@
     -->    
 
    
+      <xsl:if test="//mcp:DP_DataParameters/mcp:dataParameter/mcp:DP_DataParameter/mcp:parameterName/mcp:DP_Term/mcp:term/gco:CharacterString=$target"> *** FOUND *** </xsl:if> 
 
     <!-- list of all the parameters -->
     <xsl:for-each select="//mcp:DP_DataParameters/mcp:dataParameter/mcp:DP_DataParameter/mcp:parameterName/mcp:DP_Term/mcp:term/gco:CharacterString" > 
