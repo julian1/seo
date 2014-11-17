@@ -13,24 +13,56 @@
     <!-- xsl:variable name="target"/ --> 
 
     <html>
+
+      
+    <head>
+      
+      <meta>  
+          <xsl:attribute name="parameter">
+           <xsl:value-of select="$target" />
+          </xsl:attribute>
+      </meta>  
+
+    </head>
+
     <body>
 
-
-    <p>parameter: <xsl:value-of select="$target" /></p>
-
     <!-- cannot use match and apply templates here -->
-
-  
     <xsl:variable name="parameterExists" select="//mcp:DP_DataParameters/mcp:dataParameter/mcp:DP_DataParameter/mcp:parameterName/mcp:DP_Term/mcp:term/gco:CharacterString=$target" />
-   
 
     <xsl:choose>
       <xsl:when test="not($parameterExists)">
        <h2> not found! </h2>
       </xsl:when>
      <xsl:otherwise>
-      <h2> found ! </h2>
 
+        <!-- Page Meta Description -->
+        <xsl:value-of select="$target"/> in the    
+
+        <xsl:for-each select="//gmd:thesaurusName//gmx:Anchor[text() = 'geonetwork.thesaurus.local.theme.water_bodies' ]/ancestor::gmd:MD_Keywords/gmd:keyword" >
+          <xsl:value-of select="gco:CharacterString" />,  
+        </xsl:for-each> 
+        near
+        ...
+
+        <xsl:value-of select="//gmd:identificationInfo//gmd:citedResponsibleParty/gmd:CI_ResponsibleParty/gmd:organisationName/gco:CharacterString" /> scientific research data sets are accessible through the IMOS Portal.
+
+        <!-- Page Conent -->
+
+        <!-- so we loop the parameters or what ?? we need to at least check that it's there we'll loop 
+          test if the node exists. 
+      
+          <xsl:if test="not(/html/body)">body node missing</xsl:if> 
+        -->    
+
+        <h1>  
+        </h1> 
+
+        <h2>Scientific Research Data obtained near ... </h2>
+
+        The 
+        <xsl:value-of select="//gmd:identificationInfo//gmd:title/gco:CharacterString" />
+        is collected
 
 
 
@@ -38,56 +70,7 @@
      </xsl:otherwise>
    </xsl:choose>
 
-    parameter exists: <xsl:value-of select="$parameterExists"/>
-
-
-    <xsl:if test="not($parameterExists)"> *** NOT FOUND *** </xsl:if> 
-
-
-    <!-- xsl:apply-templates select="//gmd:thesaurusName//gmx:Anchor[text() = 'geonetwork.thesaurus.local.theme.water_bodies' ]" /-->
-    <!-- were going to need commas, which will be nasty -->
-
-    
-    <!-- Page Meta Description -->
-    ... in the    
-    <xsl:for-each select="//gmd:thesaurusName//gmx:Anchor[text() = 'geonetwork.thesaurus.local.theme.water_bodies' ]/ancestor::gmd:MD_Keywords/gmd:keyword" >
-      <xsl:value-of select="gco:CharacterString" />,  
-    </xsl:for-each> 
-    near
-    ...
-
-    <xsl:value-of select="//gmd:identificationInfo//gmd:citedResponsibleParty/gmd:CI_ResponsibleParty/gmd:organisationName/gco:CharacterString" /> scientific research data sets are accessible through the IMOS Portal.
-
-
-
-    <!-- Page Conent -->
-
-    <!-- so we loop the parameters or what ?? we need to at least check that it's there we'll loop 
-      test if the node exists. 
-  
-      <xsl:if test="not(/html/body)">body node missing</xsl:if> 
-    -->    
-
    
-
-    <!-- list of all the parameters -->
-    <xsl:for-each select="//mcp:DP_DataParameters/mcp:dataParameter/mcp:DP_DataParameter/mcp:parameterName/mcp:DP_Term/mcp:term/gco:CharacterString" > 
-      <xsl:variable name="myParameter" select="."/>
-      param <xsl:value-of select="$myParameter" />,
-      <xsl:if test="$myParameter=$target"> *** </xsl:if> 
-    </xsl:for-each> 
-
-
- 
-
-    <h1>  
-    </h1> 
-
-    <h2>Scientific Research Data obtained near ... </h2>
-
-    The 
-    <xsl:value-of select="//gmd:identificationInfo//gmd:title/gco:CharacterString" />
-    is collected
 
 
     </body>
