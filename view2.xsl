@@ -15,7 +15,6 @@
     <html>
     <body>
 
-  <xsl:if test="xpath-expression">...</xsl:if>
 
     <p>TARGET: <xsl:value-of select="$target" /></p>
 
@@ -31,20 +30,25 @@
     near
     ...
 
-    <xsl:value-of select="//gmd:identificationInfo//gmd:citedResponsibleParty//gmd:organisationName/gco:CharacterString" /> scientific research data sets are accessible through the IMOS Portal.
+    <xsl:value-of select="//gmd:identificationInfo//gmd:citedResponsibleParty/gmd:CI_ResponsibleParty/gmd:organisationName/gco:CharacterString" /> scientific research data sets are accessible through the IMOS Portal.
 
 
 
     <!-- Page Conent -->
 
-    <!-- so we loop the parameters or what ?? we need to at least check that it's there 
-      we'll loop 
+    <!-- so we loop the parameters or what ?? we need to at least check that it's there we'll loop 
+      test if the node exists. 
+  
+      <xsl:if test="not(/html/body)">body node missing</xsl:if> 
     -->    
 
+   
+
+    <!-- list of all the parameters -->
+    <xsl:for-each select="//mcp:DP_DataParameters/mcp:dataParameter/mcp:DP_DataParameter/mcp:parameterName/mcp:DP_Term/mcp:term/gco:CharacterString" > 
+      <xsl:variable name="myParameter" select="."/>
     
-
-
-    <xsl:for-each select="//mcp:DP_DataParameters/mcp:dataParameter/mcp:DP_DataParameter/mcp:parameterName/mcp:DP_Term/mcp:term/gco:CharacterString" > param <xsl:value-of select="." />,
+      param <xsl:value-of select="$myParameter" />,
     </xsl:for-each> 
 
 
