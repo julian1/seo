@@ -8,9 +8,22 @@
 >
 
 
+
+
   <xsl:template match="mcp:MD_Metadata">
 
     <!-- xsl:variable name="target"/ --> 
+
+      <xsl:variable name="waterBodies" select="//gmd:thesaurusName//gmx:Anchor[text() = 'geonetwork.thesaurus.local.theme.water_bodies' ]/ancestor::gmd:MD_Keywords/gmd:keyword/gco:CharacterString" />
+      
+      <xsl:variable name="organisation" select="//gmd:identificationInfo//gmd:citedResponsibleParty/gmd:CI_ResponsibleParty/gmd:organisationName/gco:CharacterString" />
+
+      <xsl:variable name="parameters" select="//mcp:DP_DataParameters/mcp:dataParameter/mcp:DP_DataParameter/mcp:parameterName/mcp:DP_Term/mcp:term/gco:CharacterString" />
+
+      <!-- can we simplify this dynamically? -->
+      <xsl:variable name="parameterExists" select="//mcp:DP_DataParameters/mcp:dataParameter/mcp:DP_DataParameter/mcp:parameterName/mcp:DP_Term/mcp:term/gco:CharacterString=$target" />
+
+
 
     <html>
 
@@ -24,7 +37,15 @@
 
       <meta name="water-bodies">  
         <xsl:attribute name="content">
-          <xsl:value-of select="$target" />
+          <xsl:for-each select="$waterBodies" >
+            <xsl:value-of select="." />,  
+          </xsl:for-each> 
+        </xsl:attribute>
+      </meta>  
+
+      <meta name="organisation">  
+        <xsl:attribute name="content">
+          <xsl:value-of select="$organisation" />
         </xsl:attribute>
       </meta>  
 
@@ -32,12 +53,6 @@
 
     </head>
 
-
-      <xsl:variable name="waterBodies" select="//gmd:thesaurusName//gmx:Anchor[text() = 'geonetwork.thesaurus.local.theme.water_bodies' ]/ancestor::gmd:MD_Keywords/gmd:keyword/gco:CharacterString" />
-      
-      <xsl:variable name="organisation" select="//gmd:identificationInfo//gmd:citedResponsibleParty/gmd:CI_ResponsibleParty/gmd:organisationName/gco:CharacterString" />
-
-      <xsl:variable name="parameters" select="//mcp:DP_DataParameters/mcp:dataParameter/mcp:DP_DataParameter/mcp:parameterName/mcp:DP_Term/mcp:term/gco:CharacterString" />
 
 
 
@@ -49,9 +64,6 @@
           <xsl:value-of select="$parameters" />, 
         </xsl:for-each> 
 
-
-    <!-- cannot use match and apply templates here -->
-    <xsl:variable name="parameterExists" select="//mcp:DP_DataParameters/mcp:dataParameter/mcp:DP_DataParameter/mcp:parameterName/mcp:DP_Term/mcp:term/gco:CharacterString=$target" />
 
     <xsl:choose>
       <xsl:when test="not($parameterExists)">
