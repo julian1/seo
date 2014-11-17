@@ -19,6 +19,10 @@
 
       <xsl:variable name="parameters" select="//mcp:DP_DataParameters/mcp:dataParameter/mcp:DP_DataParameter/mcp:parameterName/mcp:DP_Term/mcp:term/gco:CharacterString" />
 
+
+      <xsl:variable name="platforms" select="//mcp:DP_DataParameters/mcp:dataParameter/mcp:DP_DataParameter/mcp:platform/mcp:DP_Term/mcp:term/gco:CharacterString" />
+
+
       <!-- can we simplify this dynamically? -->
       <xsl:variable name="parameterExists" select="//mcp:DP_DataParameters/mcp:dataParameter/mcp:DP_DataParameter/mcp:parameterName/mcp:DP_Term/mcp:term/gco:CharacterString=$target" />
 
@@ -34,6 +38,15 @@
       <!-- not used -->
       <xsl:variable name="parametersList">
           <xsl:for-each select="$parameters" >
+            <xsl:value-of select="." />
+            <xsl:if test="position() != last()">
+              <xsl:text>, </xsl:text>
+            </xsl:if>
+          </xsl:for-each> 
+      </xsl:variable>
+
+      <xsl:variable name="platformsList">
+          <xsl:for-each select="$platforms" >
             <xsl:value-of select="." />
             <xsl:if test="position() != last()">
               <xsl:text>, </xsl:text>
@@ -57,6 +70,7 @@
         <xsl:value-of select="$organisation"/>
       </title>
 
+          platforms <xsl:value-of select="$platformsList" />
 
       <meta name="parameter">  
         <xsl:attribute name="content">
