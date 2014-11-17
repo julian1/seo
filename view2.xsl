@@ -37,7 +37,18 @@
       
       <xsl:variable name="organisation" select="//gmd:identificationInfo//gmd:citedResponsibleParty/gmd:CI_ResponsibleParty/gmd:organisationName/gco:CharacterString" />
 
+      <xsl:variable name="parameters" select="//mcp:DP_DataParameters/mcp:dataParameter/mcp:DP_DataParameter/mcp:parameterName/mcp:DP_Term/mcp:term/gco:CharacterString" />
+
+
+
     <body>
+
+    parameters: 
+
+        <xsl:for-each select="$waterBodies" >
+          <xsl:value-of select="$parameters" />, 
+        </xsl:for-each> 
+
 
     <!-- cannot use match and apply templates here -->
     <xsl:variable name="parameterExists" select="//mcp:DP_DataParameters/mcp:dataParameter/mcp:DP_DataParameter/mcp:parameterName/mcp:DP_Term/mcp:term/gco:CharacterString=$target" />
