@@ -44,18 +44,10 @@
     
 
 
-    <xsl:for-each select="//mcp:DP_DataParameters/mcp:dataParameter/mcp:DP_DataParameter/mcp:parameterName/mcp:DP_Term/mcp:term" > param <xsl:value-of select="gco:CharacterString" />,  
+    <xsl:for-each select="//mcp:DP_DataParameters/mcp:dataParameter/mcp:DP_DataParameter/mcp:parameterName/mcp:DP_Term/mcp:term/gco:CharacterString" > param <xsl:value-of select="." />,
     </xsl:for-each> 
 
 
-      <!-- mcp:dataParameters>
-        <mcp:DP_DataParameters>
-          <mcp:dataParameter>
-            <mcp:DP_DataParameter>
-              <mcp:parameterName>
-                <mcp:DP_Term>
-                  <mcp:term>
-                    <gco:CharacterString>Temperature of the water body</gco:CharacterString -->
  
 
     <h1>  
