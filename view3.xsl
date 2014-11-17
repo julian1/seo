@@ -40,10 +40,15 @@
         <xsl:for-each select="$parameters" >
           <xsl:variable name="parameter" select="string(.)"/>
 
-          <xsl:value-of select="$parameter" />
+          <!-- xsl:value-of select="$parameter" / -->
 
-           <xsl:value-of select='replace($parameter, " ","-")'/>
+          <xsl:variable name="filename" select='replace($parameter, " ","-")'/>
 
+            
+
+           <xsl:result-document method="xml" href="output/{$filename}.html">
+              WHOOT
+          </xsl:result-document>
 
         </xsl:for-each> 
 
