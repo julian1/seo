@@ -9,8 +9,15 @@
 
 
   <xsl:template match="mcp:MD_Metadata">
+
+    <!-- xsl:variable name="target"/ --> 
+
     <html>
     <body>
+
+  <xsl:if test="xpath-expression">...</xsl:if>
+
+    <p>TARGET: <xsl:value-of select="$target" /></p>
 
     <!-- xsl:apply-templates select="//gmd:thesaurusName//gmx:Anchor[text() = 'geonetwork.thesaurus.local.theme.water_bodies' ]" /-->
     <!-- were going to need commas, which will be nasty -->
@@ -34,11 +41,10 @@
       we'll loop 
     -->    
 
+    
 
-    <xsl:for-each select="//mcp:DP_DataParameters//mcp:DP_DataParameter//mcp:DP_Term/mcp:term" >
 
-      param <xsl:value-of select="gco:CharacterString" />,  
-
+    <xsl:for-each select="//mcp:DP_DataParameters/mcp:dataParameter/mcp:DP_DataParameter/mcp:parameterName/mcp:DP_Term/mcp:term" > param <xsl:value-of select="gco:CharacterString" />,  
     </xsl:for-each> 
 
 
