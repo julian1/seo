@@ -8,10 +8,10 @@
 >
 
 
+      <xsl:param name="target"/> 
 
   <xsl:template match="mcp:MD_Metadata">
 
-      <xsl:param name="target"/> 
 
       <xsl:variable name="waterBodies" select="//gmd:thesaurusName//gmx:Anchor[text() = 'geonetwork.thesaurus.local.theme.water_bodies' ]/ancestor::gmd:MD_Keywords/gmd:keyword/gco:CharacterString" />
       
@@ -34,6 +34,20 @@
         parameters : '<xsl:value-of select="$parameters" separator="', '"/>'
 
         platforms : '<xsl:value-of select="$platforms" separator="', '"/>'
+
+        water bodies2:
+
+        <xsl:for-each select="$parameters" >
+          <xsl:variable name="parameter" select="string(.)"/>
+
+          <xsl:value-of select="$parameter" />
+
+           <xsl:value-of select='replace($parameter, " ","-")'/>
+
+
+        </xsl:for-each> 
+
+
 
 
 
