@@ -9,7 +9,6 @@
 
 
 
-
   <xsl:template match="mcp:MD_Metadata">
 
     <!-- xsl:variable name="target"/ --> 
@@ -49,9 +48,16 @@
 
       
     <head>
-      <meta name="parameters">  
+
+      <title>
+        <xsl:value-of select="$target"/>  
+        <xsl:value-of select="$waterBodiesList"/> <xsl:value-of select="$organisation"/>
+      </title>
+
+
+      <meta name="parameter">  
         <xsl:attribute name="content">
-          <xsl:value-of select="$parametersList" />
+          <xsl:value-of select="$target" />
         </xsl:attribute>
       </meta>  
 
