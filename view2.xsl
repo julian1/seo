@@ -11,7 +11,7 @@
 
   <xsl:template match="mcp:MD_Metadata">
 
-    <!-- xsl:variable name="target"/ --> 
+      <!-- xsl:variable name="target"/ --> 
 
       <xsl:variable name="waterBodies" select="//gmd:thesaurusName//gmx:Anchor[text() = 'geonetwork.thesaurus.local.theme.water_bodies' ]/ancestor::gmd:MD_Keywords/gmd:keyword/gco:CharacterString" />
       
@@ -26,7 +26,7 @@
           <xsl:for-each select="$waterBodies" >
             <xsl:value-of select="." />
             <xsl:if test="position() != last()">
-              <xsl:text>,</xsl:text>
+              <xsl:text>, </xsl:text>
             </xsl:if>
           </xsl:for-each> 
       </xsl:variable>
@@ -36,7 +36,7 @@
           <xsl:for-each select="$parameters" >
             <xsl:value-of select="." />
             <xsl:if test="position() != last()">
-              <xsl:text>,</xsl:text>
+              <xsl:text>, </xsl:text>
             </xsl:if>
           </xsl:for-each> 
       </xsl:variable>
@@ -50,8 +50,11 @@
     <head>
 
       <title>
-        <xsl:value-of select="$target"/>  
-        <xsl:value-of select="$waterBodiesList"/> <xsl:value-of select="$organisation"/>
+        <xsl:value-of select="$target"/> 
+        <xsl:text xml:space="preserve"> </xsl:text>
+        <xsl:value-of select="$waterBodiesList"/> 
+        <xsl:text xml:space="preserve"> </xsl:text>
+        <xsl:value-of select="$organisation"/>
       </title>
 
 
@@ -76,8 +79,6 @@
 
 
     </head>
-
-
 
 
     <body>
