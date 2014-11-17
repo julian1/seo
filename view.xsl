@@ -56,7 +56,10 @@
 	</xsl:template>
 
 
-
+	<!-- so, do we apply another template, or do we use a for_each type construct 
+			or should our select be entirely different. 
+	-->
+	
 
 	<!-- ok, lets try and match and then back up  -->
 
