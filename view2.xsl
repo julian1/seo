@@ -38,7 +38,10 @@
       <meta name="water-bodies">  
         <xsl:attribute name="content">
           <xsl:for-each select="$waterBodies" >
-            <xsl:value-of select="." />,  
+            <xsl:value-of select="." />
+            <xsl:if test="position() != last()">
+             <xsl:text>,</xsl:text>
+            </xsl:if>
           </xsl:for-each> 
         </xsl:attribute>
       </meta>  
