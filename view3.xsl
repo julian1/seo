@@ -8,7 +8,6 @@
 >
 
 
-      <xsl:param name="target"/> 
 
   <xsl:template match="mcp:MD_Metadata">
 
@@ -23,37 +22,38 @@
       <xsl:variable name="platforms" select="//mcp:DP_DataParameters/mcp:dataParameter/mcp:DP_DataParameter/mcp:platform/mcp:DP_Term/mcp:term/gco:CharacterString" />
 
 
-      <!-- can we simplify this dynamically? -->
-      <xsl:variable name="parameterExists" select="//mcp:DP_DataParameters/mcp:dataParameter/mcp:DP_DataParameter/mcp:parameterName/mcp:DP_Term/mcp:term/gco:CharacterString=$target" />
-
     <!-- xsl:value-of select="/root/item" separator="', '"/ -->
 
 
         water bodies: <xsl:value-of select="$waterBodies" separator="', '"/>
-
         parameters : '<xsl:value-of select="$parameters" separator="', '"/>'
-
         platforms : '<xsl:value-of select="$platforms" separator="', '"/>'
 
         water bodies2:
 
         <xsl:for-each select="$parameters" >
           <xsl:variable name="parameter" select="string(.)"/>
-
-          <!-- xsl:value-of select="$parameter" / -->
-
           <xsl:variable name="filename" select='replace($parameter, " ","-")'/>
 
-            
+          <xsl:result-document method="xml" href="output/{$filename}.html">
+            <html>
+            <head>
 
-           <xsl:result-document method="xml" href="output/{$filename}.html">
-              WHOOT
+              <title>
+
+
+                <xsl:value-of select="$parameter" />
+
+              </title>
+
+            </head>
+            </html>
+
+
+                      WHOOT
+
           </xsl:result-document>
-
         </xsl:for-each> 
-
-
-
 
 
   </xsl:template>
