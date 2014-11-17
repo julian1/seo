@@ -28,138 +28,16 @@
 
     <!-- xsl:value-of select="/root/item" separator="', '"/ -->
 
-      <xsl:variable name="waterBodiesList">
-        <xsl:value-of select="$waterBodies" separator="', '"/>
-      </xsl:variable>
-
-      <!-- not used -->
-      <xsl:variable name="parametersList">
-          <xsl:for-each select="$parameters" >
-            <xsl:value-of select="." />
-            <xsl:if test="position() != last()">
-              <xsl:text>, </xsl:text>
-            </xsl:if>
-          </xsl:for-each> 
-      </xsl:variable>
-
-      <xsl:variable name="platformsList">
-          <xsl:for-each select="$platforms" >
-            <xsl:value-of select="." />
-            <xsl:if test="position() != last()">
-              <xsl:text>, </xsl:text>
-            </xsl:if>
-          </xsl:for-each> 
-      </xsl:variable>
-
-    <html>
-
-      
-    <head>
-
-      <title>
-        <xsl:value-of select="$target"/> 
-        <xsl:text xml:space="preserve"> </xsl:text>
-
-        <xsl:value-of select="$waterBodiesList"/> 
-        <xsl:text xml:space="preserve"> </xsl:text>
-        <xsl:value-of select="$organisation"/>
-        <xsl:text xml:space="preserve"> </xsl:text>
-        <xsl:value-of select="$platformsList"/>
-      </title>
-
 
         water bodies: <xsl:value-of select="$waterBodies" separator="', '"/>
+
         parameters : '<xsl:value-of select="$parameters" separator="', '"/>'
+
         platforms : '<xsl:value-of select="$platforms" separator="', '"/>'
 
-          platforms <xsl:value-of select="$platformsList" />
-
-      <meta name="parameter">  
-        <xsl:attribute name="content">
-          <xsl:value-of select="$target" />
-        </xsl:attribute>
-      </meta>  
-
-      <meta name="water-bodies">  
-        <xsl:attribute name="content">
-          <xsl:value-of select="$waterBodiesList" />
-        </xsl:attribute>
-      </meta>  
-
-      <meta name="organisation">  
-        <xsl:attribute name="content">
-          <xsl:value-of select="$organisation" />
-        </xsl:attribute>
-      </meta>  
 
 
-
-    </head>
-
-
-    <body>
-
-    parameters: 
-
-        <xsl:for-each select="$waterBodies" >
-          <xsl:value-of select="$parameters" />, 
-        </xsl:for-each> 
-
-
-    <xsl:choose>
-      <xsl:when test="not($parameterExists)">
-       <h2> not found! </h2>
-      </xsl:when>
-     <xsl:otherwise>
-
-        <!-- Page Meta Description -->
-        <xsl:value-of select="$target"/> in the    
-
-        <xsl:for-each select="$waterBodies" >
-          <xsl:value-of select="." />,  
-        </xsl:for-each> 
-        near
-        ...
-
-        <xsl:value-of select="$organisation" /> scientific research data sets are accessible through the IMOS Portal.
-
-        <!-- Page Conent -->
-
-        <!-- so we loop the parameters or what ?? we need to at least check that it's there we'll loop 
-          test if the node exists. 
-      
-          <xsl:if test="not(/html/body)">body node missing</xsl:if> 
-        -->    
-
-        <h1>  
-        </h1> 
-
-        <h2>Scientific Research Data obtained near ... </h2>
-
-        The 
-        <xsl:value-of select="//gmd:identificationInfo//gmd:title/gco:CharacterString" />
-        is collected
-
-
-
-
-     </xsl:otherwise>
-   </xsl:choose>
-
-   
-
-
-    </body>
-    </html>
   </xsl:template>
-
-  <!-- Ok, think we should perhaps be gathering up variables --> 
-
-
-  <!-- xsl:template match="gmx:Anchor">
-    <h2> HERE : <xsl:value-of select="./ancestor::gmd:MD_Keywords" /> </h2>
-  </xsl:template -->
-
 
 
 </xsl:stylesheet>
