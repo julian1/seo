@@ -16,13 +16,11 @@
 
       
     <head>
-      
-      <meta>  
-          <xsl:attribute name="parameter">
-           <xsl:value-of select="$target" />
-          </xsl:attribute>
+      <meta name="parameter">  
+        <xsl:attribute name="content">
+          <xsl:value-of select="$target" />
+        </xsl:attribute>
       </meta>  
-
     </head>
 
     <body>
