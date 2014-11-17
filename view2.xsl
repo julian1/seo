@@ -21,7 +21,19 @@
           <xsl:value-of select="$target" />
         </xsl:attribute>
       </meta>  
+
+      <meta name="water-bodies">  
+        <xsl:attribute name="content">
+          <xsl:value-of select="$target" />
+        </xsl:attribute>
+      </meta>  
+
+
+
     </head>
+
+
+      <xsl:variable name="waterBodies" select="//gmd:thesaurusName//gmx:Anchor[text() = 'geonetwork.thesaurus.local.theme.water_bodies' ]/ancestor::gmd:MD_Keywords/gmd:keyword/gco:CharacterString" />
 
     <body>
 
@@ -37,8 +49,8 @@
         <!-- Page Meta Description -->
         <xsl:value-of select="$target"/> in the    
 
-        <xsl:for-each select="//gmd:thesaurusName//gmx:Anchor[text() = 'geonetwork.thesaurus.local.theme.water_bodies' ]/ancestor::gmd:MD_Keywords/gmd:keyword" >
-          <xsl:value-of select="gco:CharacterString" />,  
+        <xsl:for-each select="$waterBodies" >
+          <xsl:value-of select="." />,  
         </xsl:for-each> 
         near
         ...
