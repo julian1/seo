@@ -16,13 +16,28 @@
     <body>
 
 
-    <p>paameter: <xsl:value-of select="$target" /></p>
+    <p>parameter: <xsl:value-of select="$target" /></p>
 
     <!-- cannot use match and apply templates here -->
 
   
     <xsl:variable name="parameterExists" select="//mcp:DP_DataParameters/mcp:dataParameter/mcp:DP_DataParameter/mcp:parameterName/mcp:DP_Term/mcp:term/gco:CharacterString=$target" />
-    
+   
+
+    <xsl:choose>
+      <xsl:when test="not($parameterExists)">
+       <h2> not found! </h2>
+      </xsl:when>
+     <xsl:otherwise>
+      <h2> found ! </h2>
+
+
+
+
+
+     </xsl:otherwise>
+   </xsl:choose>
+
     parameter exists: <xsl:value-of select="$parameterExists"/>
 
 
