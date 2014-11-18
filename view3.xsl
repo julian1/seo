@@ -29,6 +29,14 @@
           </gmd:type>
           <gmd:thesaurusName>
 
+
+
+  <gmd:identificationInfo>
+    <mcp:MD_DataIdentification gco:isoType="gmd:MD_DataIdentification">
+      <mcp:dataParameters>
+        <mcp:DP_DataParameters>
+
+
   -->
  
  
@@ -38,7 +46,7 @@
       organisation---  '<xsl:value-of select="$organisation" separator=", " />'
 
       <!-- xsl:variable name="parameters" select="//mcp:DP_DataParameters/mcp:dataParameter/mcp:DP_DataParameter/mcp:parameterName/mcp:DP_Term/mcp:term/gco:CharacterString" / -->
-      <xsl:variable name="parameters" select="//mcp:DP_DataParameters/mcp:dataParameter/mcp:DP_DataParameter" />
+      <xsl:variable name="parameters" select="gmd:identificationInfo/mcp:MD_DataIdentification/mcp:dataParameters/mcp:DP_DataParameters/mcp:dataParameter/mcp:DP_DataParameter" />
 
 
 
