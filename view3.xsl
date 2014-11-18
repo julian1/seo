@@ -12,21 +12,16 @@
 
   <xsl:template match="mcp:MD_Metadata">
 
+      <!-- Data identification is a common root and should be factored -->
       <xsl:variable name="waterBodies" select="gmd:identificationInfo/mcp:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:thesaurusName//gmx:Anchor[text() = 'geonetwork.thesaurus.local.theme.water_bodies' ]/ancestor::gmd:MD_Keywords/gmd:keyword/gco:CharacterString" />
 
-      <xsl:variable name="organisation" select="gmd:contact/gmd:CI_ResponsibleParty/gmd:organisationName/gco:CharacterString" />
 
       <xsl:variable name="parameters" select="gmd:identificationInfo/mcp:MD_DataIdentification/mcp:dataParameters/mcp:DP_DataParameters/mcp:dataParameter/mcp:DP_DataParameter" />
 
       <xsl:variable name="title" select="gmd:identificationInfo/mcp:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:title/gco:CharacterString" />
-<!-- 
-  <gmd:identificationInfo>
-    <mcp:MD_DataIdentification gco:isoType="gmd:MD_DataIdentification">
-      <gmd:citation>
-        <gmd:CI_Citation>
-          <gmd:title>
-            <gco:CharacterString>IMOS - Argo Australia Profiles</gco:CharacterString>
--->
+
+      <xsl:variable name="organisation" select="gmd:contact/gmd:CI_ResponsibleParty/gmd:organisationName/gco:CharacterString" />
+
  
         organisation: '<xsl:value-of select="$organisation"/>'
         water bodies: '<xsl:value-of select="$waterBodies" separator="', '"/>'
@@ -71,15 +66,15 @@
               <!-- Page Meta Description -->
               <meta name="description">  
                 <xsl:attribute name="content">
-                  <xsl:value-of select="$parameter" />
+                  <xsl:value-of select="$parameter"/>
                   <xsl:text> in the </xsl:text>
                   <xsl:value-of select="$waterBodies" separator=", "/>
                   <xsl:text> near </xsl:text>
                   <!-- TODO land masses -->
                   <xsl:text> using </xsl:text>
-                  <xsl:value-of select="$platform" />
+                  <xsl:value-of select="$platform"/>
                   <xsl:text>. The </xsl:text>
-                  <xsl:value-of select="$organisation" />
+                  <xsl:value-of select="$organisation"/>
                 </xsl:attribute>
               </meta>  
 
@@ -97,18 +92,33 @@
 
               <xsl:text>&#xa;</xsl:text>
               <h1> 
-              <xsl:value-of select="$parameter" />
-              <xsl:text> in the </xsl:text>
-              <xsl:value-of select="$waterBodies" separator=", "/>
-              <xsl:text>.</xsl:text>
+                <xsl:value-of select="$parameter" />
+                <xsl:text> in the </xsl:text>
+                <xsl:value-of select="$waterBodies" separator=", "/>
+                <xsl:text>.</xsl:text>
               </h1> 
 
               <xsl:text>&#xa;</xsl:text>
               <h2>
-              <xsl:text>Scientific Research Data obtained near </xsl:text>
-              <!-- TODO land masses -->
-              <xsl:text>.</xsl:text>
+                <xsl:text>Scientific Research Data obtained near </xsl:text>
+                <!-- TODO land masses -->
+                <xsl:text>.</xsl:text>
               </h2>
+              
+              <xsl:text>&#xa;</xsl:text>
+              <p>
+                <xsl:text>The </xsl:text>
+                <xsl:value-of select="$title" />
+                <xsl:text> is collected by a combination of </xsl:text>
+                <xsl:value-of select="$platform"/>
+                <xsl:text> in the </xsl:text>
+                <xsl:value-of select="$waterBodies" separator=", "/>
+                <xsl:text> off the coastlines(s) of </xsl:text>
+                <!-- TODO land masses -->
+                <xsl:text> by </xsl:text>
+                <xsl:value-of select="$organisation"/>
+                <xsl:text>.</xsl:text>
+              </p>
 
             </body>
 
