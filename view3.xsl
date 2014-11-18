@@ -15,18 +15,15 @@
       <!-- Data identification is a common root and should be factored -->
       <xsl:variable name="waterBodies" select="gmd:identificationInfo/mcp:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:thesaurusName//gmx:Anchor[text() = 'geonetwork.thesaurus.local.theme.water_bodies' ]/ancestor::gmd:MD_Keywords/gmd:keyword/gco:CharacterString" />
 
-
       <xsl:variable name="parameters" select="gmd:identificationInfo/mcp:MD_DataIdentification/mcp:dataParameters/mcp:DP_DataParameters/mcp:dataParameter/mcp:DP_DataParameter" />
 
       <xsl:variable name="title" select="gmd:identificationInfo/mcp:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:title/gco:CharacterString" />
 
       <xsl:variable name="organisation" select="gmd:contact/gmd:CI_ResponsibleParty/gmd:organisationName/gco:CharacterString" />
 
- 
         organisation: '<xsl:value-of select="$organisation"/>'
         water bodies: '<xsl:value-of select="$waterBodies" separator="', '"/>'
         title:        '<xsl:value-of select="$title" />'
-
 
         <xsl:for-each select="$parameters" >
 
@@ -35,12 +32,9 @@
           <xsl:variable name="platform" select="mcp:platform/mcp:DP_Term/mcp:term/gco:CharacterString" />
           <xsl:variable name="filename" select='encode-for-uri( replace($parameter, " ","-"))'/>
 
-
-
           parameter     '<xsl:value-of select="$parameter" />'
           platform      '<xsl:value-of select="$platform" />'
           filename      '<xsl:value-of select="$filename" />'
-
 
           <xsl:result-document method="xml" href="output/{$filename}.html">
 
@@ -64,7 +58,7 @@
               <xsl:text>&#xa;</xsl:text>
 
               <!-- Page Meta Description -->
-              <meta name="description">  
+              <meta name="description">
                 <xsl:attribute name="content">
                   <xsl:value-of select="$parameter"/>
                   <xsl:text> in the </xsl:text>
@@ -76,27 +70,22 @@
                   <xsl:text>. The </xsl:text>
                   <xsl:value-of select="$organisation"/>
                 </xsl:attribute>
-              </meta>  
+              </meta>
 
 
               <xsl:text>&#xa;</xsl:text>
             </head>
 
             <body>
-            <!-- Page Content -->
-          <!-- 
-              <h1><parameter> in the <water bodies></h1>
-              <h2>Scientific Research Data obtained near <land masses>.</h2>
-              <p>The <gmd:title> is collected by a combination of <platform> in the <water bodies> off the coastline(s) of <land masses> by <gmd:organisationName>.</p>
-          --> 
+              <!-- Page Content -->
 
               <xsl:text>&#xa;</xsl:text>
-              <h1> 
+              <h1>
                 <xsl:value-of select="$parameter" />
                 <xsl:text> in the </xsl:text>
                 <xsl:value-of select="$waterBodies" separator=", "/>
                 <xsl:text>.</xsl:text>
-              </h1> 
+              </h1>
 
               <xsl:text>&#xa;</xsl:text>
               <h2>
@@ -104,7 +93,7 @@
                 <!-- TODO land masses -->
                 <xsl:text>.</xsl:text>
               </h2>
-              
+
               <xsl:text>&#xa;</xsl:text>
               <p>
                 <xsl:text>The </xsl:text>
@@ -119,6 +108,24 @@
                 <xsl:value-of select="$organisation"/>
                 <xsl:text>.</xsl:text>
               </p>
+
+              <!-- 
+              The <parameter> data sets are useful for scientific and/or academic research and are free to download from the IMOS Portal.   
+              <h2><parameter> Data Collection Map</h2>
+              -->
+  
+              <xsl:text>&#xa;</xsl:text>
+              <xsl:text>The </xsl:text>
+              <xsl:value-of select="$parameter" />
+              <xsl:text> data sets are useful for scientific and/or academic research and are free to download from the IMOS Portal.</xsl:text>
+
+              <p/>
+              <xsl:text>&#xa;</xsl:text>
+              <h2>
+              <xsl:value-of select="$parameter" />
+              <xsl:text> Data Collection Map</xsl:text>
+              </h2>
+
 
             </body>
 
