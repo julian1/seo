@@ -13,8 +13,18 @@
 
 
       <xsl:variable name="waterBodies" select="//gmd:thesaurusName//gmx:Anchor[text() = 'geonetwork.thesaurus.local.theme.water_bodies' ]/ancestor::gmd:MD_Keywords/gmd:keyword/gco:CharacterString" />
-      
-      <xsl:variable name="organisation" select="//gmd:identificationInfo//gmd:citedResponsibleParty/gmd:CI_ResponsibleParty/gmd:organisationName/gco:CharacterString" />
+     
+
+  <!-- gmd:contact>
+    <gmd:CI_ResponsibleParty>
+      <gmd:organisationName>
+        <gco:CharacterString>eMarine Information Infrastructure (eMII)</gco:CharacterString -->
+ 
+ 
+      <xsl:variable name="organisation" select="gmd:contact/gmd:CI_ResponsibleParty/gmd:organisationName/gco:CharacterString" />
+
+
+      organisation---  '<xsl:value-of select="$organisation" separator=", " />'
 
       <!-- xsl:variable name="parameters" select="//mcp:DP_DataParameters/mcp:dataParameter/mcp:DP_DataParameter/mcp:parameterName/mcp:DP_Term/mcp:term/gco:CharacterString" / -->
       <xsl:variable name="parameters" select="//mcp:DP_DataParameters/mcp:dataParameter/mcp:DP_DataParameter" />
@@ -40,29 +50,19 @@
 
         <xsl:for-each select="$parameters" >
 
-
-      <!-- /mcp:term>
-        <mcp:type>
-          <mcp:DP_TypeCode codeList="http://schemas.aodn.org.au/mcp-2.0/schema/resources/Codelist/gmxCodelists.xml#DP_TypeCode" codeListValue="longName">longName</mcp:DP_TypeCode>
-            </mcp:type -->
-
-
-          <!-- xsl:variable name="parameter" select="mcp:parameterName/mcp:DP_Term/mcp:term/gco:CharacterString" /-->
-
-          <!-- xsl:variable name="parameter" select="mcp:parameterName/mcp:DP_Term/mcp:term/mcp:type/mcp:DP_TypeCode[text() = 'longName']" / -->
-          <xsl:variable name="parameter" select="mcp:parameterName/mcp:DP_Term/mcp:type/mcp:DP_TypeCode[text() = 'longName']" />
-
-
+          <!-- this should restrict code list as well as longName -->
+          <xsl:variable name="parameter" select="mcp:parameterName/mcp:DP_Term/mcp:type/mcp:DP_TypeCode[text() = 'longName']/../../mcp:term/gco:CharacterString" />
 
           <xsl:variable name="platform" select="mcp:platform/mcp:DP_Term/mcp:term/gco:CharacterString" />
 
-          parameter <xsl:value-of select="$parameter" />
-          platform <xsl:value-of select="$platform" />
+          <xsl:variable name="filename" select='encode-for-uri( replace($parameter, " ","-"))'/>
 
-   
-          <!-- xsl:variable name="filename" select='encode-for-uri( replace($parameter, " ","-"))'/>
+          parameter     '<xsl:value-of select="$parameter" />'
+          platform      '<xsl:value-of select="$platform" />'
+          filename      '<xsl:value-of select="$filename" />'
+          organisation  '<xsl:value-of select="$organisation" separator=", " />'
 
-          filename <xsl:value-of select="$filename" />
+
 
           <xsl:result-document method="xml" href="output/{$filename}.html">
 
@@ -77,19 +77,19 @@
                 <xsl:text> </xsl:text>
                 <xsl:value-of select="$waterBodies" separator=", "/>
                 <xsl:text> </xsl:text>
-
+                <!-- land masses -->
+                <xsl:text> </xsl:text>
+                <xsl:value-of select="$platform" />
+                <xsl:text> IMOS Scientific Research Data </xsl:text>
+                <xsl:value-of select="$organisation" />
 
               </title>
 
               <xsl:text>&#xa;</xsl:text>
             </head>
             </html>
-
-                      WHOOT
-
           </xsl:result-document>
 
-          -->
         </xsl:for-each> 
 
 
