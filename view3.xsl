@@ -11,53 +11,14 @@
 
   <xsl:template match="mcp:MD_Metadata">
 
-
       <xsl:variable name="waterBodies" select="gmd:identificationInfo/mcp:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:thesaurusName//gmx:Anchor[text() = 'geonetwork.thesaurus.local.theme.water_bodies' ]/ancestor::gmd:MD_Keywords/gmd:keyword/gco:CharacterString" />
      
-
-  <!-- gmd:contact>
-    <gmd:CI_ResponsibleParty>
-      <gmd:organisationName>
-        <gco:CharacterString>eMarine Information Infrastructure (eMII)</gco:CharacterString 
-
-  <gmd:identificationInfo>
-    <mcp:MD_DataIdentification gco:isoType="gmd:MD_DataIdentification">
-      <gmd:descriptiveKeywords>
-        <gmd:MD_Keywords>
-          <gmd:type>
-            <gmd:MD_KeywordTypeCode codeList="http://schemas.aodn.org.au/mcp-2.0/schema/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="theme">theme</gmd:MD_KeywordTypeCode>
-          </gmd:type>
-          <gmd:thesaurusName>
-
-
-
-  <gmd:identificationInfo>
-    <mcp:MD_DataIdentification gco:isoType="gmd:MD_DataIdentification">
-      <mcp:dataParameters>
-        <mcp:DP_DataParameters>
-
-
-  -->
- 
- 
       <xsl:variable name="organisation" select="gmd:contact/gmd:CI_ResponsibleParty/gmd:organisationName/gco:CharacterString" />
 
-
-      organisation---  '<xsl:value-of select="$organisation" separator=", " />'
-
-      <!-- xsl:variable name="parameters" select="//mcp:DP_DataParameters/mcp:dataParameter/mcp:DP_DataParameter/mcp:parameterName/mcp:DP_Term/mcp:term/gco:CharacterString" / -->
       <xsl:variable name="parameters" select="gmd:identificationInfo/mcp:MD_DataIdentification/mcp:dataParameters/mcp:DP_DataParameters/mcp:dataParameter/mcp:DP_DataParameter" />
 
 
-
-
-
-      <!-- xsl:variable name="platforms" select="//mcp:DP_DataParameters/mcp:dataParameter/mcp:DP_DataParameter/mcp:platform/mcp:DP_Term/mcp:term/gco:CharacterString" / -->
-
-
-        <!-- xsl:value-of select="/root/item" separator="', '"/ -->
-
-
+        organisation---  '<xsl:value-of select="$organisation" separator=", " />'
         water bodies: <xsl:value-of select="$waterBodies" separator=", "/>
 
 
@@ -71,9 +32,7 @@
 
           <!-- this should restrict code list as well as longName -->
           <xsl:variable name="parameter" select="mcp:parameterName/mcp:DP_Term/mcp:type/mcp:DP_TypeCode[text() = 'longName']/../../mcp:term/gco:CharacterString" />
-
           <xsl:variable name="platform" select="mcp:platform/mcp:DP_Term/mcp:term/gco:CharacterString" />
-
           <xsl:variable name="filename" select='encode-for-uri( replace($parameter, " ","-"))'/>
 
           parameter     '<xsl:value-of select="$parameter" />'
