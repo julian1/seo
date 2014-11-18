@@ -16,7 +16,8 @@
       
       <xsl:variable name="organisation" select="//gmd:identificationInfo//gmd:citedResponsibleParty/gmd:CI_ResponsibleParty/gmd:organisationName/gco:CharacterString" />
 
-      <xsl:variable name="parameters" select="//mcp:DP_DataParameters/mcp:dataParameter/mcp:DP_DataParameter/mcp:parameterName/mcp:DP_Term/mcp:term/gco:CharacterString" />
+      <!-- xsl:variable name="parameters" select="//mcp:DP_DataParameters/mcp:dataParameter/mcp:DP_DataParameter/mcp:parameterName/mcp:DP_Term/mcp:term/gco:CharacterString" / -->
+      <xsl:variable name="parameters" select="//mcp:DP_DataParameters/mcp:dataParameter/mcp:DP_DataParameter" />
 
 
       <xsl:variable name="platforms" select="//mcp:DP_DataParameters/mcp:dataParameter/mcp:DP_DataParameter/mcp:platform/mcp:DP_Term/mcp:term/gco:CharacterString" />
@@ -35,8 +36,21 @@
       -->
 
         <xsl:for-each select="$parameters" >
-          <xsl:variable name="parameter" select="string(.)"/>
-          <xsl:variable name="filename" select='replace($parameter, " ","-")'/>
+
+
+
+          <xsl:variable name="parameter" select="mcp:parameterName/mcp:DP_Term/mcp:term/gco:CharacterString" />
+          <xsl:variable name="platform" select="mcp:platform/mcp:DP_Term/mcp:term/gco:CharacterString" />
+
+          parameter <xsl:value-of select="$parameter" />
+          platform <xsl:value-of select="$platform" />
+
+
+
+          <!-- xsl:variable name="filename" select='encode-for-uri( replace($parameter, " ","-"))'/>
+          <xsl:variable name="filename" select='encode-for-uri( $parameter)'/>
+
+          filename <xsl:value-of select="$filename" />
 
           <xsl:result-document method="xml" href="output/{$filename}.html">
 
@@ -47,10 +61,11 @@
               <xsl:text>&#xa;</xsl:text>
 
               <title>
-
                 <xsl:value-of select="$parameter" />
                 <xsl:text> </xsl:text>
                 <xsl:value-of select="$waterBodies" separator=", "/>
+                <xsl:text> </xsl:text>
+
 
               </title>
 
@@ -58,10 +73,11 @@
             </head>
             </html>
 
-
                       WHOOT
 
           </xsl:result-document>
+
+          -->
         </xsl:for-each> 
 
 
