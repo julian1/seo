@@ -22,14 +22,17 @@
       <xsl:variable name="platforms" select="//mcp:DP_DataParameters/mcp:dataParameter/mcp:DP_DataParameter/mcp:platform/mcp:DP_Term/mcp:term/gco:CharacterString" />
 
 
-    <!-- xsl:value-of select="/root/item" separator="', '"/ -->
+        <!-- xsl:value-of select="/root/item" separator="', '"/ -->
 
 
-        water bodies: <xsl:value-of select="$waterBodies" separator="', '"/>
+        water bodies: <xsl:value-of select="$waterBodies"/>
+
+
+      <!-- 
         parameters : '<xsl:value-of select="$parameters" separator="', '"/>'
         platforms : '<xsl:value-of select="$platforms" separator="', '"/>'
-
         water bodies2:
+      -->
 
         <xsl:for-each select="$parameters" >
           <xsl:variable name="parameter" select="string(.)"/>
