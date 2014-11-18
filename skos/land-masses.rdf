@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:ns2="http://www.w3.org/2004/02/skos/core#"
+	xmlns:ns3="http://purl.org/dc/elements/1.1/"
+	xmlns:ns6="http://www.opengis.net/gml#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+
+<rdf:Description rdf:about="http://www.mysite.org/thesaurus/land-masses#1416353851324">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1972k9684x1">
+	<ns6:srsName rdf:resource="http://www.opengis.net/gml/srs/epsg.xml#epsg:4326"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.mysite.org/thesaurus/land-masses#1416353851324">
+	<ns6:BoundedBy rdf:nodeID="node1972k9684x1"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1972k9684x1">
+	<rdf:type rdf:resource="http://www.opengis.net/gml#Envelope"/>
+	<ns6:lowerCorner> </ns6:lowerCorner>
+	<ns6:upperCorner> </ns6:upperCorner>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://geonetwork-opensource.org/land-masses">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+	<ns3:title>land-masses</ns3:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.mysite.org/thesaurus/land-masses#1416353870241">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.mysite.org/thesaurus/land-masses#1416353851324">
+	<ns2:prefLabel xml:lang="en">Australia</ns2:prefLabel>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1972k9684x2">
+	<ns6:lowerCorner> </ns6:lowerCorner>
+	<ns6:srsName rdf:resource="http://www.opengis.net/gml/srs/epsg.xml#epsg:4326"/>
+	<rdf:type rdf:resource="http://www.opengis.net/gml#Envelope"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.mysite.org/thesaurus/land-masses#1416353851324">
+	<ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.mysite.org/thesaurus/land-masses#1416353870241">
+	<ns6:BoundedBy rdf:nodeID="node1972k9684x2"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1972k9684x2">
+	<ns6:upperCorner> </ns6:upperCorner>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.mysite.org/thesaurus/land-masses#1416353870241">
+	<ns2:prefLabel xml:lang="en">New Zealand</ns2:prefLabel>
+	<ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.mysite.org/thesaurus/land-masses#1416353888761">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1972k9684x3">
+	<ns6:lowerCorner> </ns6:lowerCorner>
+	<ns6:srsName rdf:resource="http://www.opengis.net/gml/srs/epsg.xml#epsg:4326"/>
+	<rdf:type rdf:resource="http://www.opengis.net/gml#Envelope"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.mysite.org/thesaurus/land-masses#1416353888761">
+	<ns6:BoundedBy rdf:nodeID="node1972k9684x3"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1972k9684x3">
+	<ns6:upperCorner> </ns6:upperCorner>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1972k9684x4">
+	<ns6:upperCorner> </ns6:upperCorner>
+	<rdf:type rdf:resource="http://www.opengis.net/gml#Envelope"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.mysite.org/thesaurus/land-masses#1416353888761">
+	<ns2:prefLabel xml:lang="en">Indonesia</ns2:prefLabel>
+	<ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.mysite.org/thesaurus/land-masses#1416353929233">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1972k9684x4">
+	<ns6:lowerCorner> </ns6:lowerCorner>
+	<ns6:srsName rdf:resource="http://www.opengis.net/gml/srs/epsg.xml#epsg:4326"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.mysite.org/thesaurus/land-masses#1416353929233">
+	<ns6:BoundedBy rdf:nodeID="node1972k9684x4"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1972k9684x5">
+	<ns6:srsName rdf:resource="http://www.opengis.net/gml/srs/epsg.xml#epsg:4326"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.mysite.org/thesaurus/land-masses#1416353945731">
+	<ns6:BoundedBy rdf:nodeID="node1972k9684x5"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1972k9684x5">
+	<ns6:upperCorner> </ns6:upperCorner>
+	<rdf:type rdf:resource="http://www.opengis.net/gml#Envelope"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.mysite.org/thesaurus/land-masses#1416353929233">
+	<ns2:prefLabel xml:lang="en">Papua New Guinea</ns2:prefLabel>
+	<ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.mysite.org/thesaurus/land-masses#1416353945731">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1972k9684x5">
+	<ns6:lowerCorner> </ns6:lowerCorner>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1972k9684x6">
+	<ns6:lowerCorner> </ns6:lowerCorner>
+	<ns6:srsName rdf:resource="http://www.opengis.net/gml/srs/epsg.xml#epsg:4326"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.mysite.org/thesaurus/land-masses#1416353960820">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<ns6:BoundedBy rdf:nodeID="node1972k9684x6"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1972k9684x6">
+	<ns6:upperCorner> </ns6:upperCorner>
+	<rdf:type rdf:resource="http://www.opengis.net/gml#Envelope"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.mysite.org/thesaurus/land-masses#1416353945731">
+	<ns2:prefLabel xml:lang="en">Philippines</ns2:prefLabel>
+	<ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.mysite.org/thesaurus/land-masses#1416353960820">
+	<ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.mysite.org/thesaurus/land-masses#1416353974428">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1972k9684x7">
+	<ns6:lowerCorner> </ns6:lowerCorner>
+	<ns6:srsName rdf:resource="http://www.opengis.net/gml/srs/epsg.xml#epsg:4326"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.mysite.org/thesaurus/land-masses#1416353960820">
+	<ns2:prefLabel xml:lang="en">Fiji</ns2:prefLabel>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.mysite.org/thesaurus/land-masses#1416353974428">
+	<ns6:BoundedBy rdf:nodeID="node1972k9684x7"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1972k9684x7">
+	<ns6:upperCorner> </ns6:upperCorner>
+	<rdf:type rdf:resource="http://www.opengis.net/gml#Envelope"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1972k9684x8">
+	<rdf:type rdf:resource="http://www.opengis.net/gml#Envelope"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.mysite.org/thesaurus/land-masses#1416353974428">
+	<ns2:prefLabel xml:lang="en">New Caledonia</ns2:prefLabel>
+	<ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.mysite.org/thesaurus/land-masses#1416354004240">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1972k9684x8">
+	<ns6:lowerCorner> </ns6:lowerCorner>
+	<ns6:srsName rdf:resource="http://www.opengis.net/gml/srs/epsg.xml#epsg:4326"/>
+	<ns6:upperCorner> </ns6:upperCorner>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.mysite.org/thesaurus/land-masses#1416354004240">
+	<ns6:BoundedBy rdf:nodeID="node1972k9684x8"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.mysite.org/thesaurus/land-masses#1416354014402">
+	<ns6:BoundedBy rdf:nodeID="node1972k9684x9"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1972k9684x9">
+	<ns6:upperCorner> </ns6:upperCorner>
+	<rdf:type rdf:resource="http://www.opengis.net/gml#Envelope"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.mysite.org/thesaurus/land-masses#1416354004240">
+	<ns2:prefLabel xml:lang="en">Solomon Islands</ns2:prefLabel>
+	<ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.mysite.org/thesaurus/land-masses#1416354014402">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1972k9684x9">
+	<ns6:lowerCorner> </ns6:lowerCorner>
+	<ns6:srsName rdf:resource="http://www.opengis.net/gml/srs/epsg.xml#epsg:4326"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.mysite.org/thesaurus/land-masses#1416354014402">
+	<ns2:prefLabel xml:lang="en">Vanuatu</ns2:prefLabel>
+	<ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+</rdf:Description>
+
+</rdf:RDF>
