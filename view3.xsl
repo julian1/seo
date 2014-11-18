@@ -18,9 +18,19 @@
 
       <xsl:variable name="parameters" select="gmd:identificationInfo/mcp:MD_DataIdentification/mcp:dataParameters/mcp:DP_DataParameters/mcp:dataParameter/mcp:DP_DataParameter" />
 
-
+      <xsl:variable name="title" select="gmd:identificationInfo/mcp:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:title/gco:CharacterString" />
+<!-- 
+  <gmd:identificationInfo>
+    <mcp:MD_DataIdentification gco:isoType="gmd:MD_DataIdentification">
+      <gmd:citation>
+        <gmd:CI_Citation>
+          <gmd:title>
+            <gco:CharacterString>IMOS - Argo Australia Profiles</gco:CharacterString>
+-->
+ 
         organisation: '<xsl:value-of select="$organisation"/>'
         water bodies: '<xsl:value-of select="$waterBodies" separator="', '"/>'
+        title:        '<xsl:value-of select="$title" />'
 
 
         <xsl:for-each select="$parameters" >
@@ -29,6 +39,8 @@
           <xsl:variable name="parameter" select="mcp:parameterName/mcp:DP_Term/mcp:type/mcp:DP_TypeCode[text() = 'longName']/../../mcp:term/gco:CharacterString" />
           <xsl:variable name="platform" select="mcp:platform/mcp:DP_Term/mcp:term/gco:CharacterString" />
           <xsl:variable name="filename" select='encode-for-uri( replace($parameter, " ","-"))'/>
+
+
 
           parameter     '<xsl:value-of select="$parameter" />'
           platform      '<xsl:value-of select="$platform" />'
@@ -76,7 +88,27 @@
             </head>
 
             <body>
+            <!-- Page Content -->
+          <!-- 
+              <h1><parameter> in the <water bodies></h1>
+              <h2>Scientific Research Data obtained near <land masses>.</h2>
+              <p>The <gmd:title> is collected by a combination of <platform> in the <water bodies> off the coastline(s) of <land masses> by <gmd:organisationName>.</p>
+          --> 
 
+              <xsl:text>&#xa;</xsl:text>
+              <h1> 
+              <xsl:value-of select="$parameter" />
+              <xsl:text> in the </xsl:text>
+              <xsl:value-of select="$waterBodies" separator=", "/>
+              <xsl:text>.</xsl:text>
+              </h1> 
+
+              <xsl:text>&#xa;</xsl:text>
+              <h2>
+              <xsl:text>Scientific Research Data obtained near </xsl:text>
+              <!-- TODO land masses -->
+              <xsl:text>.</xsl:text>
+              </h2>
 
             </body>
 
