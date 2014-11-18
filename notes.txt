@@ -1,4 +1,35 @@
 
+WORKS
+http://maps.googleapis.com/maps/api/staticmap?center=33.402285,-111.942715&zoom=20&size=600x600&maptype=satellite&sensor=false&path=color%3ared|weight:1|fillcolor%3awhite|33.4022475,-111.9426775|33.4022475,-111.9427525|33.4023225,-111.9427525|33.4023225,-111.9426775|33.4022475,-111.9426775
+
+
+http://maps.googleapis.com/maps/api/staticmap?center=33.402285,-111.942715&zoom=20&size=600x600&maptype=satellite&sensor=false&path=color%3ared|weight:1|fillcolor%3awhite|33,-111|33,-111|33,-111|33,-111|33,-111
+
+VERY GOOD triangle
+http://maps.googleapis.com/maps/api/staticmap?center=33.402285,-111.942715&zoom=1&size=600x600&maptype=satellite&sensor=false&path=color%3ared|weight:1|fillcolor%3awhite|30,-100|30,-121|40,-111|40,-111|30,-100
+http://maps.googleapis.com/maps/api/staticmap?center=33.402285,-111.942715&zoom=1&size=600x600&maptype=satellite&sensor=false&path=color%3ared|weight:1|fillcolor%3awhite|30,-100|30,-121|40,-121|40,-111|30,-100
+
+----
+
+http://geoserver-static-11-nsp-mel.aodn.org.au/geoserver/baselayers/wms?service=WMS&version=1.1.0&request=GetMap&layers=default_basemap_simple&styles=&bbox=-180.0,-90.0,180.0,90.0&width=200&height=100&srs=EPSG:4326&format=image%2Fjpeg
+
+
+153 -28 153 -27 156 -27 156 -28 153 -28
+
+|-28,153|-27,153|-27,156|-28,156|-28,153 
+
+
+http://maps.googleapis.com/maps/api/staticmap?center=33.402285,-111.942715&zoom=1&size=600x600&maptype=satellite&sensor=false&path=color%3ared|weight:1|fillcolor%3awhite|-28,153|-27,153|-27,156|-28,156|-28,153
+
+http://maps.googleapis.com/maps/api/staticmap?center=-20,160&zoom=3.5&size=600x600&maptype=satellite&sensor=false&path=color%3ared|weight:1|fillcolor%3awhite|-28,153|-27,153|-27,156|-28,156|-28,153
+
+without zoom, or center - it automatically centers
+http://maps.googleapis.com/maps/api/staticmap?size=600x600&maptype=satellite&sensor=false&path=color%3ared|weight:1|fillcolor%3awhite|-28,153|-27,153|-27,156|-28,156|-28,153
+
+# with correct color
+http://maps.googleapis.com/maps/api/staticmap?size=600x600&maptype=satellite&sensor=false&path=color%3ared|weight:1|fillcolor%3aorange|-28,153|-27,153|-27,156|-28,156|-28,153
+
+
 
 
 <!-- Ok, think we should perhaps be gathering up variables --> 
