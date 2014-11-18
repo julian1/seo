@@ -25,7 +25,7 @@
         <!-- xsl:value-of select="/root/item" separator="', '"/ -->
 
 
-        water bodies: <xsl:value-of select="$waterBodies"/>
+        water bodies: <xsl:value-of select="$waterBodies" separator=", "/>
 
 
       <!-- 
@@ -39,16 +39,22 @@
           <xsl:variable name="filename" select='replace($parameter, " ","-")'/>
 
           <xsl:result-document method="xml" href="output/{$filename}.html">
+
+            <xsl:text>&#xa;</xsl:text>
             <html>
             <head>
 
+              <xsl:text>&#xa;</xsl:text>
+
               <title>
 
-
                 <xsl:value-of select="$parameter" />
+                <xsl:text> </xsl:text>
+                <xsl:value-of select="$waterBodies" separator=", "/>
 
               </title>
 
+              <xsl:text>&#xa;</xsl:text>
             </head>
             </html>
 
