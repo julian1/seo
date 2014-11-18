@@ -20,7 +20,10 @@
       <xsl:variable name="parameters" select="//mcp:DP_DataParameters/mcp:dataParameter/mcp:DP_DataParameter" />
 
 
-      <xsl:variable name="platforms" select="//mcp:DP_DataParameters/mcp:dataParameter/mcp:DP_DataParameter/mcp:platform/mcp:DP_Term/mcp:term/gco:CharacterString" />
+
+
+
+      <!-- xsl:variable name="platforms" select="//mcp:DP_DataParameters/mcp:dataParameter/mcp:DP_DataParameter/mcp:platform/mcp:DP_Term/mcp:term/gco:CharacterString" / -->
 
 
         <!-- xsl:value-of select="/root/item" separator="', '"/ -->
@@ -38,17 +41,26 @@
         <xsl:for-each select="$parameters" >
 
 
+      <!-- /mcp:term>
+        <mcp:type>
+          <mcp:DP_TypeCode codeList="http://schemas.aodn.org.au/mcp-2.0/schema/resources/Codelist/gmxCodelists.xml#DP_TypeCode" codeListValue="longName">longName</mcp:DP_TypeCode>
+            </mcp:type -->
 
-          <xsl:variable name="parameter" select="mcp:parameterName/mcp:DP_Term/mcp:term/gco:CharacterString" />
+
+          <!-- xsl:variable name="parameter" select="mcp:parameterName/mcp:DP_Term/mcp:term/gco:CharacterString" /-->
+
+          <!-- xsl:variable name="parameter" select="mcp:parameterName/mcp:DP_Term/mcp:term/mcp:type/mcp:DP_TypeCode[text() = 'longName']" / -->
+          <xsl:variable name="parameter" select="mcp:parameterName/mcp:DP_Term/mcp:type/mcp:DP_TypeCode[text() = 'longName']" />
+
+
+
           <xsl:variable name="platform" select="mcp:platform/mcp:DP_Term/mcp:term/gco:CharacterString" />
 
           parameter <xsl:value-of select="$parameter" />
           platform <xsl:value-of select="$platform" />
 
-
-
+   
           <!-- xsl:variable name="filename" select='encode-for-uri( replace($parameter, " ","-"))'/>
-          <xsl:variable name="filename" select='encode-for-uri( $parameter)'/>
 
           filename <xsl:value-of select="$filename" />
 
