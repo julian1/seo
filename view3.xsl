@@ -132,7 +132,6 @@
               <!-- avoid xsl generating self-closing p as non valid html -->
               <xsl:text>&#xa;</xsl:text>
               <p>
-                <xsl:text>&#xa;</xsl:text>
               </p>
               <h2>
                 <xsl:value-of select="$parameter" />
@@ -140,6 +139,7 @@
               </h2>
 
 
+              <div>
               <xsl:text>&#xa;</xsl:text>
               <xsl:element name="img">
                 <xsl:attribute name="src">
@@ -148,7 +148,17 @@
                  </xsl:attribute>
                 <xsl:attribute name="align">left</xsl:attribute>
               </xsl:element>
+              </div>
 
+             
+              <div>
+              <form action="http://google.com">
+                <input type="submit" value="Go to Google"/>
+              </form>
+              </div>
+
+
+       
 
             </body>
             </html>
