@@ -151,19 +151,49 @@
 
 
               <!-- http://stackoverflow.com/questions/2906582/how-to-create-an-html-button-that-acts-like-a-link -->
-              <form action="http://google.com">
+
+              <!-- this form approach doesn't work as the client browser strips the uuid parameter -->
+              <!-- xsl:element name="form">
+                <xsl:attribute name="action">
+                  <xsl:value-of select="concat( 'https://imos.aodn.org.au/imos123/home?uuid=', $uuid)"/>
+                </xsl:attribute>
                 <xsl:element name="input">
                   <xsl:attribute name="type">submit</xsl:attribute>
                   <xsl:attribute name="value">
                     <xsl:value-of select="$parameter"/>
                   </xsl:attribute>
                 </xsl:element>
-              </form>
+              </xsl:element -->
+
+              <!-- works but obscures the link -->
+              <!-- xsl:element name="button">
+                <xsl:attribute name="onclick">
+                  <xsl:value-of select="concat( concat( 'location.href=''https://imos.aodn.org.au/imos123/home?uuid=', $uuid), '''')"/>
+                </xsl:attribute>
+                <xsl:value-of select="$parameter"/>
+              </xsl:element -->
+
+              <div>
+              <xsl:element name="a">
+                <xsl:attribute name="href">
+                  <xsl:value-of select="concat( 'https://imos.aodn.org.au/imos123/home?uuid=', $uuid)"/>
+                </xsl:attribute>
+                <button type="button">
+                  <xsl:value-of select="$parameter"/>
+                </button>
+              </xsl:element>
+
+              </div>
 
 
-            <!-- 
+
+
+
+
+            <!--
 
               Argo
+              https://imos.aodn.org.au/imos123/home?uuid=4402cb50-e20a-44ee-93e6-4728259250d2
               https://imos.aodn.org.au/imos123/home?uuid=4402cb50-e20a-44ee-93e6-4728259250d2
             -->
 
