@@ -174,28 +174,18 @@
               </xsl:element -->
 
               <div>
-              <xsl:element name="a">
-                <xsl:attribute name="href">
-                  <xsl:value-of select="concat( 'https://imos.aodn.org.au/imos123/home?uuid=', $uuid)"/>
-                </xsl:attribute>
-                <button type="button">
-                  <xsl:value-of select="$parameter"/>
-                </button>
-              </xsl:element>
-
+                <!-- http://stackoverflow.com/questions/710089/how-do-i-make-an-html-link-look-like-a-button -->
+                <xsl:element name="a">
+                  <xsl:attribute name="href">
+                    <xsl:value-of select="concat( 'https://imos.aodn.org.au/imos123/home?uuid=', $uuid)"/>
+                  </xsl:attribute>
+                  <button type="button">
+                    <xsl:value-of select="$parameter"/>
+                  </button>
+                </xsl:element>
               </div>
 
 
-
-
-
-
-            <!--
-
-              Argo
-              https://imos.aodn.org.au/imos123/home?uuid=4402cb50-e20a-44ee-93e6-4728259250d2
-              https://imos.aodn.org.au/imos123/home?uuid=4402cb50-e20a-44ee-93e6-4728259250d2
-            -->
 
 
             </body>
