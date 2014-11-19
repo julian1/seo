@@ -139,7 +139,6 @@
               </h2>
 
 
-              <div>
               <xsl:text>&#xa;</xsl:text>
               <xsl:element name="img">
                 <xsl:attribute name="src">
@@ -148,10 +147,8 @@
                   <xsl:value-of select="'http://maps.googleapis.com/maps/api/staticmap?size=300x300&amp;maptype=satellite&amp;path=color%3aorange|weight:3|-28,153|-27,153|-27,156|-28,156|-28,153&amp;path=color%3aorange|weight:3|-10,127|-8,127|-8,128|-10,128|-10,127'" disable-output-escaping="yes" />
                  </xsl:attribute>
               </xsl:element>
-              </div>
 
              
-              <div>
               <form action="http://google.com">
 
                   <xsl:element name="input">
@@ -165,7 +162,6 @@
 
                 <!-- input type="submit" value="Go to Google"/-->
               </form>
-              </div>
 
 
        
