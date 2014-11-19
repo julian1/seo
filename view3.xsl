@@ -126,24 +126,20 @@
               <xsl:value-of select="$parameter" />
               <xsl:text> data sets are useful for scientific and/or academic research and are free to download from the IMOS Portal.</xsl:text>
 
-              <p/>
+              <!-- avoid xsl generating self-closing p as non valid html -->
               <xsl:text>&#xa;</xsl:text>
+              <p>
+                <xsl:text>&#xa;</xsl:text>
+              </p>
               <h2>
-              <xsl:value-of select="$parameter" />
-              <xsl:text> Data Collection Map</xsl:text>
+                <xsl:value-of select="$parameter" />
+                <xsl:text> Data Collection Map</xsl:text>
               </h2>
-
-
             </body>
-
             </html>
           </xsl:result-document>
-
         </xsl:for-each>
 
-
   </xsl:template>
-
-
 </xsl:stylesheet>
 
