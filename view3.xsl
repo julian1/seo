@@ -26,6 +26,8 @@
 
       <xsl:variable name="title" select="gmd:identificationInfo/mcp:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:title/gco:CharacterString" />
 
+      <xsl:variable name="abstract" select="gmd:identificationInfo/mcp:MD_DataIdentification/gmd:abstract/gco:CharacterString" />
+
       <xsl:variable name="organisation" select="gmd:contact/gmd:CI_ResponsibleParty/gmd:organisationName/gco:CharacterString" />
 
         uuid :        '<xsl:value-of select="$uuid"/>'
@@ -33,6 +35,7 @@
         water bodies: '<xsl:value-of select="$waterBodies" separator="', '"/>'
         land masses:  '<xsl:value-of select="$landMasses" separator="', '"/>'
         title:        '<xsl:value-of select="$title" />'
+        abstract:     '<xsl:value-of select="$abstract" />'
 
         <xsl:for-each select="$parameters" >
 
@@ -174,7 +177,7 @@
               </xsl:element -->
 
               <div>
-                <!-- http://stackoverflow.com/questions/710089/how-do-i-make-an-html-link-look-like-a-button -->
+                <!-- Good because doesn't hide the link, http://stackoverflow.com/questions/710089/how-do-i-make-an-html-link-look-like-a-button -->
                 <xsl:element name="a">
                   <xsl:attribute name="href">
                     <xsl:value-of select="concat( 'https://imos.aodn.org.au/imos123/home?uuid=', $uuid)"/>
@@ -186,7 +189,14 @@
               </div>
 
 
-                    <!-- xsl:value-of select="concat( 'Download a ', $parameter)"/ -->
+              <xsl:text>&#xa;</xsl:text>
+              <h2>
+                <xsl:value-of select="string-join(('About the ', $title, ' Data Set'), '')"/>
+              </h2>
+
+              <p>
+                <xsl:value-of select="$abstract"/>
+              </p>
 
 
             </body>
