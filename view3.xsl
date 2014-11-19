@@ -144,16 +144,26 @@
               <xsl:element name="img">
                 <xsl:attribute name="src">
                   <!-- the browser transforms &amp; to & when html -->
+                  <!-- TODO extract the real extent -->
                   <xsl:value-of select="'http://maps.googleapis.com/maps/api/staticmap?size=300x300&amp;maptype=satellite&amp;path=color%3aorange|weight:3|-28,153|-27,153|-27,156|-28,156|-28,153&amp;path=color%3aorange|weight:3|-10,127|-8,127|-8,128|-10,128|-10,127'" disable-output-escaping="yes" />
                  </xsl:attribute>
-                <xsl:attribute name="align">left</xsl:attribute>
               </xsl:element>
               </div>
 
              
               <div>
               <form action="http://google.com">
-                <input type="submit" value="Go to Google"/>
+
+                  <xsl:element name="input">
+                    <xsl:attribute name="type">submit</xsl:attribute>
+                    <xsl:attribute name="value">
+                      <xsl:value-of select="$parameter"/>
+                    </xsl:attribute>
+                  </xsl:element>
+
+                  <!-- input type="submit" value="$parameter"/ -->
+
+                <!-- input type="submit" value="Go to Google"/-->
               </form>
               </div>
 
