@@ -16,6 +16,9 @@
 
   <xsl:template match="mcp:MD_Metadata">
 
+
+      <xsl:variable name="uuid" select="gmd:fileIdentifier/gco:CharacterString"/>
+
       <!-- Data identification is a common root and should be factored -->
       <xsl:variable name="waterBodies" select="gmd:identificationInfo/mcp:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:thesaurusName//gmx:Anchor[text() = 'geonetwork.thesaurus.local.theme.water-bodies' ]/ancestor::gmd:MD_Keywords/gmd:keyword/gco:CharacterString" />
 
@@ -27,6 +30,7 @@
 
       <xsl:variable name="organisation" select="gmd:contact/gmd:CI_ResponsibleParty/gmd:organisationName/gco:CharacterString" />
 
+        uuid :        '<xsl:value-of select="$uuid"/>'
         organisation: '<xsl:value-of select="$organisation"/>'
         water bodies: '<xsl:value-of select="$waterBodies" separator="', '"/>'
         land masses:  '<xsl:value-of select="$landMasses" separator="', '"/>'
@@ -142,29 +146,30 @@
               <xsl:text>&#xa;</xsl:text>
               <xsl:element name="img">
                 <xsl:attribute name="src">
-                  <!-- the browser transforms &amp; to & when html -->
+                  <!-- the browser is responsible for transforming &amp; to & when method is html -->
                   <!-- TODO extract the real extent -->
                   <xsl:value-of select="'http://maps.googleapis.com/maps/api/staticmap?size=300x300&amp;maptype=satellite&amp;path=color%3aorange|weight:3|-28,153|-27,153|-27,156|-28,156|-28,153&amp;path=color%3aorange|weight:3|-10,127|-8,127|-8,128|-10,128|-10,127'" disable-output-escaping="yes" />
                  </xsl:attribute>
               </xsl:element>
 
-             
+
+              <!-- http://stackoverflow.com/questions/2906582/how-to-create-an-html-button-that-acts-like-a-link -->
               <form action="http://google.com">
-
-                  <xsl:element name="input">
-                    <xsl:attribute name="type">submit</xsl:attribute>
-                    <xsl:attribute name="value">
-                      <xsl:value-of select="$parameter"/>
-                    </xsl:attribute>
-                  </xsl:element>
-
-                  <!-- input type="submit" value="$parameter"/ -->
-
-                <!-- input type="submit" value="Go to Google"/-->
+                <xsl:element name="input">
+                  <xsl:attribute name="type">submit</xsl:attribute>
+                  <xsl:attribute name="value">
+                    <xsl:value-of select="$parameter"/>
+                  </xsl:attribute>
+                </xsl:element>
               </form>
 
 
-       
+            <!-- 
+
+              Argo
+              https://imos.aodn.org.au/imos123/home?uuid=4402cb50-e20a-44ee-93e6-4728259250d2
+            -->
+
 
             </body>
             </html>
