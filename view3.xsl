@@ -44,7 +44,7 @@
           filename      '<xsl:value-of select="$filename" />'
 
           <xsl:result-document method="xml" href="output/{$filename}.html">
-
+             <xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html></xsl:text>
             <xsl:text>&#xa;</xsl:text>
             <html>
             <head>
