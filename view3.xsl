@@ -124,11 +124,6 @@
                 <xsl:text>.</xsl:text>
               </p>
 
-              <!--
-              The <parameter> data sets are useful for scientific and/or academic research and are free to download from the IMOS Portal.
-              <h2><parameter> Data Collection Map</h2>
-              -->
-
               <xsl:text>&#xa;</xsl:text>
               <xsl:text>The </xsl:text>
               <xsl:value-of select="$parameter" />
@@ -143,12 +138,6 @@
                 <xsl:value-of select="$parameter" />
                 <xsl:text> Data Collection Map</xsl:text>
               </h2>
-
-
-              <xsl:variable name="x">
-                <xsl:text disable-output-escaping="yes">&amp;</xsl:text>
-              </xsl:variable>
-
 
 
               <xsl:text>&#xa;</xsl:text>
