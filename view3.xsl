@@ -180,12 +180,13 @@
                     <xsl:value-of select="concat( 'https://imos.aodn.org.au/imos123/home?uuid=', $uuid)"/>
                   </xsl:attribute>
                   <button type="button">
-                    <xsl:value-of select="$parameter"/>
+                    <xsl:value-of select="string-join(('Download a ', $parameter, ' Data Set'), '')"/>
                   </button>
                 </xsl:element>
               </div>
 
 
+                    <!-- xsl:value-of select="concat( 'Download a ', $parameter)"/ -->
 
 
             </body>
