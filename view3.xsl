@@ -38,12 +38,12 @@
           <xsl:variable name="parameter" select="mcp:parameterName/mcp:DP_Term/mcp:type/mcp:DP_TypeCode[text() = 'longName']/../../mcp:term/gco:CharacterString" />
           <xsl:variable name="platform" select="mcp:platform/mcp:DP_Term/mcp:term/gco:CharacterString" />
 
- 
+
           <xsl:variable name="filename">
             <xsl:value-of select='replace($parameter, " ","-")'/>
             <!-- xsl:value-of select="$waterBodies" separator="-"/-->
           </xsl:variable>
- 
+
           water bodies: '<xsl:value-of select="$waterBodies" separator="', '"/>'
           <!-- xsl:variable name="filename" select='encode-for-uri( )'/ -->
 
@@ -124,11 +124,11 @@
                 <xsl:text>.</xsl:text>
               </p>
 
-              <!-- 
-              The <parameter> data sets are useful for scientific and/or academic research and are free to download from the IMOS Portal.   
+              <!--
+              The <parameter> data sets are useful for scientific and/or academic research and are free to download from the IMOS Portal.
               <h2><parameter> Data Collection Map</h2>
               -->
-  
+
               <xsl:text>&#xa;</xsl:text>
               <xsl:text>The </xsl:text>
               <xsl:value-of select="$parameter" />
@@ -143,6 +143,24 @@
                 <xsl:value-of select="$parameter" />
                 <xsl:text> Data Collection Map</xsl:text>
               </h2>
+
+
+              <xsl:variable name="x">
+                <xsl:text disable-output-escaping="yes">&amp;</xsl:text>
+              </xsl:variable>
+
+
+
+              <xsl:text>&#xa;</xsl:text>
+              <xsl:element name="img">
+                <xsl:attribute name="src">
+                  <!-- the browser transforms &amp; to & when html -->
+                  <xsl:value-of select="'http://maps.googleapis.com/maps/api/staticmap?size=300x300&amp;maptype=satellite&amp;path=color%3aorange|weight:3|-28,153|-27,153|-27,156|-28,156|-28,153&amp;path=color%3aorange|weight:3|-10,127|-8,127|-8,128|-10,128|-10,127'" disable-output-escaping="yes" />
+                 </xsl:attribute>
+                <xsl:attribute name="align">left</xsl:attribute>
+              </xsl:element>
+
+
             </body>
             </html>
           </xsl:result-document>
