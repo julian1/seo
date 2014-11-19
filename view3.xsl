@@ -3,13 +3,16 @@
 
 <!-- TODO shouldn't have all this in the output -->
 <xsl:stylesheet version="2.0"
-  xmlns:mcp="http://schemas.aodn.org.au/mcp-2.0"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:mcp="http://schemas.aodn.org.au/mcp-2.0"
   xmlns:gco="http://www.isotc211.org/2005/gco"
   xmlns:gmd="http://www.isotc211.org/2005/gmd"
   xmlns:gmx="http://www.isotc211.org/2005/gmx"
+
+  exclude-result-prefixes="xsl mcp gco gmd gmx"
 >
 
+  <xsl:output method="html" indent="yes" omit-xml-declaration="yes" encoding="UTF-8" />
 
   <xsl:template match="mcp:MD_Metadata">
 
