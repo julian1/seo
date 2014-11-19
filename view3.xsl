@@ -198,7 +198,6 @@
                 <xsl:value-of select="$abstract"/>
               </p>
 
-
             </body>
             </html>
           </xsl:result-document>
