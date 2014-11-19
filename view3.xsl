@@ -37,13 +37,21 @@
           <!-- TODO this should restrict code list as well as longName -->
           <xsl:variable name="parameter" select="mcp:parameterName/mcp:DP_Term/mcp:type/mcp:DP_TypeCode[text() = 'longName']/../../mcp:term/gco:CharacterString" />
           <xsl:variable name="platform" select="mcp:platform/mcp:DP_Term/mcp:term/gco:CharacterString" />
-          <xsl:variable name="filename" select='encode-for-uri( replace($parameter, " ","-"))'/>
+
+ 
+          <xsl:variable name="filename">
+            <xsl:value-of select='replace($parameter, " ","-")'/>
+            <!-- xsl:value-of select="$waterBodies" separator="-"/-->
+          </xsl:variable>
+ 
+          water bodies: '<xsl:value-of select="$waterBodies" separator="', '"/>'
+          <!-- xsl:variable name="filename" select='encode-for-uri( )'/ -->
 
           parameter     '<xsl:value-of select="$parameter" />'
           platform      '<xsl:value-of select="$platform" />'
           filename      '<xsl:value-of select="$filename" />'
 
-          <xsl:result-document method="xml" href="output/{$filename}.html">
+          <xsl:result-document method="xml" href="output/{ encode-for-uri( $filename)}.html">
              <xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html></xsl:text>
             <xsl:text>&#xa;</xsl:text>
             <html>
