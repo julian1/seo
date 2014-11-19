@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- TODO should be html -->
 
-<!-- TODO shouldn't have all this in the output -->
 <xsl:stylesheet version="2.0"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:mcp="http://schemas.aodn.org.au/mcp-2.0"
@@ -38,7 +36,7 @@
 
         <xsl:for-each select="$parameters" >
 
-          <!-- TODO this should restrict code list as well as longName -->
+          <!-- TODO this should be restricted by code list as well as longName -->
           <xsl:variable name="parameter" select="mcp:parameterName/mcp:DP_Term/mcp:type/mcp:DP_TypeCode[text() = 'longName']/../../mcp:term/gco:CharacterString" />
           <xsl:variable name="platform" select="mcp:platform/mcp:DP_Term/mcp:term/gco:CharacterString" />
 
@@ -50,7 +48,6 @@
 
           water bodies: '<xsl:value-of select="$waterBodies" separator="', '"/>'
           <!-- xsl:variable name="filename" select='encode-for-uri( )'/ -->
-
           parameter     '<xsl:value-of select="$parameter" />'
           platform      '<xsl:value-of select="$platform" />'
           filename      '<xsl:value-of select="$filename" />'
