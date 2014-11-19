@@ -90,6 +90,13 @@ http://maps.googleapis.com/maps/api/staticmap?size=600x600&maptype=hybrid&path=c
 
 http://maps.googleapis.com/maps/api/staticmap?size=300x300&maptype=satellite&path=color%3aorange|weight:3|-28,153|-27,153|-27,156|-28,156|-28,153&path=color%3aorange|weight:3|-10,127|-8,127|-8,128|-10,128|-10,127
 
+&amp;
+http://maps.googleapis.com/maps/api/staticmap?size=300x300&amp;maptype=satellite&amp;path=color%3aorange|weight:3|-28,153|-27,153|-27,156|-28,156|-28,153&amp;path=color%3aorange|weight:3|-10,127|-8,127|-8,128|-10,128|-10,127
+
+%26
+http://maps.googleapis.com/maps/api/staticmap?size=300x300%26maptype=satellite%26path=color%3aorange|weight:3|-28,153|-27,153|-27,156|-28,156|-28,153%26path=color%3aorange|weight:3|-10,127|-8,127|-8,128|-10,128|-10,127
+
+
 
 <!-- Ok, think we should perhaps be gathering up variables --> 
 
