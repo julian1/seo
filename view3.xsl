@@ -110,37 +110,38 @@
         </head>
 
         <body>
-          <!-- Page Content -->
+          <header>
+            <!-- Page Content -->
+            <xsl:text>&#xa;</xsl:text>
+            <h1>
+              <xsl:value-of select="$parameter" />
+              <xsl:text> in the </xsl:text>
+              <xsl:value-of select="$waterBodies" separator=", "/>
+              <xsl:text>.</xsl:text>
+            </h1>
 
-          <xsl:text>&#xa;</xsl:text>
-          <h1>
-            <xsl:value-of select="$parameter" />
-            <xsl:text> in the </xsl:text>
-            <xsl:value-of select="$waterBodies" separator=", "/>
-            <xsl:text>.</xsl:text>
-          </h1>
+            <xsl:text>&#xa;</xsl:text>
+            <h2>
+              <xsl:text>Scientific Research Data obtained near </xsl:text>
+              <xsl:value-of select="$landMasses" separator=", "/>
+              <xsl:text>.</xsl:text>
+            </h2>
 
-          <xsl:text>&#xa;</xsl:text>
-          <h2>
-            <xsl:text>Scientific Research Data obtained near </xsl:text>
-            <xsl:value-of select="$landMasses" separator=", "/>
-            <xsl:text>.</xsl:text>
-          </h2>
-
-          <xsl:text>&#xa;</xsl:text>
-          <p>
-            <xsl:text>The </xsl:text>
-            <xsl:value-of select="$title" />
-            <xsl:text> is collected by a combination of </xsl:text>
-            <xsl:value-of select="$platform"/>
-            <xsl:text> in the </xsl:text>
-            <xsl:value-of select="$waterBodies" separator=", "/>
-            <xsl:text> off the coastlines(s) of </xsl:text>
-            <xsl:value-of select="$landMasses" separator=", "/>
-            <xsl:text> by </xsl:text>
-            <xsl:value-of select="$organisation"/>
-            <xsl:text>.</xsl:text>
-          </p>
+            <xsl:text>&#xa;</xsl:text>
+            <p>
+              <xsl:text>The </xsl:text>
+              <xsl:value-of select="$title" />
+              <xsl:text> is collected by a combination of </xsl:text>
+              <xsl:value-of select="$platform"/>
+              <xsl:text> in the </xsl:text>
+              <xsl:value-of select="$waterBodies" separator=", "/>
+              <xsl:text> off the coastlines(s) of </xsl:text>
+              <xsl:value-of select="$landMasses" separator=", "/>
+              <xsl:text> by </xsl:text>
+              <xsl:value-of select="$organisation"/>
+              <xsl:text>.</xsl:text>
+            </p>
+          </header>
 
           <xsl:text>&#xa;</xsl:text>
           <xsl:text>The </xsl:text>
