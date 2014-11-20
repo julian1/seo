@@ -58,7 +58,7 @@
       -->
 
       <xsl:result-document method="xml" href="output/{ encode-for-uri( $filename)}.html">
-         <xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html></xsl:text>
+        <xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html></xsl:text>
         <xsl:text>&#xa;</xsl:text>
         <html>
         <head>
@@ -210,8 +210,15 @@
 
 
     <xsl:result-document method="xml" href="output/index.html">
+      <xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html></xsl:text>
+      <xsl:text>&#xa;</xsl:text>
       <html>
+        <head>
+          <xsl:text>&#xa;</xsl:text>
+        <title>index</title>
+        </head>
         <body>
+          <ul> 
           <xsl:for-each select="$parameters">
 
             <xsl:variable name="parameter" select="mcp:parameterName/mcp:DP_Term/mcp:type/mcp:DP_TypeCode[text() = 'longName']/../../mcp:term/gco:CharacterString" />
@@ -223,6 +230,8 @@
             </xsl:variable>
 
             <xsl:text>&#xa;</xsl:text>
+
+            <li>
             <xsl:element name="a">
               <xsl:attribute name="href">
                 <xsl:value-of select="$filename"/>
@@ -230,7 +239,11 @@
               <xsl:value-of select='$parameter'/>
             </xsl:element>
 
+            </li>
+
+
           </xsl:for-each>
+          </ul> 
 
         </body>
       </html>
