@@ -1,4 +1,29 @@
+                          <xsl:element name="input">
+                  <xsl:attribute name="type">submit</xsl:attribute>
+                  <xsl:attribute name="value">Gojkkkkjj
+                    <xsl:value-of select="'Go to Google"/>
+                   </xsl:attribute>
+                </xsl:element>
 
+
+
+              <xsl:element name="button">
+                <xsl:attribute name="src">
+                  <!-- the browser transforms &amp; to & when html -->
+                  <xsl:value-of select="'http://www.google.com" disable-output-escaping="yes" />
+                 </xsl:attribute>
+                <xsl:attribute name="align">left</xsl:attribute>
+              </xsl:element>
+
+
+
+			<xsl:variable name="waterBodiesList" select="$waterBodies"/>
+            <xsl:value-of select="$waterBodies" separator="-"/>
+          </xsl:variable>
+
+          <xsl:variable name="filename" select='encode-for-uri( concat( replace($parameter, " ","-"), $waterBodiesList ))'/>
+
+ 
 
 
         <xsl:for-each select="$parameters" >
