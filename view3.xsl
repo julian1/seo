@@ -62,7 +62,6 @@
         <xsl:text>&#xa;</xsl:text>
         <html>
         <head>
-          <xsl:text>&#xa;</xsl:text>
           <!-- Page Meta Title -->
           <title>
             <xsl:value-of select="$parameter" />
@@ -77,10 +76,8 @@
             <xsl:text> Integrated Marine Observing System</xsl:text>
           </title>
 
-          <xsl:text>&#xa;</xsl:text>
           <meta charset="utf-8"/>
 
-          <xsl:text>&#xa;</xsl:text>
           <!-- Page Meta Description -->
           <meta name="description">
             <xsl:attribute name="content">
@@ -96,7 +93,6 @@
             </xsl:attribute>
           </meta>
 
-          <xsl:text>&#xa;</xsl:text>
           <style type="text/css" media="screen">
             .button-link {
               padding: 10px 15px;
@@ -106,13 +102,11 @@
             }
           </style>
 
-          <xsl:text>&#xa;</xsl:text>
         </head>
 
         <body>
           <header>
             <!-- Page Content -->
-            <xsl:text>&#xa;</xsl:text>
             <h1>
               <xsl:value-of select="$parameter" />
               <xsl:text> in the </xsl:text>
@@ -120,14 +114,12 @@
               <xsl:text>.</xsl:text>
             </h1>
 
-            <xsl:text>&#xa;</xsl:text>
             <h2>
               <xsl:text>Scientific Research Data obtained near </xsl:text>
               <xsl:value-of select="$landMasses" separator=", "/>
               <xsl:text>.</xsl:text>
             </h2>
 
-            <xsl:text>&#xa;</xsl:text>
             <p>
               <xsl:text>The </xsl:text>
               <xsl:value-of select="$title" />
@@ -143,20 +135,17 @@
             </p>
           </header>
 
-          <xsl:text>&#xa;</xsl:text>
           <xsl:text>The </xsl:text>
           <xsl:value-of select="$parameter" />
           <xsl:text> data sets are useful for scientific and/or academic research and are free to download from the IMOS Portal.</xsl:text>
 
           <!-- avoid xsl generating self-closing p as non valid html -->
-          <xsl:text>&#xa;</xsl:text>
           <h2>
             <xsl:value-of select="$parameter" />
             <xsl:text> Data Collection Map</xsl:text>
           </h2>
 
 
-          <xsl:text>&#xa;</xsl:text>
 
           <div>
             <xsl:element name="img">
@@ -222,7 +211,6 @@
 
 
 
-          <xsl:text>&#xa;</xsl:text>
           <h2>
             <xsl:value-of select="string-join(('About the ', $title, ' Data Set'), '')"/>
           </h2>
@@ -243,7 +231,6 @@
       <xsl:text>&#xa;</xsl:text>
       <html>
         <head>
-          <xsl:text>&#xa;</xsl:text>
           <title>List of parameters, The eMarine Information Infrastructure (eMII)</title>
           <meta charset="utf-8"/>
           <meta name="description" content="List of parameters, The eMarine Information Infrastructure (eMII)"/>
@@ -259,7 +246,6 @@
                 <xsl:text>.html</xsl:text>
               </xsl:variable>
 
-              <xsl:text>&#xa;</xsl:text>
               <li>
               <xsl:element name="a">
                 <xsl:attribute name="href">
