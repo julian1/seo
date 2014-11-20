@@ -102,6 +102,7 @@
               padding: 10px 15px;
               background: #4479BA;
               color: #FFF;
+              border-radius: 4px;
             }
           </style>
 
