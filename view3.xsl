@@ -29,12 +29,14 @@
 
     <xsl:variable name="organisation" select="gmd:contact/gmd:CI_ResponsibleParty/gmd:organisationName/gco:CharacterString" />
 
+    <!-- 
     uuid :        '<xsl:value-of select="$uuid"/>'
     organisation: '<xsl:value-of select="$organisation"/>'
     water bodies: '<xsl:value-of select="$waterBodies" separator="', '"/>'
     land masses:  '<xsl:value-of select="$landMasses" separator="', '"/>'
     title:        '<xsl:value-of select="$title" />'
     abstract:     '<xsl:value-of select="$abstract" />'
+    -->
 
     <xsl:for-each select="$parameters" >
 
@@ -48,11 +50,12 @@
         <!-- xsl:value-of select="$waterBodies" separator="-"/-->
       </xsl:variable>
 
+      <!-- 
       water bodies: '<xsl:value-of select="$waterBodies" separator="', '"/>'
-      <!-- xsl:variable name="filename" select='encode-for-uri( )'/ -->
       parameter     '<xsl:value-of select="$parameter" />'
       platform      '<xsl:value-of select="$platform" />'
       filename      '<xsl:value-of select="$filename" />'
+      -->
 
       <xsl:result-document method="xml" href="output/{ encode-for-uri( $filename)}.html">
          <xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html></xsl:text>
