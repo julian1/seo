@@ -208,6 +208,34 @@
       </xsl:result-document>
     </xsl:for-each>
 
+
+    <xsl:result-document method="xml" href="output/index.html">
+      <html>
+        <body>
+          <xsl:for-each select="$parameters">
+
+            <xsl:variable name="parameter" select="mcp:parameterName/mcp:DP_Term/mcp:type/mcp:DP_TypeCode[text() = 'longName']/../../mcp:term/gco:CharacterString" />
+
+            <xsl:variable name="filename">
+              <xsl:value-of select='replace($parameter, " ","-")'/>
+              <!-- xsl:value-of select="$waterBodies" separator="-"/-->
+              <xsl:text>.html</xsl:text>
+            </xsl:variable>
+
+            <xsl:text>&#xa;</xsl:text>
+            <xsl:element name="a">
+              <xsl:attribute name="href">
+                <xsl:value-of select="$filename"/>
+              </xsl:attribute>
+              <xsl:value-of select='$parameter'/>
+            </xsl:element>
+
+          </xsl:for-each>
+
+        </body>
+      </html>
+    </xsl:result-document>
+
   </xsl:template>
 </xsl:stylesheet>
 
