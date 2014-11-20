@@ -29,7 +29,7 @@
 
     <xsl:variable name="organisation" select="gmd:contact/gmd:CI_ResponsibleParty/gmd:organisationName/gco:CharacterString" />
 
-    <!-- 
+    <!--
     uuid :        '<xsl:value-of select="$uuid"/>'
     organisation: '<xsl:value-of select="$organisation"/>'
     water bodies: '<xsl:value-of select="$waterBodies" separator="', '"/>'
@@ -50,7 +50,7 @@
         <!-- xsl:value-of select="$waterBodies" separator="-"/-->
       </xsl:variable>
 
-      <!-- 
+      <!--
       water bodies: '<xsl:value-of select="$waterBodies" separator="', '"/>'
       parameter     '<xsl:value-of select="$parameter" />'
       platform      '<xsl:value-of select="$platform" />'
@@ -96,6 +96,14 @@
             </xsl:attribute>
           </meta>
 
+          <xsl:text>&#xa;</xsl:text>
+          <style type="text/css" media="screen">
+            .button-link {
+              padding: 10px 15px;
+              background: #4479BA;
+              color: #FFF;
+            }
+          </style>
 
           <xsl:text>&#xa;</xsl:text>
         </head>
@@ -180,9 +188,9 @@
             <xsl:value-of select="$parameter"/>
           </xsl:element -->
 
-          <div>
             <!-- Good because doesn't hide the link, http://stackoverflow.com/questions/710089/how-do-i-make-an-html-link-look-like-a-button -->
             <!-- but validator complains - 'The element button must not appear as a descendant of the a element' -->
+          <!-- div>
             <xsl:element name="a">
               <xsl:attribute name="href">
                 <xsl:value-of select="concat( 'https://imos.aodn.org.au/imos123/home?uuid=', $uuid)"/>
@@ -191,7 +199,20 @@
                 <xsl:value-of select="string-join(('Download a ', $parameter, ' Data Set'), '')"/>
               </button>
             </xsl:element>
+          </div -->
+
+          <!-- just style as a button -->
+
+          <div>
+            <xsl:element name="a">
+              <xsl:attribute name="href">
+                <xsl:value-of select="concat( 'https://imos.aodn.org.au/imos123/home?uuid=', $uuid)"/>
+              </xsl:attribute>
+              <xsl:attribute name="class">button-link</xsl:attribute>
+              <xsl:value-of select="string-join(('Download a ', $parameter, ' Data Set'), '')"/>
+            </xsl:element>
           </div>
+
 
 
           <xsl:text>&#xa;</xsl:text>
@@ -209,42 +230,39 @@
     </xsl:for-each>
 
 
+    <!-- output an index file -->
     <xsl:result-document method="xml" href="output/index.html">
       <xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html></xsl:text>
       <xsl:text>&#xa;</xsl:text>
       <html>
         <head>
           <xsl:text>&#xa;</xsl:text>
-        <title>index</title>
+          <title>List of parameters, The eMarine Information Infrastructure (eMII)</title>
+          <meta charset="utf-8"/>
+          <meta name="description" content="List of parameters, The eMarine Information Infrastructure (eMII)"/>
         </head>
         <body>
-          <ul> 
-          <xsl:for-each select="$parameters">
+          <ul>
+            <xsl:for-each select="$parameters">
 
-            <xsl:variable name="parameter" select="mcp:parameterName/mcp:DP_Term/mcp:type/mcp:DP_TypeCode[text() = 'longName']/../../mcp:term/gco:CharacterString" />
+              <xsl:variable name="parameter" select="mcp:parameterName/mcp:DP_Term/mcp:type/mcp:DP_TypeCode[text() = 'longName']/../../mcp:term/gco:CharacterString" />
+              <xsl:variable name="filename">
+                <xsl:value-of select='replace($parameter, " ","-")'/>
+                <!-- xsl:value-of select="$waterBodies" separator="-"/-->
+                <xsl:text>.html</xsl:text>
+              </xsl:variable>
 
-            <xsl:variable name="filename">
-              <xsl:value-of select='replace($parameter, " ","-")'/>
-              <!-- xsl:value-of select="$waterBodies" separator="-"/-->
-              <xsl:text>.html</xsl:text>
-            </xsl:variable>
-
-            <xsl:text>&#xa;</xsl:text>
-
-            <li>
-            <xsl:element name="a">
-              <xsl:attribute name="href">
-                <xsl:value-of select="$filename"/>
-              </xsl:attribute>
-              <xsl:value-of select='$parameter'/>
-            </xsl:element>
-
-            </li>
-
-
-          </xsl:for-each>
-          </ul> 
-
+              <xsl:text>&#xa;</xsl:text>
+              <li>
+              <xsl:element name="a">
+                <xsl:attribute name="href">
+                  <xsl:value-of select="$filename"/>
+                </xsl:attribute>
+                <xsl:value-of select='$parameter'/>
+              </xsl:element>
+              </li>
+            </xsl:for-each>
+          </ul>
         </body>
       </html>
     </xsl:result-document>
