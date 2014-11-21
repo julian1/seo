@@ -1,4 +1,14 @@
 
+https://10.11.12.13/geonetwork/srv/eng/metadata.formatter.html?id=21810&xsl=view
+
+https://10.11.12.13/geonetwork/srv/eng/metadata.formatter.html?id=21810&xsl=view15
+
+https://10.11.12.13/geonetwork/srv/eng/metadata.formatter.xml?uuid=4402cb50-e20a-44ee-93e6-4728259250d2&xslid=view15
+
+-----
+
+
+
 Discussion 2009, where not possible, to deal with holes.
 
 https://groups.google.com/forum/#!topic/google-maps-api/FCeBF21cBr0
