@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!-- works https://10.11.12.13/geonetwork/srv/eng/metadata.formatter.html?uuid=4402cb50-e20a-44ee-93e6-4728259250d2&xsl=view14 -->
+
 <xsl:stylesheet version="2.0"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:mcp="http://schemas.aodn.org.au/mcp-2.0"
@@ -33,6 +35,7 @@ http://stackoverflow.org/wiki/Translate_newlines_to_HTML_BR_Tags
 
 
 <xsl:template match="root">
+    <!-- xsl:apply-templates /-->
     <xsl:apply-templates select="mcp:MD_Metadata"/>
 
 </xsl:template>
@@ -83,8 +86,8 @@ http://stackoverflow.org/wiki/Translate_newlines_to_HTML_BR_Tags
         platform      '<xsl:value-of select="$platform" />'
         -->
 
-        <xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html></xsl:text>
-        <xsl:text>&#xa;</xsl:text>
+        <!-- xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html></xsl:text -->
+        <!-- xsl:text>&#xa;</xsl:text -->
         <html>
         <head>
           <!-- Page Meta Title -->
