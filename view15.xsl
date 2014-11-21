@@ -10,9 +10,14 @@
   exclude-result-prefixes="xsl mcp gco gmd gmx"
 >
 
+<xsl:param name="myparam" />
+
 <xsl:template match="root">
 
     <html>
+
+    <xsl:value-of select="$myparam" />
+    <br/>
     <xsl:variable name="uuid" select="mcp:MD_Metadata/gmd:fileIdentifier/gco:CharacterString"/>
     <xsl:value-of select="$uuid" />
     </html>
