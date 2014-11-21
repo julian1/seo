@@ -29,8 +29,15 @@ http://stackoverflow.org/wiki/Translate_newlines_to_HTML_BR_Tags
     </xsl:choose>
 </xsl:template>
 
-
 <xsl:output method="html" indent="yes" omit-xml-declaration="yes" encoding="UTF-8" />
+
+
+<xsl:template match="root">
+    <xsl:apply-templates select="mcp:MD_Metadata"/>
+
+</xsl:template>
+
+
 
   <xsl:template match="mcp:MD_Metadata">
 
@@ -249,5 +256,6 @@ http://stackoverflow.org/wiki/Translate_newlines_to_HTML_BR_Tags
 
 
   </xsl:template>
+
 </xsl:stylesheet>
 
