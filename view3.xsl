@@ -10,6 +10,26 @@
   exclude-result-prefixes="xsl mcp gco gmd gmx"
 >
 
+<!-- Translate newlines to HTML BR Tags
+http://stackoverflow.org/wiki/Translate_newlines_to_HTML_BR_Tags
+-->
+<xsl:template name="replace">
+    <xsl:param name="string"/>
+    <xsl:choose>
+        <xsl:when test="contains($string,'&#10;')">
+            <xsl:value-of select="substring-before($string,'&#10;')"/>
+            <br/>
+            <xsl:call-template name="replace">
+                <xsl:with-param name="string" select="substring-after($string,'&#10;')"/>
+            </xsl:call-template>
+        </xsl:when>
+        <xsl:otherwise>
+            <xsl:value-of select="$string"/>
+        </xsl:otherwise>
+    </xsl:choose>
+</xsl:template>
+
+
 <xsl:output method="html" indent="yes" omit-xml-declaration="yes" encoding="UTF-8" />
 
   <xsl:template match="mcp:MD_Metadata">
@@ -216,7 +236,10 @@
           </h2>
 
           <p>
-            <xsl:value-of select="$abstract"/>
+            <xsl:call-template name="replace">
+              <xsl:with-param name="string" select="$abstract"/>
+            </xsl:call-template>
+            <!-- xsl:copy-of select="translate( $abstract, ' ', '&lt;br /&gt; <br/>' )"/ -->
           </p>
 
         </body>
