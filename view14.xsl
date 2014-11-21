@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- works https://10.11.12.13/geonetwork/srv/eng/metadata.formatter.html?uuid=4402cb50-e20a-44ee-93e6-4728259250d2&xsl=view14 -->
+<!-- Now parametized 
+  https://10.11.12.13/geonetwork/srv/eng/metadata.formatter.html?uuid=4402cb50-e20a-44ee-93e6-4728259250d2&xsl=view14&paramIndex=0  
+-->
 
 <xsl:stylesheet version="2.0"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
@@ -11,6 +13,9 @@
 
   exclude-result-prefixes="xsl mcp gco gmd gmx"
 >
+
+<!-- xsl:param name="paramIndex" as="xs:integer" /-->
+<xsl:param name="paramIndex"  />
 
 <!-- Translate newlines to HTML BR Tags
 http://stackoverflow.org/wiki/Translate_newlines_to_HTML_BR_Tags
@@ -72,7 +77,7 @@ http://stackoverflow.org/wiki/Translate_newlines_to_HTML_BR_Tags
 
       <xsl:variable name="index" select="position() - 1"/>      
 
-      <xsl:if test="$index = 0">
+      <xsl:if test="$index = number( $paramIndex)">
 
 
         <!-- TODO this should be restricted by code list as well as longName -->
