@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- Now parametized 
-  https://10.11.12.13/geonetwork/srv/eng/metadata.formatter.html?uuid=4402cb50-e20a-44ee-93e6-4728259250d2&xsl=landing-links  
+<!-- Now parametized
+  https://10.11.12.13/geonetwork/srv/eng/metadata.formatter.html?uuid=4402cb50-e20a-44ee-93e6-4728259250d2&xsl=landing-links
 
   or
   Note it works for either input because of root
@@ -23,7 +23,7 @@
   <xsl:output method="html" indent="yes" omit-xml-declaration="yes" encoding="UTF-8" />
 
 
-  
+
   <!-- match root node, when running in geonetwork -->
   <xsl:template match="root">
       <xsl:apply-templates select="mcp:MD_Metadata"/>
@@ -65,47 +65,32 @@
         <meta name="description" content="List of parameters, The eMarine Information Infrastructure (eMII)"/>
       </head>
       <body>
+        <h1> 
+          <xsl:value-of select='$title'/>
+        </h1>
         <ul>
           <xsl:for-each select="$parameters">
 
+            <xsl:variable name="paramIndex" select="position() - 1"/>
             <xsl:variable name="parameter" select="mcp:parameterName/mcp:DP_Term/mcp:type/mcp:DP_TypeCode[text() = 'longName']/../../mcp:term/gco:CharacterString" />
 
-            <xsl:variable name="filename">
-              <xsl:value-of select='replace($title, " ","-")'/>
-              <xsl:text>-</xsl:text>
-              <xsl:value-of select='replace($parameter, " ","-")'/>
-              <!-- xsl:value-of select="$waterBodies" separator="-"/-->
-              <xsl:text>.html</xsl:text>
-            </xsl:variable>
-
-
-              <xsl:value-of select="string-join(('Download a ', $parameter, ' Data Set'), '')"/>
-
-            <!-- metadata.formatter.html?uuid=4402cb50-e20a-44ee-93e6-4728259250d2&xsl=landing-page&paramIndex=1  -->
-
-              <!-- xsl:value-of select="'/metadata.formatter.html?uuid='$uuid'&amp;xsl=landing-page"&amp;paramIndex=1'/
-
-
-              <xsl:text>-</xsl:text>
-              -->
-            <li>
-
-            <xsl:variable name="href">
+           <xsl:variable name="href">
               <xsl:value-of select="'metadata.formatter.html?uuid='"/>
               <xsl:value-of select="$uuid"/>
               <xsl:value-of select="'&amp;xsl=landing-page'"/>
-              <xsl:value-of select="'&amp;paramIndex=1'"/>
+              <xsl:value-of select="'&amp;paramIndex='"/>
+              <xsl:value-of select="$paramIndex"/>
             </xsl:variable>
 
+            <!-- eg. metadata.formatter.html?uuid=4402cb50-e20a-44ee-93e6-4728259250d2&xsl=landing-page&paramIndex=1  -->
 
-            <xsl:element name="a">
-              <xsl:attribute name="href">
-                <xsl:value-of select="$href"/>
-              </xsl:attribute>
-              <xsl:value-of select='$title'/>
-              <xsl:text>, </xsl:text>
-              <xsl:value-of select='$parameter'/>
-            </xsl:element>
+            <li>
+              <xsl:element name="a">
+                <xsl:attribute name="href">
+                  <xsl:value-of select="$href"/>
+                </xsl:attribute>
+                <xsl:value-of select='$parameter'/>
+              </xsl:element>
             </li>
           </xsl:for-each>
         </ul>
