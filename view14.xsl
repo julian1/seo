@@ -4,8 +4,9 @@
   https://10.11.12.13/geonetwork/srv/eng/metadata.formatter.html?uuid=4402cb50-e20a-44ee-93e6-4728259250d2&xsl=view14&paramIndex=0  
 
   or
+  Note it works for either input because of root
 
-  java -jar saxon9he.jar formatter-input.xml view14.xsl paramIndex=1 
+  java -jar saxon9he.jar records/argo_with_wb_and_lm.xml  view14.xsl paramIndex=1 | less
 -->
 
 <xsl:stylesheet version="2.0"
@@ -18,36 +19,38 @@
   exclude-result-prefixes="xsl mcp gco gmd gmx"
 >
 
-<!-- xsl:param name="paramIndex" as="xs:integer" /-->
-<xsl:param name="paramIndex"  />
 
-<!-- Translate newlines to HTML BR Tags
-http://stackoverflow.org/wiki/Translate_newlines_to_HTML_BR_Tags
--->
-<xsl:template name="replace">
-    <xsl:param name="string"/>
-    <xsl:choose>
-        <xsl:when test="contains($string,'&#10;')">
-            <xsl:value-of select="substring-before($string,'&#10;')"/>
-            <br/>
-            <xsl:call-template name="replace">
-                <xsl:with-param name="string" select="substring-after($string,'&#10;')"/>
-            </xsl:call-template>
-        </xsl:when>
-        <xsl:otherwise>
-            <xsl:value-of select="$string"/>
-        </xsl:otherwise>
-    </xsl:choose>
-</xsl:template>
-
-<xsl:output method="html" indent="yes" omit-xml-declaration="yes" encoding="UTF-8" />
+  <!-- xsl:param name="paramIndex" as="xs:integer" /-->
+  <xsl:param name="paramIndex"/>
 
 
-<xsl:template match="root">
-    <!-- xsl:apply-templates /-->
-    <xsl:apply-templates select="mcp:MD_Metadata"/>
 
-</xsl:template>
+  <xsl:output method="html" indent="yes" omit-xml-declaration="yes" encoding="UTF-8" />
+
+
+  <!-- Translate newlines to HTML BR Tags
+  http://stackoverflow.org/wiki/Translate_newlines_to_HTML_BR_Tags
+  -->
+  <xsl:template name="replace">
+      <xsl:param name="string"/>
+      <xsl:choose>
+          <xsl:when test="contains($string,'&#10;')">
+              <xsl:value-of select="substring-before($string,'&#10;')"/>
+              <br/>
+              <xsl:call-template name="replace">
+                  <xsl:with-param name="string" select="substring-after($string,'&#10;')"/>
+              </xsl:call-template>
+          </xsl:when>
+          <xsl:otherwise>
+              <xsl:value-of select="$string"/>
+          </xsl:otherwise>
+      </xsl:choose>
+  </xsl:template>
+
+
+  <xsl:template match="root">
+      <xsl:apply-templates select="mcp:MD_Metadata"/>
+  </xsl:template>
 
 
 
