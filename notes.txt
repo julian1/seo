@@ -1,4 +1,54 @@
 
+parameter.
+https://10.11.12.13/geonetwork/srv/eng/metadata.formatter.html?uuid=4402cb50-e20a-44ee-93e6-4728259250d2&xsl=view14&paramIndex=3
+
+-- show metadata record
+https://10.11.12.13/geonetwork/srv/eng/metadata.edit?uuid=4402cb50-e20a-44ee-93e6-4728259250d2
+
+
+
+
+1. So one of the tasks I worked on was to develop SEO pages, from geonetwork metadata and descriptive terms.  
+2. working with john cuthbertson
+
+- show the marked up water-bodies and land-masses in argo metadata
+- then show the style sheet.  
+- maybe show file output.
+
+Issues
+
+- one to many relationship between metadata record and views - means need parametization. 
+- long lists water-bodies and land-masses means changes from original templates. eg. can't fit original files on filesystem.
+- only for an example argo only - need to get all geonetwork records updated 
+- index pages - one long list, or a tree - never discussed. Only looked at the pages - not how to Have generated
+- trying to find a webservice that could generate the the image. looked at geoserver, google maps, open layers - only one is google static maps api.
+	it has it's geometry form (markup not WKT, GML, KML) - issue of url length, and holes in geometry. 
+- parametization of the stylesheet, needed to change the formatter service to expose url parameters to the stylesheet transform.  
+- url rewrite (should be simple)
+
+-
+
+---
+
+Think this is the code, 
+./web/src/main/java/org/fao/geonet/services/metadata/format/Format.java
+
+There's another transform method that takes params,
+
+vim ./jeeves/src/main/java/jeeves/utils/Xml.java
+
+ 396      * @throws Exception
+ 397      */
+ 398     public static Element transform(Element xml, String styleSheetPath, Map<String,String> params) throws Exception
+ 399     {
+ 400         JDOMResult resXml = new JDOMResult();
+ 401         transform(xml, styleSheetPath, resXml, params);
+ 402         return (Element)resXml.getDocument().getRootElement().detach();
+ 403     }
+ 4
+
+----
+
 https://10.11.12.13/geonetwork/srv/eng/metadata.formatter.html?id=21810&xsl=view
 
 https://10.11.12.13/geonetwork/srv/eng/metadata.formatter.html?id=21810&xsl=view15
