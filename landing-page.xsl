@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!-- Now parametized 
-  https://10.11.12.13/geonetwork/srv/eng/metadata.formatter.html?uuid=4402cb50-e20a-44ee-93e6-4728259250d2&xsl=view14&paramIndex=0  
+  https://10.11.12.13/geonetwork/srv/eng/metadata.formatter.html?uuid=4402cb50-e20a-44ee-93e6-4728259250d2&xsl=landing-page&paramIndex=0  
 
   or
   Note it works for either input because of root
 
-  java -jar saxon9he.jar records/argo_with_wb_and_lm.xml  view14.xsl paramIndex=1 | less
+  java -jar saxon9he.jar records/argo_with_wb_and_lm.xml  landing-page.xsl paramIndex=1 | less
 -->
 
 <xsl:stylesheet version="2.0"
@@ -47,7 +47,8 @@
       </xsl:choose>
   </xsl:template>
 
-
+  
+  <!-- match root node, when running in geonetwork -->
   <xsl:template match="root">
       <xsl:apply-templates select="mcp:MD_Metadata"/>
   </xsl:template>
