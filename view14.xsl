@@ -2,6 +2,10 @@
 
 <!-- Now parametized 
   https://10.11.12.13/geonetwork/srv/eng/metadata.formatter.html?uuid=4402cb50-e20a-44ee-93e6-4728259250d2&xsl=view14&paramIndex=0  
+
+  or
+
+  java -jar saxon9he.jar formatter-input.xml view14.xsl paramIndex=1 
 -->
 
 <xsl:stylesheet version="2.0"
