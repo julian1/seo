@@ -78,10 +78,29 @@
               <xsl:text>.html</xsl:text>
             </xsl:variable>
 
+
+              <xsl:value-of select="string-join(('Download a ', $parameter, ' Data Set'), '')"/>
+
+            <!-- metadata.formatter.html?uuid=4402cb50-e20a-44ee-93e6-4728259250d2&xsl=landing-page&paramIndex=1  -->
+
+              <!-- xsl:value-of select="'/metadata.formatter.html?uuid='$uuid'&amp;xsl=landing-page"&amp;paramIndex=1'/
+
+
+              <xsl:text>-</xsl:text>
+              -->
             <li>
+
+            <xsl:variable name="href">
+              <xsl:value-of select="'metadata.formatter.html?uuid='"/>
+              <xsl:value-of select="$uuid"/>
+              <xsl:value-of select="'&amp;xsl=landing-page'"/>
+              <xsl:value-of select="'&amp;paramIndex=1'"/>
+            </xsl:variable>
+
+
             <xsl:element name="a">
               <xsl:attribute name="href">
-                <xsl:value-of select="$filename"/>
+                <xsl:value-of select="$href"/>
               </xsl:attribute>
               <xsl:value-of select='$title'/>
               <xsl:text>, </xsl:text>
