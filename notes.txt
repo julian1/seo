@@ -1,4 +1,11 @@
 
+
+list of all uuids (using search)
+    list of all parameters in uuid (very similar to existing page)
+        formated landing page
+
+---
+
 parameter.
 https://10.11.12.13/geonetwork/srv/eng/metadata.formatter.html?uuid=4402cb50-e20a-44ee-93e6-4728259250d2&xsl=view14&paramIndex=3
 
