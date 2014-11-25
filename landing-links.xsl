@@ -6,7 +6,7 @@
   or
   Note it works for either input because of root
 
-  java -jar saxon9he.jar records/argo_with_wb_and_lm.xml  landing-links.xs
+  java -jar saxon9he.jar records/argo_with_wb_and_lm.xml  landing-links.xsl
 -->
 
 <xsl:stylesheet version="2.0"
