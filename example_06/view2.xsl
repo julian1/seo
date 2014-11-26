@@ -18,14 +18,19 @@
 
 
 	<!-- xsl:variable name="href" select="http://10.11.12.13"/ -->
+	
+  <xsl:variable name="term" select="'http://vocab.nerc.ac.uk/collection/P01/current/PSLTZZ01'"/>
 
   <xsl:output method="html" indent="yes" omit-xml-declaration="yes" encoding="UTF-8" />
+
+
+  <xsl:variable name="fuck" select="'http://10.11.12.13/geonetwork/srv/en/xml.search.keywordlink?request=broader&amp;thesaurus=external.theme.parameterClassificationScheme&amp;id=http://vocab.nerc.ac.uk/collection/P01/current/PSLTZZ01'"/>
 
   <xsl:template match="mcp:MD_Metadata">
 
 	 <!-- xsl:variable name="test" select="document('http://10.11.12.13/geonetwork/srv/en/xml.thesaurus.getList')"/ -->
 	 
-    <xsl:variable name="test" select="document('http://10.11.12.13/geonetwork/srv/en/xml.search.keywordlink?request=broader&amp;thesaurus=external.theme.parameterClassificationScheme&amp;id=http://vocab.nerc.ac.uk/collection/P01/current/PSLTZZ01')/response/narrower/descKeys/keyword/values/value[@language='eng']"  />
+    <xsl:variable name="test" select="document($fuck)/response/narrower/descKeys/keyword/values/value[@language='eng']"  />
 
     <xsl:value-of select="$test" />
   </xsl:template>
