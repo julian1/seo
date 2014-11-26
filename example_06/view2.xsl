@@ -25,10 +25,12 @@
 
 
   <xsl:variable name="term" select="'http://vocab.nerc.ac.uk/collection/P01/current/PSLTZZ01'"/>
+  
+  <xsl:variable name="geonetworkUrl" select="'http://10.11.12.13'"/>
 
 
 
-  <xsl:variable name="fuck" select="string-join(('http://10.11.12.13/geonetwork/srv/en/xml.search.keywordlink?request=broader&amp;thesaurus=external.theme.parameterClassificationScheme&amp;id=', $term ),'')" />
+  <xsl:variable name="fuck" select="string-join(($geonetworkUrl, '/geonetwork/srv/en/xml.search.keywordlink?request=broader&amp;thesaurus=external.theme.parameterClassificationScheme&amp;id=', $term ),'')" />
 
 
   <xsl:template match="mcp:MD_Metadata">
