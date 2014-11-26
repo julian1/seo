@@ -91,28 +91,19 @@ http://stackoverflow.org/wiki/Translate_newlines_to_HTML_BR_Tags
     <xsl:variable name="x">
       <xsl:for-each select="$parameters" >
 
-        <xsl:text>&#xa;</xsl:text>
         <xsl:variable name="longName" select="mcp:parameterName/mcp:DP_Term/mcp:type/mcp:DP_TypeCode[text() = 'longName']/../../mcp:term/gco:CharacterString" />
-        <!-- this needs to be fixed - so it's not the long name -->
-
-        <xsl:variable name="term" select="mcp:parameterName/mcp:DP_Term/mcp:type/mcp:DP_TypeCode[text() = 'longName']/../../mcp:vocabularyRelationship/mcp:DP_VocabularyRelationship/mcp:vocabularyTermURL/gmd:URL" />
-
-        <!--xsl:value-of select="$term" /-->
-       
-
-        <!-- xsl:variable name="term" select="'http://vocab.nerc.ac.uk/collection/P01/current/PSLTZZ01'"/ -->
-
-        <!--xsl:text>&#xa;</xsl:text-->
-        <xsl:variable name="request" select="string-join(($geonetworkUrl, '/geonetwork/srv/en/xml.search.keywordlink?request=broader&amp;thesaurus=', $thesaurus, '&amp;id=', $term ),'')" />
-        <!--xsl:value-of select="$request" /-->
-
-        <!--xsl:text>&#xa;</xsl:text-->
-        <xsl:variable name="broader" select="document($request)/response/narrower/descKeys/keyword/values/value[@language='eng']"  />
-        <!--xsl:value-of select="$broader" /-->
 
         <xsl:element name="longName">
           <xsl:value-of select="$longName" />
         </xsl:element>
+
+
+        <!-- this needs to be fixed - so it's not the long name -->
+        <xsl:variable name="term" select="mcp:parameterName/mcp:DP_Term/mcp:type/mcp:DP_TypeCode[text() = 'longName']/../../mcp:vocabularyRelationship/mcp:DP_VocabularyRelationship/mcp:vocabularyTermURL/gmd:URL" />
+
+        <xsl:variable name="request" select="string-join(($geonetworkUrl, '/geonetwork/srv/en/xml.search.keywordlink?request=broader&amp;thesaurus=', $thesaurus, '&amp;id=', $term ),'')" />
+
+        <xsl:variable name="broader" select="document($request)/response/narrower/descKeys/keyword/values/value[@language='eng']"  />
 
         <xsl:element name="broader">
           <xsl:value-of select="$broader" />
@@ -134,6 +125,11 @@ http://stackoverflow.org/wiki/Translate_newlines_to_HTML_BR_Tags
 
        <xsl:text>&#xa;------3------&#xa;</xsl:text> 
           <xsl:value-of select="$x/broader" separator="-"/>
+
+       <xsl:text>&#xa;------4------&#xa;</xsl:text> 
+          <xsl:value-of select="$x/longName" separator="-"/>
+
+
 
        <xsl:text>&#xa;</xsl:text> 
 
