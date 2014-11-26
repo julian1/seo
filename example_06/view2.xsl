@@ -20,15 +20,15 @@
 
 	<!-- xsl:variable name="href" select="http://10.11.12.13"/ -->
 	
-  <xsl:variable name="term" select="'http://vocab.nerc.ac.uk/collection/P01/current/PSLTZZ01'"/>
 
   <xsl:output method="html" indent="yes" omit-xml-declaration="yes" encoding="UTF-8" />
 
 
+  <xsl:variable name="term" select="'http://vocab.nerc.ac.uk/collection/P01/current/PSLTZZ01'"/>
 
 
 
-  <xsl:variable name="fuck" select="string-join(('http://10.11.12.13/geonetwork/srv/en/xml.search.keywordlink?request=broader&amp;thesaurus=external.theme.parameterClassificationScheme&amp;id=http://vocab.nerc.ac.uk/collection/P01/current/PSLTZZ01'),'')" />
+  <xsl:variable name="fuck" select="string-join(('http://10.11.12.13/geonetwork/srv/en/xml.search.keywordlink?request=broader&amp;thesaurus=external.theme.parameterClassificationScheme&amp;id=', $term ),'')" />
 
 
   <xsl:template match="mcp:MD_Metadata">
