@@ -92,8 +92,9 @@ http://stackoverflow.org/wiki/Translate_newlines_to_HTML_BR_Tags
       <xsl:for-each select="$parameters" >
 
         <xsl:text>&#xa;</xsl:text>
-        <!-- xsl:variable name="parameter" select="mcp:parameterName/mcp:DP_Term/mcp:type/mcp:DP_TypeCode[text() = 'longName']/../../mcp:term/gco:CharacterString" / -->
+        <xsl:variable name="longName" select="mcp:parameterName/mcp:DP_Term/mcp:type/mcp:DP_TypeCode[text() = 'longName']/../../mcp:term/gco:CharacterString" />
         <!-- this needs to be fixed - so it's not the long name -->
+
         <xsl:variable name="term" select="mcp:parameterName/mcp:DP_Term/mcp:type/mcp:DP_TypeCode[text() = 'longName']/../../mcp:vocabularyRelationship/mcp:DP_VocabularyRelationship/mcp:vocabularyTermURL/gmd:URL" />
 
         <!--xsl:value-of select="$term" /-->
@@ -109,7 +110,11 @@ http://stackoverflow.org/wiki/Translate_newlines_to_HTML_BR_Tags
         <xsl:variable name="broader" select="document($request)/response/narrower/descKeys/keyword/values/value[@language='eng']"  />
         <!--xsl:value-of select="$broader" /-->
 
-        <xsl:element name="whoot">
+        <xsl:element name="longName">
+          <xsl:value-of select="$longName" />
+        </xsl:element>
+
+        <xsl:element name="broader">
           <xsl:value-of select="$broader" />
         </xsl:element>
 
@@ -119,7 +124,7 @@ http://stackoverflow.org/wiki/Translate_newlines_to_HTML_BR_Tags
 
 
        <xsl:text>&#xa;------1------&#xa;</xsl:text> 
-          <xsl:for-each select="$x/whoot" >
+          <xsl:for-each select="$x/broader" >
             <xsl:value-of select="." />
            <xsl:text>,</xsl:text> 
           </xsl:for-each>
@@ -128,9 +133,7 @@ http://stackoverflow.org/wiki/Translate_newlines_to_HTML_BR_Tags
           <xsl:value-of select="$x" separator=", "/>
 
        <xsl:text>&#xa;------3------&#xa;</xsl:text> 
-
-          <xsl:value-of select="$x/whoot" separator="-"/>
-
+          <xsl:value-of select="$x/broader" separator="-"/>
 
        <xsl:text>&#xa;</xsl:text> 
 
