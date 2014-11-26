@@ -117,19 +117,21 @@ http://stackoverflow.org/wiki/Translate_newlines_to_HTML_BR_Tags
     </xsl:variable>
 
 
-      <xsl:text>&#xa;</xsl:text> <xsl:text>-------------</xsl:text> <xsl:text>&#xa;</xsl:text>
 
+       <xsl:text>&#xa;------1------&#xa;</xsl:text> 
+      <xsl:for-each select="$x/whoot" >
+        <xsl:value-of select="." />
 
-
-      <xsl:for-each select="$x" >
-        <xsl:value-of select="whoot" />
+       <xsl:text>,</xsl:text> 
+      
       </xsl:for-each>
 
-       <xsl:text>&#xa;------a------&#xa;</xsl:text> 
+       <xsl:text>&#xa;------2------&#xa;</xsl:text> 
+
 
       <xsl:value-of select="$x" separator=", "/>
 
-       <xsl:text>&#xa;------f------&#xa;</xsl:text> 
+       <xsl:text>&#xa;------3------&#xa;</xsl:text> 
 
 
     <xsl:for-each select="$parameters" >
