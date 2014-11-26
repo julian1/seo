@@ -5,6 +5,7 @@
 <!-- 
 	Note that Saxon - doesn't like the SSL self-signed certificate when running in vagrant instance
 
+'http://10.11.12.13/geonetwork/srv/en/xml.search.keywordlink?request=broader&amp;thesaurus=external.theme.parameterClassificationScheme&amp;id=http://vocab.nerc.ac.uk/collection/P01/current/PSLTZZ01'"/>
 -->
 <xsl:stylesheet version="2.0"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
@@ -24,7 +25,11 @@
   <xsl:output method="html" indent="yes" omit-xml-declaration="yes" encoding="UTF-8" />
 
 
-  <xsl:variable name="fuck" select="'http://10.11.12.13/geonetwork/srv/en/xml.search.keywordlink?request=broader&amp;thesaurus=external.theme.parameterClassificationScheme&amp;id=http://vocab.nerc.ac.uk/collection/P01/current/PSLTZZ01'"/>
+
+
+
+  <xsl:variable name="fuck" select="string-join(('http://10.11.12.13/geonetwork/srv/en/xml.search.keywordlink?request=broader&amp;thesaurus=external.theme.parameterClassificationScheme&amp;id=http://vocab.nerc.ac.uk/collection/P01/current/PSLTZZ01'),'')" />
+
 
   <xsl:template match="mcp:MD_Metadata">
 
