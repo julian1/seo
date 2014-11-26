@@ -88,7 +88,7 @@ http://stackoverflow.org/wiki/Translate_newlines_to_HTML_BR_Tags
         which we can then for-each over again
     --> 
 
-    <xsl:variable name="x">
+    <xsl:variable name="parameterList">
       <xsl:for-each select="$parameters" >
 
         <xsl:variable name="longName" select="mcp:parameterName/mcp:DP_Term/mcp:type/mcp:DP_TypeCode[text() = 'longName']/../../mcp:term/gco:CharacterString" />
@@ -115,19 +115,19 @@ http://stackoverflow.org/wiki/Translate_newlines_to_HTML_BR_Tags
 
 
        <xsl:text>&#xa;------1------&#xa;</xsl:text> 
-          <xsl:for-each select="$x/broader" >
+          <xsl:for-each select="$parameterList/broader" >
             <xsl:value-of select="." />
            <xsl:text>,</xsl:text> 
           </xsl:for-each>
 
        <xsl:text>&#xa;------2------&#xa;</xsl:text> 
-          <xsl:value-of select="$x" separator=", "/>
+          <xsl:value-of select="$parameterList" separator=", "/>
 
        <xsl:text>&#xa;------3------&#xa;</xsl:text> 
-          <xsl:value-of select="$x/broader" separator="-"/>
+          <xsl:value-of select="$parameterList/broader" separator="-"/>
 
        <xsl:text>&#xa;------4------&#xa;</xsl:text> 
-          <xsl:value-of select="$x/longName" separator="-"/>
+          <xsl:value-of select="$parameterList/longName" separator="-"/>
 
 
 
