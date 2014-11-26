@@ -62,29 +62,49 @@ http://stackoverflow.org/wiki/Translate_newlines_to_HTML_BR_Tags
   <!-- 
     so we actually want the uri not the 
 
-                  <mcp:term>
-                    <gco:CharacterString>Practical salinity of the water body</gco:CharacterString>
-                  </mcp:term>
-                  <mcp:type>
-                    <mcp:DP_TypeCode codeList="http://schemas.aodn.org.au/mcp-2.0/schema/resources/Codelist/gmxCodelists.xml#DP_TypeCode" codeListValue="longName">longName</mcp:DP_TypeCode>
-                  </mcp:type>
-                  <mcp:vocabularyRelationship>
-                    <mcp:DP_VocabularyRelationship>
-                      <mcp:relationshipType>
-                        <mcp:DP_RelationshipTypeCode codeList="http://schemas.aodn.org.au/mcp-2.0/schema/resources/Codelist/gmxCodelists.xml#DP_RelationshipTypeCode" codeListValue="skos:exactMatch">skos:exactMatch</mcp:DP_RelationshipTypeCode>
-                      </mcp:relationshipType>
-                      <mcp:vocabularyTermURL>
-                        <gmd:URL>http://vocab.nerc.ac.uk/collection/P01/current/PSLTZZ01</gmd:URL>
+    <mcp:term>
+      <gco:CharacterString>Practical salinity of the water body</gco:CharacterString>
+    </mcp:term>
+    <mcp:type>
+      <mcp:DP_TypeCode codeList="http://schemas.aodn.org.au/mcp-2.0/schema/resources/Codelist/gmxCodelists.xml#DP_TypeCode" codeListValue="longName">longName</mcp:DP_TypeCode>
+    </mcp:type>
+    <mcp:vocabularyRelationship>
+      <mcp:DP_VocabularyRelationship>
+        <mcp:relationshipType>
+          <mcp:DP_RelationshipTypeCode codeList="http://schemas.aodn.org.au/mcp-2.0/schema/resources/Codelist/gmxCodelists.xml#DP_RelationshipTypeCode" codeListValue="skos:exactMatch">skos:exactMatch</mcp:DP_RelationshipTypeCode>
+        </mcp:relationshipType>
+        <mcp:vocabularyTermURL>
+          <gmd:URL>http://vocab.nerc.ac.uk/collection/P01/current/PSLTZZ01</gmd:URL>
 
 
   -->
+
+    <xsl:variable name="geonetworkUrl" select="'http://10.11.12.13'"/>
+    <xsl:variable name="thesaurus" select="'external.theme.parameterClassificationScheme'"/>
+
     <xsl:for-each select="$parameters" >
 
+      <xsl:text>&#xa;</xsl:text>
       <!-- xsl:variable name="parameter" select="mcp:parameterName/mcp:DP_Term/mcp:type/mcp:DP_TypeCode[text() = 'longName']/../../mcp:term/gco:CharacterString" / -->
-      <!-- this needs to be fixed -->
-      <xsl:variable name="parameterUrl" select="mcp:parameterName/mcp:DP_Term/mcp:type/mcp:DP_TypeCode[text() = 'longName']/../../mcp:vocabularyRelationship/mcp:DP_VocabularyRelationship/mcp:vocabularyTermURL/gmd:URL" />
-      <xsl:value-of select='replace($parameterUrl, " ","-")'/>
-      
+      <!-- this needs to be fixed - so it's not the long name -->
+      <xsl:variable name="term" select="mcp:parameterName/mcp:DP_Term/mcp:type/mcp:DP_TypeCode[text() = 'longName']/../../mcp:vocabularyRelationship/mcp:DP_VocabularyRelationship/mcp:vocabularyTermURL/gmd:URL" />
+
+      <xsl:value-of select="$term" />
+     
+
+      <!-- xsl:variable name="term" select="'http://vocab.nerc.ac.uk/collection/P01/current/PSLTZZ01'"/ -->
+
+      <xsl:text>&#xa;</xsl:text>
+      <xsl:variable name="request" select="string-join(($geonetworkUrl, '/geonetwork/srv/en/xml.search.keywordlink?request=broader&amp;thesaurus=', $thesaurus, '&amp;id=', $term ),'')" />
+      <xsl:value-of select="$request" />
+
+      <xsl:text>&#xa;</xsl:text>
+      <xsl:variable name="broader" select="document($request)/response/narrower/descKeys/keyword/values/value[@language='eng']"  />
+      <xsl:value-of select="$broader" />
+
+
+
+ 
     </xsl:for-each>
 
 
