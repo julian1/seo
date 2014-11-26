@@ -82,33 +82,54 @@ http://stackoverflow.org/wiki/Translate_newlines_to_HTML_BR_Tags
     <xsl:variable name="geonetworkUrl" select="'http://10.11.12.13'"/>
     <xsl:variable name="thesaurus" select="'external.theme.parameterClassificationScheme'"/>
 
-    <xsl:for-each select="$parameters" >
 
-      <xsl:text>&#xa;</xsl:text>
-      <!-- xsl:variable name="parameter" select="mcp:parameterName/mcp:DP_Term/mcp:type/mcp:DP_TypeCode[text() = 'longName']/../../mcp:term/gco:CharacterString" / -->
-      <!-- this needs to be fixed - so it's not the long name -->
-      <xsl:variable name="term" select="mcp:parameterName/mcp:DP_Term/mcp:type/mcp:DP_TypeCode[text() = 'longName']/../../mcp:vocabularyRelationship/mcp:DP_VocabularyRelationship/mcp:vocabularyTermURL/gmd:URL" />
+    <!-- Ideally rather than text joining stuff together with - it would be good to assemble 
+        a parent and set of child nodes.
+        which we can then for-each over again
+    --> 
 
-      <xsl:value-of select="$term" />
-     
+    <xsl:variable name="x">
+      <xsl:for-each select="$parameters" >
 
-      <!-- xsl:variable name="term" select="'http://vocab.nerc.ac.uk/collection/P01/current/PSLTZZ01'"/ -->
+        <xsl:text>&#xa;</xsl:text>
+        <!-- xsl:variable name="parameter" select="mcp:parameterName/mcp:DP_Term/mcp:type/mcp:DP_TypeCode[text() = 'longName']/../../mcp:term/gco:CharacterString" / -->
+        <!-- this needs to be fixed - so it's not the long name -->
+        <xsl:variable name="term" select="mcp:parameterName/mcp:DP_Term/mcp:type/mcp:DP_TypeCode[text() = 'longName']/../../mcp:vocabularyRelationship/mcp:DP_VocabularyRelationship/mcp:vocabularyTermURL/gmd:URL" />
 
-      <xsl:text>&#xa;</xsl:text>
-      <xsl:variable name="request" select="string-join(($geonetworkUrl, '/geonetwork/srv/en/xml.search.keywordlink?request=broader&amp;thesaurus=', $thesaurus, '&amp;id=', $term ),'')" />
-      <xsl:value-of select="$request" />
+        <!--xsl:value-of select="$term" /-->
+       
 
-      <xsl:text>&#xa;</xsl:text>
-      <xsl:variable name="broader" select="document($request)/response/narrower/descKeys/keyword/values/value[@language='eng']"  />
-      <xsl:value-of select="$broader" />
+        <!-- xsl:variable name="term" select="'http://vocab.nerc.ac.uk/collection/P01/current/PSLTZZ01'"/ -->
+
+        <!--xsl:text>&#xa;</xsl:text-->
+        <xsl:variable name="request" select="string-join(($geonetworkUrl, '/geonetwork/srv/en/xml.search.keywordlink?request=broader&amp;thesaurus=', $thesaurus, '&amp;id=', $term ),'')" />
+        <!--xsl:value-of select="$request" /-->
+
+        <!--xsl:text>&#xa;</xsl:text-->
+        <xsl:variable name="broader" select="document($request)/response/narrower/descKeys/keyword/values/value[@language='eng']"  />
+        <!--xsl:value-of select="$broader" /-->
+
+        <xsl:element name="whoot">
+          <xsl:value-of select="$broader" />
+        </xsl:element>
+
+      </xsl:for-each>
+    </xsl:variable>
+
+
+      <xsl:text>&#xa;</xsl:text> <xsl:text>-------------</xsl:text> <xsl:text>&#xa;</xsl:text>
 
 
 
- 
-    </xsl:for-each>
+      <xsl:for-each select="$x" >
+        <xsl:value-of select="whoot" />
+      </xsl:for-each>
 
+       <xsl:text>&#xa;------a------&#xa;</xsl:text> 
 
+      <xsl:value-of select="$x" separator=", "/>
 
+       <xsl:text>&#xa;------f------&#xa;</xsl:text> 
 
 
     <xsl:for-each select="$parameters" >
