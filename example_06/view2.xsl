@@ -24,22 +24,21 @@
   <xsl:output method="html" indent="yes" omit-xml-declaration="yes" encoding="UTF-8" />
 
 
-  <xsl:variable name="term" select="'http://vocab.nerc.ac.uk/collection/P01/current/PSLTZZ01'"/>
-  
   <xsl:variable name="geonetworkUrl" select="'http://10.11.12.13'"/>
+
+  <xsl:variable name="term" select="'http://vocab.nerc.ac.uk/collection/P01/current/PSLTZZ01'"/>
 
   <xsl:variable name="thesaurus" select="'external.theme.parameterClassificationScheme'"/>
 
 
-
-  <xsl:variable name="fuck" select="string-join(($geonetworkUrl, '/geonetwork/srv/en/xml.search.keywordlink?request=broader&amp;thesaurus=', $thesaurus, '&amp;id=', $term ),'')" />
+  <xsl:variable name="request" select="string-join(($geonetworkUrl, '/geonetwork/srv/en/xml.search.keywordlink?request=broader&amp;thesaurus=', $thesaurus, '&amp;id=', $term ),'')" />
 
 
   <xsl:template match="mcp:MD_Metadata">
 
 	 <!-- xsl:variable name="test" select="document('http://10.11.12.13/geonetwork/srv/en/xml.thesaurus.getList')"/ -->
 	 
-    <xsl:variable name="test" select="document($fuck)/response/narrower/descKeys/keyword/values/value[@language='eng']"  />
+    <xsl:variable name="test" select="document($request)/response/narrower/descKeys/keyword/values/value[@language='eng']"  />
 
     <xsl:value-of select="$test" />
   </xsl:template>
