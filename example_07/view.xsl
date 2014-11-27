@@ -63,7 +63,7 @@
     <xsl:variable name="thesaurus" select="'external.theme.parameterClassificationScheme'"/>
 
 
-    <!-- Construct an intermediate node with all values in one place --> 
+    <!-- Construct an intermediate node with common values in one place --> 
     <xsl:variable name="parameterList">
       <xsl:for-each select="$parameters" >
 
@@ -88,6 +88,18 @@
     </xsl:variable>
 
 
+    <!-- group unique platforms -->
+    <xsl:variable name="platformList">
+      <xsl:for-each-group select="$parameterList" group-by="platform">
+
+        <xsl:element name="platform">
+        <xsl:value-of select="current-grouping-key()"/>
+
+        </xsl:element>
+
+      </xsl:for-each-group>
+    </xsl:variable>
+
 
     <xsl:text>&#xa;------broader------&#xa;</xsl:text> 
     <xsl:value-of select="$parameterList/broader" separator=", "/>
@@ -100,6 +112,17 @@
 
     <xsl:text>&#xa;------first platform------&#xa;</xsl:text> 
     <xsl:value-of select="$parameterList/platform[1]" />
+
+
+    <xsl:text>&#xa;------ platformList ------&#xa;</xsl:text> 
+
+
+    <xsl:value-of select="$platformList/platform" separator=", "/>
+
+    <!-- xsl:for-each-group select="$parameterList" group-by="platform">
+      <xsl:value-of select="current-grouping-key()"/>
+    </xsl:for-each-group-->
+
 
     <xsl:text>&#xa;</xsl:text> 
 
@@ -120,6 +143,25 @@
           <xsl:value-of select="$organisation" />
           <xsl:text> | Integrated Marine Observing System</xsl:text>
         </title>
+
+        <meta charset="utf-8"/>
+
+        <!-- Page Meta Description -->
+        <meta name="description">
+          <xsl:attribute name="content">
+
+            <xsl:value-of select="$parameterList/broader" separator=", "/>
+            <xsl:text> in the oceans, seas and/or atmosphere near </xsl:text>
+            <xsl:value-of select="$landMasses" separator=", "/>
+
+            <xsl:text> using </xsl:text>
+            <xsl:text>. The </xsl:text>
+            <xsl:value-of select="$organisation"/>
+          </xsl:attribute>
+        </meta>
+
+
+
       </head>
     </html>
 
