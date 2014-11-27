@@ -63,7 +63,7 @@
     <xsl:variable name="thesaurus" select="'external.theme.parameterClassificationScheme'"/>
 
 
-    <!-- Construct an intermediate node with common values in one place --> 
+    <!-- Create an intermediate node with values we'll use in more than once --> 
     <xsl:variable name="parameterList">
       <xsl:for-each select="$parameters" >
 
@@ -88,15 +88,12 @@
     </xsl:variable>
 
 
-    <!-- group unique platforms -->
-    <xsl:variable name="platformList">
+    <!-- Group unique platforms -->
+    <xsl:variable name="uniquePlatforms">
       <xsl:for-each-group select="$parameterList" group-by="platform">
-
         <xsl:element name="platform">
-        <xsl:value-of select="current-grouping-key()"/>
-
+          <xsl:value-of select="current-grouping-key()"/>
         </xsl:element>
-
       </xsl:for-each-group>
     </xsl:variable>
 
@@ -110,14 +107,8 @@
     <xsl:text>&#xa;------platform------&#xa;</xsl:text> 
     <xsl:value-of select="$parameterList/platform" separator=", "/>
 
-    <xsl:text>&#xa;------first platform------&#xa;</xsl:text> 
-    <xsl:value-of select="$parameterList/platform[1]" />
-
-
-    <xsl:text>&#xa;------ platformList ------&#xa;</xsl:text> 
-
-
-    <xsl:value-of select="$platformList/platform" separator=", "/>
+    <xsl:text>&#xa;------ uniquePlatforms ------&#xa;</xsl:text> 
+    <xsl:value-of select="$uniquePlatforms/platform" separator=", "/>
 
     <!-- xsl:for-each-group select="$parameterList" group-by="platform">
       <xsl:value-of select="current-grouping-key()"/>
@@ -137,8 +128,7 @@
         <title>
           <xsl:value-of select="$parameterList/broader" separator=", "/>
           <xsl:text> | Seas Oceans Atmosphere | </xsl:text>
-          <!-- take the first platform -->
-          <xsl:value-of select="$parameterList/platform[1]" />
+          <xsl:value-of select="$uniquePlatforms/platform" separator=", "/>
           <xsl:text> | IMOS Scientific Research Data </xsl:text>
           <xsl:value-of select="$organisation" />
           <xsl:text> | Integrated Marine Observing System</xsl:text>
@@ -153,16 +143,43 @@
             <xsl:value-of select="$parameterList/broader" separator=", "/>
             <xsl:text> in the oceans, seas and/or atmosphere near </xsl:text>
             <xsl:value-of select="$landMasses" separator=", "/>
-
             <xsl:text> using </xsl:text>
-            <xsl:text>. The </xsl:text>
+            <xsl:value-of select="$uniquePlatforms/platform" separator=", "/>
+            <xsl:text>. </xsl:text>
+
+            <xsl:text>The </xsl:text>
             <xsl:value-of select="$organisation"/>
+            <xsl:text> scientific research data sets are accessible through the IMOS Portal.</xsl:text>
+
           </xsl:attribute>
         </meta>
-
-
-
       </head>
+
+      <body>
+        <header>
+          <!-- Page Content -->
+          <h1>
+            <xsl:value-of select="$parameterList/broader" separator=", "/>
+            <xsl:text> | Oceans Seas Atmosphere</xsl:text>
+          </h1>
+  
+          <h2>
+            <xsl:value-of select="$waterBodies" separator=", "/>
+          </h2>
+
+          <!-- TODO: should the header end here? -->
+          <h3>
+            <xsl:text> Scientific Research Measurement Data recorded off the coast(s) of </xsl:text>
+            <xsl:value-of select="$landMasses" separator=", "/>
+          </h3>
+
+
+
+        </header>
+      </body>
+
+
+
     </html>
 
 
@@ -198,37 +215,6 @@
         <xsl:text>&#xa;</xsl:text>
         <html>
         <head>
-          <!-- Page Meta Title -->
-          <title>
-            <xsl:value-of select="$parameter"/>
-            <xsl:text> </xsl:text>
-            <xsl:value-of select="$waterBody"/>
-            <xsl:text>, </xsl:text>
-            <xsl:value-of select="$landMasses" separator=", "/>
-            <xsl:text> </xsl:text>
-            <xsl:value-of select="$platform" />
-            <xsl:text> IMOS Scientific Research Data </xsl:text>
-            <xsl:value-of select="$organisation" />
-            <xsl:text> Integrated Marine Observing System</xsl:text>
-          </title>
-
-          <meta charset="utf-8"/>
-
-          <!-- Page Meta Description -->
-          <meta name="description">
-            <xsl:attribute name="content">
-              <xsl:value-of select="$parameter"/>
-              <xsl:text> in the </xsl:text>
-              <xsl:value-of select="$waterBody"/>
-              <xsl:text> near </xsl:text>
-              <xsl:value-of select="$landMasses" separator=", "/>
-              <xsl:text> using </xsl:text>
-              <xsl:value-of select="$platform"/>
-              <xsl:text>. The </xsl:text>
-              <xsl:value-of select="$organisation"/>
-            </xsl:attribute>
-          </meta>
-
           <style type="text/css" media="screen">
             .button-link {
               padding: 10px 15px;
@@ -243,19 +229,6 @@
         <body>
           <header>
             <!-- Page Content -->
-            <h1>
-              <xsl:value-of select="$parameter" />
-              <xsl:text> in the </xsl:text>
-              <xsl:value-of select="$waterBody"/>
-              <xsl:text>.</xsl:text>
-            </h1>
-
-            <h2>
-              <xsl:text>Scientific Research Data obtained off the coast(s) of </xsl:text>
-              <xsl:value-of select="$landMasses" separator=", "/>
-              <xsl:text>.</xsl:text>
-            </h2>
-
             <p>
               <xsl:text>The </xsl:text>
               <xsl:value-of select="$title" />
