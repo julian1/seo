@@ -173,9 +173,31 @@
             <xsl:value-of select="$landMasses" separator=", "/>
           </h3>
 
-
-
+          <p>
+            <xsl:value-of select="$title" />
+            <xsl:text>. This data is collected by a combination of </xsl:text>
+            <xsl:value-of select="$uniquePlatforms/platform" separator=", "/>
+            <xsl:text> in the </xsl:text>
+            <xsl:value-of select="$waterBodies" separator=", "/>
+            <xsl:text> off the coastlines(s) by </xsl:text>
+            <xsl:value-of select="$organisation"/>
+            <xsl:text>.</xsl:text>
+          </p>
         </header>
+
+        <div>
+          <xsl:text>The </xsl:text>
+          <xsl:value-of select="$parameterList/broader" separator=", "/>
+          <xsl:text> data sets are useful for scientific and/or academic research and are free to download from the IMOS Portal.</xsl:text>
+        </div>
+
+        <h2>
+          <xsl:value-of select="$parameterList/broader" separator=", "/>
+          <xsl:text> Data Collection Map</xsl:text>
+        </h2>
+
+
+
       </body>
 
 
@@ -229,29 +251,9 @@
         <body>
           <header>
             <!-- Page Content -->
-            <p>
-              <xsl:text>The </xsl:text>
-              <xsl:value-of select="$title" />
-              <xsl:text> is collected by a combination of </xsl:text>
-              <xsl:value-of select="$platform"/>
-              <xsl:text> in the </xsl:text>
-              <xsl:value-of select="$waterBody"/>
-              <xsl:text> off the coastlines(s) by </xsl:text>
-              <xsl:value-of select="$organisation"/>
-              <xsl:text>.</xsl:text>
-            </p>
           </header>
 
-          <xsl:text>The </xsl:text>
-          <xsl:value-of select="$parameter" />
-          <xsl:text> data sets are useful for scientific and/or academic research and are free to download from the IMOS Portal.</xsl:text>
-
           <!-- avoid xsl generating self-closing p as non valid html -->
-          <h2>
-            <xsl:value-of select="$parameter" />
-            <xsl:text> Data Collection Map</xsl:text>
-          </h2>
-
 
 
           <div>
