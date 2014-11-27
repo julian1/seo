@@ -109,29 +109,52 @@
           <xsl:value-of select="$broader" />
         </xsl:element>
 
+
+        <xsl:element name="platform">
+          <xsl:value-of select="mcp:platform/mcp:DP_Term/mcp:term/gco:CharacterString" />
+        </xsl:element>
+
       </xsl:for-each>
     </xsl:variable>
 
 
 
-       <xsl:text>&#xa;------1------&#xa;</xsl:text> 
-          <xsl:for-each select="$parameterList/broader" >
-            <xsl:value-of select="." />
-           <xsl:text>,</xsl:text> 
-          </xsl:for-each>
+      <xsl:text>&#xa;------broader------&#xa;</xsl:text> 
+      <xsl:value-of select="$parameterList/broader" separator=", "/>
 
-       <xsl:text>&#xa;------2------&#xa;</xsl:text> 
-          <xsl:value-of select="$parameterList" separator=", "/>
+      <xsl:text>&#xa;------longName------&#xa;</xsl:text> 
+      <xsl:value-of select="$parameterList/longName" separator=", "/>
 
-       <xsl:text>&#xa;------3------&#xa;</xsl:text> 
-          <xsl:value-of select="$parameterList/broader" separator="-"/>
+      <xsl:text>&#xa;------platform------&#xa;</xsl:text> 
+      <xsl:value-of select="$parameterList/platform" separator=", "/>
 
-       <xsl:text>&#xa;------4------&#xa;</xsl:text> 
-          <xsl:value-of select="$parameterList/longName" separator="-"/>
 
+      <xsl:text>&#xa;------first platform------&#xa;</xsl:text> 
+      <xsl:value-of select="$parameterList/platform[1]" />
 
 
        <xsl:text>&#xa;</xsl:text> 
+
+        <html>
+        <head>
+          <!-- Page Meta Title -->
+          <title>
+            <xsl:value-of select="$parameterList/broader" separator=", "/>
+            <xsl:text> | Seas Oceans Atmosphere | </xsl:text>
+            <xsl:text> </xsl:text>
+
+      <xsl:value-of select="$parameterList/platform[1]" />
+
+
+            <xsl:text> | IMOS Scientific Research Data </xsl:text>
+            <xsl:value-of select="$organisation" />
+            <xsl:text> Integrated Marine Observing System</xsl:text>
+          </title>
+
+
+        </head>
+       </html>
+
 
 
 
