@@ -211,62 +211,85 @@
             </p>
           </header>
 
-        <div>
-          <xsl:text>The </xsl:text>
-          <xsl:value-of select="$parameterList/broader" separator=", "/>
-          <xsl:text> data sets are useful for scientific and/or academic research and are free to download from the IMOS Portal.</xsl:text>
-        </div>
-
-
-        <div class="row">
-          <div class="col-md-4">
-
-            <h2>
-              <xsl:value-of select="$parameterList/broader" separator=", "/>
-              <xsl:text> Data Collection Map</xsl:text>
-            </h2>
-
-            <div>
-              <xsl:element name="img">
-                <xsl:attribute name="src">
-                  <!-- the browser is responsible for transforming &amp; to & when method is html -->
-                  <!-- TODO extract the real extent -->
-                  <xsl:value-of select="'http://maps.googleapis.com/maps/api/staticmap?size=300x300&amp;maptype=satellite&amp;path=color%3aorange%7Cweight:3%7C-28,153%7C-27,153%7C-27,156%7C-28,156%7C-28,153&amp;path=color%3aorange%7Cweight:3%7C-10,127%7C-8,127%7C-8,128%7C-10,128%7C-10,127'" disable-output-escaping="yes" />
-                </xsl:attribute>
-                <xsl:attribute name="alt">Geographical extent</xsl:attribute>
-              </xsl:element>
-            </div>
+          <div>
+            <xsl:text>The </xsl:text>
+            <xsl:value-of select="$parameterList/broader" separator=", "/>
+            <xsl:text> data sets are useful for scientific and/or academic research and are free to download from the IMOS Portal.</xsl:text>
           </div>
 
-          <div class="col-md-8">
- 
-            <div>
-              <xsl:element name="a">
 
-                <xsl:attribute name="href">
-                  <xsl:value-of select="concat('https://imos.aodn.org.au/imos123/home?uuid=', $uuid)"/>
-                </xsl:attribute>
-                <xsl:attribute name="class">button-link</xsl:attribute>
+          <div class="row">
+            <div class="col-md-4">
 
-                <xsl:value-of select="'Download a '"/>
+              <h2>
                 <xsl:value-of select="$parameterList/broader" separator=", "/>
-                <xsl:value-of select="' Data Set'"/>
-              </xsl:element>
-            </div>
+                <xsl:text> Data Collection Map</xsl:text>
+              </h2>
 
-            <h2>
-              <xsl:value-of select="string-join(('About the ', $title, ' Data Set'), '')"/>
-            </h2>
+              <div>
+                <xsl:element name="img">
+                  <xsl:attribute name="src">
+                    <!-- the browser is responsible for transforming &amp; to & when method is html -->
+                    <!-- TODO extract the real extent -->
+                    <xsl:value-of select="'http://maps.googleapis.com/maps/api/staticmap?size=300x300&amp;maptype=satellite&amp;path=color%3aorange%7Cweight:3%7C-28,153%7C-27,153%7C-27,156%7C-28,156%7C-28,153&amp;path=color%3aorange%7Cweight:3%7C-10,127%7C-8,127%7C-8,128%7C-10,128%7C-10,127'" disable-output-escaping="yes" />
+                  </xsl:attribute>
+                  <xsl:attribute name="alt">Geographical extent</xsl:attribute>
+                </xsl:element>
+              </div>
+            </div> <!-- col -->
 
-            <p>
-              <xsl:call-template name="replace">
-                <xsl:with-param name="string" select="$abstract"/>
-              </xsl:call-template>
-            </p>
+            <div class="col-md-8">
+   
+              <div>
+                <xsl:element name="a">
 
+                  <xsl:attribute name="href">
+                    <xsl:value-of select="concat('https://imos.aodn.org.au/imos123/home?uuid=', $uuid)"/>
+                  </xsl:attribute>
+                  <xsl:attribute name="class">button-link</xsl:attribute>
+
+                  <xsl:value-of select="'Download a '"/>
+                  <xsl:value-of select="$parameterList/broader" separator=", "/>
+                  <xsl:value-of select="' Data Set'"/>
+                </xsl:element>
+              </div>
+
+              <h2>
+                <xsl:value-of select="string-join(('About the ', $title, ' Data Set'), '')"/>
+              </h2>
+
+              <p>
+                <xsl:call-template name="replace">
+                  <xsl:with-param name="string" select="$abstract"/>
+                </xsl:call-template>
+              </p>
+            </div> <!-- col -->
+
+          </div> <!-- row -->
+
+        </div> <!-- container -->
+
+    <div class="jumbotronFooter voffset5">
+      <div class="container">
+        <footer class="row">
+          <div class="col-md-4">
+              <p>If you've found this information useful, see something wrong, or have a suggestion, please let us
+                  know.
+                  All feedback is very welcome. For help and information about this site
+                  please contact <a href="mailto:info@emii.org.au">info@emii.org.au</a>
+              </p>
           </div>
+          <div class="col-md-8">
+              <p>Use of this web site and information available from it is subject to our
+                  <a href="http://imos.org.au/imostermsofuse0.html">Conditions of use</a>
+              </p>
+              <p> 2014 IMOS</p>
           </div>
-        </div>
+        </footer>
+      </div>
+      </div>
+
+
       </body>
 
     </html>
