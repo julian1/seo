@@ -59,26 +59,6 @@
     abstract:     '<xsl:value-of select="$abstract" />'
   -->
 
-  <!-- 
-    so we actually want the uri not the 
-
-    <mcp:term>
-      <gco:CharacterString>Practical salinity of the water body</gco:CharacterString>
-    </mcp:term>
-    <mcp:type>
-      <mcp:DP_TypeCode codeList="http://schemas.aodn.org.au/mcp-2.0/schema/resources/Codelist/gmxCodelists.xml#DP_TypeCode" codeListValue="longName">longName</mcp:DP_TypeCode>
-    </mcp:type>
-    <mcp:vocabularyRelationship>
-      <mcp:DP_VocabularyRelationship>
-        <mcp:relationshipType>
-          <mcp:DP_RelationshipTypeCode codeList="http://schemas.aodn.org.au/mcp-2.0/schema/resources/Codelist/gmxCodelists.xml#DP_RelationshipTypeCode" codeListValue="skos:exactMatch">skos:exactMatch</mcp:DP_RelationshipTypeCode>
-        </mcp:relationshipType>
-        <mcp:vocabularyTermURL>
-          <gmd:URL>http://vocab.nerc.ac.uk/collection/P01/current/PSLTZZ01</gmd:URL>
-
-
-  -->
-
     <xsl:variable name="geonetworkUrl" select="'http://10.11.12.13'"/>
     <xsl:variable name="thesaurus" select="'external.theme.parameterClassificationScheme'"/>
 
@@ -109,36 +89,39 @@
 
 
 
-      <xsl:text>&#xa;------broader------&#xa;</xsl:text> 
-      <xsl:value-of select="$parameterList/broader" separator=", "/>
+    <xsl:text>&#xa;------broader------&#xa;</xsl:text> 
+    <xsl:value-of select="$parameterList/broader" separator=", "/>
 
-      <xsl:text>&#xa;------longName------&#xa;</xsl:text> 
-      <xsl:value-of select="$parameterList/longName" separator=", "/>
+    <xsl:text>&#xa;------longName------&#xa;</xsl:text> 
+    <xsl:value-of select="$parameterList/longName" separator=", "/>
 
-      <xsl:text>&#xa;------platform------&#xa;</xsl:text> 
-      <xsl:value-of select="$parameterList/platform" separator=", "/>
+    <xsl:text>&#xa;------platform------&#xa;</xsl:text> 
+    <xsl:value-of select="$parameterList/platform" separator=", "/>
+
+    <xsl:text>&#xa;------first platform------&#xa;</xsl:text> 
+    <xsl:value-of select="$parameterList/platform[1]" />
+
+    <xsl:text>&#xa;</xsl:text> 
 
 
-      <xsl:text>&#xa;------first platform------&#xa;</xsl:text> 
-      <xsl:value-of select="$parameterList/platform[1]" />
+    <!-- doctype -->
+    <xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html></xsl:text>
+    <xsl:text>&#xa;</xsl:text>
 
-
-       <xsl:text>&#xa;</xsl:text> 
-
-        <html>
-        <head>
-          <!-- Page Meta Title -->
-          <title>
-            <xsl:value-of select="$parameterList/broader" separator=", "/>
-            <xsl:text> | Seas Oceans Atmosphere | </xsl:text>
-            <!-- take the first platform -->
-            <xsl:value-of select="$parameterList/platform[1]" />
-            <xsl:text> | IMOS Scientific Research Data </xsl:text>
-            <xsl:value-of select="$organisation" />
-            <xsl:text> | Integrated Marine Observing System</xsl:text>
-          </title>
-        </head>
-       </html>
+    <html>
+      <head>
+        <!-- Page Meta Title -->
+        <title>
+          <xsl:value-of select="$parameterList/broader" separator=", "/>
+          <xsl:text> | Seas Oceans Atmosphere | </xsl:text>
+          <!-- take the first platform -->
+          <xsl:value-of select="$parameterList/platform[1]" />
+          <xsl:text> | IMOS Scientific Research Data </xsl:text>
+          <xsl:value-of select="$organisation" />
+          <xsl:text> | Integrated Marine Observing System</xsl:text>
+        </title>
+      </head>
+    </html>
 
 
 
