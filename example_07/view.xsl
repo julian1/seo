@@ -283,7 +283,7 @@
               <p>Use of this web site and information available from it is subject to our
                   <a href="http://imos.org.au/imostermsofuse0.html">Conditions of use</a>
               </p>
-              <p> 2014 IMOS</p>
+              <p>&#169; 2014 IMOS</p>
           </div>
         </footer>
       </div>
