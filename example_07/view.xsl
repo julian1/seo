@@ -83,35 +83,25 @@
     <xsl:variable name="thesaurus" select="'external.theme.parameterClassificationScheme'"/>
 
 
-    <!-- Ideally rather than text joining stuff together with - it would be good to assemble 
-        a parent and set of child nodes.
-        which we can then for-each over again
-    --> 
-
+    <!-- Construct an intermediate node with all values in one place --> 
     <xsl:variable name="parameterList">
       <xsl:for-each select="$parameters" >
 
-        <xsl:variable name="longName" select="mcp:parameterName/mcp:DP_Term/mcp:type/mcp:DP_TypeCode[text() = 'longName']/../../mcp:term/gco:CharacterString" />
-
         <xsl:element name="longName">
-          <xsl:value-of select="$longName" />
+          <xsl:value-of select="mcp:parameterName/mcp:DP_Term/mcp:type/mcp:DP_TypeCode[text() = 'longName']/../../mcp:term/gco:CharacterString" />
         </xsl:element>
 
+        <xsl:element name="platform">
+          <xsl:value-of select="mcp:platform/mcp:DP_Term/mcp:term/gco:CharacterString" />
+        </xsl:element>
 
-        <!-- this needs to be fixed - so it's not the long name -->
+        <!-- TODO: change so it doesn't go via the long name -->
         <xsl:variable name="term" select="mcp:parameterName/mcp:DP_Term/mcp:type/mcp:DP_TypeCode[text() = 'longName']/../../mcp:vocabularyRelationship/mcp:DP_VocabularyRelationship/mcp:vocabularyTermURL/gmd:URL" />
 
         <xsl:variable name="request" select="string-join(($geonetworkUrl, '/geonetwork/srv/en/xml.search.keywordlink?request=broader&amp;thesaurus=', $thesaurus, '&amp;id=', $term ),'')" />
 
-        <xsl:variable name="broader" select="document($request)/response/narrower/descKeys/keyword/values/value[@language='eng']"  />
-
         <xsl:element name="broader">
-          <xsl:value-of select="$broader" />
-        </xsl:element>
-
-
-        <xsl:element name="platform">
-          <xsl:value-of select="mcp:platform/mcp:DP_Term/mcp:term/gco:CharacterString" />
+          <xsl:value-of select="document($request)/response/narrower/descKeys/keyword/values/value[@language='eng']" />
         </xsl:element>
 
       </xsl:for-each>
@@ -141,17 +131,12 @@
           <title>
             <xsl:value-of select="$parameterList/broader" separator=", "/>
             <xsl:text> | Seas Oceans Atmosphere | </xsl:text>
-            <xsl:text> </xsl:text>
-
-      <xsl:value-of select="$parameterList/platform[1]" />
-
-
+            <!-- take the first platform -->
+            <xsl:value-of select="$parameterList/platform[1]" />
             <xsl:text> | IMOS Scientific Research Data </xsl:text>
             <xsl:value-of select="$organisation" />
-            <xsl:text> Integrated Marine Observing System</xsl:text>
+            <xsl:text> | Integrated Marine Observing System</xsl:text>
           </title>
-
-
         </head>
        </html>
 
