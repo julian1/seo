@@ -246,7 +246,7 @@
                   <xsl:attribute name="href">
                     <xsl:value-of select="concat('https://imos.aodn.org.au/imos123/home?uuid=', $uuid)"/>
                   </xsl:attribute>
-                  <xsl:attribute name="class">btn btn-primary active voffset4</xsl:attribute>
+                  <xsl:attribute name="class">btn btn-primary voffset4</xsl:attribute>
                   <xsl:attribute name="role">button</xsl:attribute>
 
 
