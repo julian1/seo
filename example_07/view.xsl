@@ -98,26 +98,33 @@
     </xsl:variable>
 
 
-    <xsl:text>&#xa;------broader------&#xa;</xsl:text> 
-    <xsl:value-of select="$parameterList/broader" separator=", "/>
+    <xsl:variable name="filename">
+      <xsl:value-of select="$parameterList/broader" separator="-"/>
+      <xsl:text>.html</xsl:text>
+    </xsl:variable>
 
-    <xsl:text>&#xa;------longName------&#xa;</xsl:text> 
-    <xsl:value-of select="$parameterList/longName" separator=", "/>
 
-    <xsl:text>&#xa;------platform------&#xa;</xsl:text> 
-    <xsl:value-of select="$parameterList/platform" separator=", "/>
+    <xsl:text>&#xa;      filename &#xa;</xsl:text> 
+    <xsl:value-of select="$filename"/>
 
-    <xsl:text>&#xa;------ uniquePlatforms ------&#xa;</xsl:text> 
-    <xsl:value-of select="$uniquePlatforms/platform" separator=", "/>
+    <!-- 
+    <xsl:text>&#xa;      broader      &#xa;</xsl:text> 
+    <xsl:value of select="$parameterList/broader" separator=", "/>
 
-    <!-- xsl:for-each-group select="$parameterList" group-by="platform">
-      <xsl:value-of select="current-grouping-key()"/>
-    </xsl:for-each-group-->
+    <xsl:text>&#xa;      longName      &#xa;</xsl:text> 
+    <xsl:value of select="$parameterList/longName" separator=", "/>
 
+    <xsl:text>&#xa;      platform      &#xa;</xsl:text> 
+    <xsl:value of select="$parameterList/platform" separator=", "/>
+
+    <xsl:text>&#xa;       uniquePlatforms       &#xa;</xsl:text> 
+    <xsl:value of select="$uniquePlatforms/platform" separator=", "/>
 
     <xsl:text>&#xa;</xsl:text> 
+    -->
 
 
+    <xsl:result-document method="xml" href="output/{ encode-for-uri( $filename)}">
     <!-- doctype -->
     <xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html></xsl:text>
     <xsl:text>&#xa;</xsl:text>
@@ -171,6 +178,7 @@
           <h3>
             <xsl:text> Scientific Research Measurement Data recorded off the coast(s) of </xsl:text>
             <xsl:value-of select="$landMasses" separator=", "/>
+            <xsl:text>. </xsl:text>
           </h3>
 
           <p>
@@ -235,114 +243,8 @@
 
       </body>
 
-
-
     </html>
-
-
-
-
-    <xsl:for-each select="$parameters" >
-    
-      <!-- TODO this should be restricted by code list as well as longName -->
-      <xsl:variable name="parameter" select="mcp:parameterName/mcp:DP_Term/mcp:type/mcp:DP_TypeCode[text() = 'longName']/../../mcp:term/gco:CharacterString" />
-      <xsl:variable name="platform" select="mcp:platform/mcp:DP_Term/mcp:term/gco:CharacterString" />
-
-    <xsl:for-each select="$waterBodies" >
-
-      <xsl:variable name="waterBody" select="." />
-
-
-      <xsl:variable name="filename">
-        <xsl:value-of select='replace($parameter, " ","-")'/>
-        <xsl:text>-</xsl:text>
-        <xsl:value-of select='replace($waterBody, " ","-")'/>
-        <xsl:text>.html</xsl:text>
-      </xsl:variable>
-
-      <!--
-      water bodies: '<xsl:value-of select="$waterBodies" separator="', '"/>'
-      parameter     '<xsl:value-of select="$parameter" />'
-      platform      '<xsl:value-of select="$platform" />'
-      filename      '<xsl:value-of select="$filename" />'
-      -->
-
-      <xsl:result-document method="xml" href="output/{ encode-for-uri( $filename)}">
-        <xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html></xsl:text>
-        <xsl:text>&#xa;</xsl:text>
-        <html>
-        <head>
-          <style type="text/css" media="screen">
-            .button-link {
-              padding: 10px 15px;
-              background: #4479BA;
-              color: #FFF;
-              border-radius: 4px;
-            }
-          </style>
-
-        </head>
-
-        <body>
-          <header>
-            <!-- Page Content -->
-          </header>
-
-          <!-- avoid xsl generating self-closing p as non valid html -->
-
-
-
-          <!-- http://stackoverflow.com/questions/2906582/how-to-create-an-html-button-that-acts-like-a-link -->
-
-          <!-- this form approach doesn't work as the client browser strips the uuid parameter -->
-          <!-- xsl:element name="form">
-            <xsl:attribute name="action">
-              <xsl:value-of select="concat( 'https://imos.aodn.org.au/imos123/home?uuid=', $uuid)"/>
-            </xsl:attribute>
-            <xsl:element name="input">
-              <xsl:attribute name="type">submit</xsl:attribute>
-              <xsl:attribute name="value">
-                <xsl:value-of select="$parameter"/>
-              </xsl:attribute>
-            </xsl:element>
-          </xsl:element -->
-
-          <!-- works but obscures the link -->
-          <!-- xsl:element name="button">
-            <xsl:attribute name="onclick">
-              <xsl:value-of select="concat( concat( 'location.href=''https://imos.aodn.org.au/imos123/home?uuid=', $uuid), '''')"/>
-            </xsl:attribute>
-            <xsl:value-of select="$parameter"/>
-          </xsl:element -->
-
-            <!-- Good because doesn't hide the link, http://stackoverflow.com/questions/710089/how-do-i-make-an-html-link-look-like-a-button -->
-            <!-- but validator complains - 'The element button must not appear as a descendant of the a element' -->
-          <!-- div>
-            <xsl:element name="a">
-              <xsl:attribute name="href">
-                <xsl:value-of select="concat( 'https://imos.aodn.org.au/imos123/home?uuid=', $uuid)"/>
-              </xsl:attribute>
-              <button type="button">
-                <xsl:value-of select="string-join(('Download a ', $parameter, ' Data Set'), '')"/>
-              </button>
-            </xsl:element>
-          </div -->
-
-          <!-- just style as a button -->
-
-
-          <p>
-            <xsl:call-template name="replace">
-              <xsl:with-param name="string" select="$abstract"/>
-            </xsl:call-template>
-            <!-- xsl:copy-of select="translate( $abstract, ' ', '&lt;br /&gt; <br/>' )"/ -->
-          </p>
-
-        </body>
-        </html>
-      </xsl:result-document>
-    </xsl:for-each>
-    </xsl:for-each>
+    </xsl:result-document>
 
 
     <!-- output an index file -->
@@ -356,36 +258,14 @@
           <meta name="description" content="List of parameters, The eMarine Information Infrastructure (eMII)"/>
         </head>
         <body>
-          <ul>
-            <xsl:for-each select="$parameters">
 
-              <xsl:variable name="parameter" select="mcp:parameterName/mcp:DP_Term/mcp:type/mcp:DP_TypeCode[text() = 'longName']/../../mcp:term/gco:CharacterString" />
+          <xsl:element name="a">
+            <xsl:attribute name="href">
+              <xsl:value-of select="encode-for-uri( $filename)"/>
+            </xsl:attribute>
+            <xsl:value-of select='$filename'/>
+          </xsl:element>
 
-                <xsl:for-each select="$waterBodies" >
-
-                  <xsl:variable name="waterBody" select="." />
-
-                  <xsl:variable name="filename">
-                    <xsl:value-of select='replace($parameter, " ","-")'/>
-                    <xsl:text>-</xsl:text>
-                    <xsl:value-of select='replace($waterBody, " ","-")'/>
-                    <xsl:text>.html</xsl:text>
-                  </xsl:variable>
-
-                  <li>
-                  <xsl:element name="a">
-                    <xsl:attribute name="href">
-                      <xsl:value-of select="$filename"/>
-                    </xsl:attribute>
-
-                    <!-- xsl:value-of select="string-join(('$parameter', '-in-the-', '$waterBody'), '')"/-->
-                    <xsl:value-of select='$filename'/>
-
-                  </xsl:element>
-                  </li>
-                </xsl:for-each>
-            </xsl:for-each>
-          </ul>
         </body>
       </html>
     </xsl:result-document>
