@@ -207,8 +207,31 @@
           </xsl:element>
         </div>
 
+        <br/>
 
+        <div>
+          <xsl:element name="a">
 
+            <xsl:attribute name="href">
+              <xsl:value-of select="concat('https://imos.aodn.org.au/imos123/home?uuid=', $uuid)"/>
+            </xsl:attribute>
+            <xsl:attribute name="class">button-link</xsl:attribute>
+
+            <xsl:value-of select="'Download a '"/>
+            <xsl:value-of select="$parameterList/broader" separator=", "/>
+            <xsl:value-of select="' Data Set'"/>
+          </xsl:element>
+        </div>
+
+        <h2>
+          <xsl:value-of select="string-join(('About the ', $title, ' Data Set'), '')"/>
+        </h2>
+
+        <p>
+          <xsl:call-template name="replace">
+            <xsl:with-param name="string" select="$abstract"/>
+          </xsl:call-template>
+        </p>
 
       </body>
 
@@ -307,23 +330,6 @@
 
           <!-- just style as a button -->
 
-          <br/>
-
-          <div>
-            <xsl:element name="a">
-              <xsl:attribute name="href">
-                <xsl:value-of select="concat( 'https://imos.aodn.org.au/imos123/home?uuid=', $uuid)"/>
-              </xsl:attribute>
-              <xsl:attribute name="class">button-link</xsl:attribute>
-              <xsl:value-of select="string-join(('Download a ', $parameter, ' Data Set'), '')"/>
-            </xsl:element>
-          </div>
-
-
-
-          <h2>
-            <xsl:value-of select="string-join(('About the ', $title, ' Data Set'), '')"/>
-          </h2>
 
           <p>
             <xsl:call-template name="replace">
