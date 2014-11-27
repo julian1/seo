@@ -196,6 +196,18 @@
           <xsl:text> Data Collection Map</xsl:text>
         </h2>
 
+        <div>
+          <xsl:element name="img">
+            <xsl:attribute name="src">
+              <!-- the browser is responsible for transforming &amp; to & when method is html -->
+              <!-- TODO extract the real extent -->
+              <xsl:value-of select="'http://maps.googleapis.com/maps/api/staticmap?size=300x300&amp;maptype=satellite&amp;path=color%3aorange%7Cweight:3%7C-28,153%7C-27,153%7C-27,156%7C-28,156%7C-28,153&amp;path=color%3aorange%7Cweight:3%7C-10,127%7C-8,127%7C-8,128%7C-10,128%7C-10,127'" disable-output-escaping="yes" />
+            </xsl:attribute>
+            <xsl:attribute name="alt">Geographical extent</xsl:attribute>
+          </xsl:element>
+        </div>
+
+
 
 
       </body>
@@ -255,17 +267,6 @@
 
           <!-- avoid xsl generating self-closing p as non valid html -->
 
-
-          <div>
-            <xsl:element name="img">
-              <xsl:attribute name="src">
-                <!-- the browser is responsible for transforming &amp; to & when method is html -->
-                <!-- TODO extract the real extent -->
-                <xsl:value-of select="'http://maps.googleapis.com/maps/api/staticmap?size=300x300&amp;maptype=satellite&amp;path=color%3aorange%7Cweight:3%7C-28,153%7C-27,153%7C-27,156%7C-28,156%7C-28,153&amp;path=color%3aorange%7Cweight:3%7C-10,127%7C-8,127%7C-8,128%7C-10,128%7C-10,127'" disable-output-escaping="yes" />
-              </xsl:attribute>
-              <xsl:attribute name="alt">Geographical extent</xsl:attribute>
-            </xsl:element>
-          </div>
 
 
           <!-- http://stackoverflow.com/questions/2906582/how-to-create-an-html-button-that-acts-like-a-link -->
