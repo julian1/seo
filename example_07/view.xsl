@@ -54,14 +54,18 @@
     <!-- take the right most element of the land mass separated by | -->
     <xsl:variable name="waterBodiesTidied">
       <xsl:for-each select="$waterBodies">
-          <xsl:value-of select="replace(., '.*\|(.*)','$1')"/>
+          <xsl:element name="water-body">
+            <xsl:value-of select="replace(., '.*\|(.*)','$1')"/>
+          </xsl:element>
       </xsl:for-each>
     </xsl:variable>
 
     <!-- take the right most element of the water body separated by | -->
     <xsl:variable name="landMassesTidied">
       <xsl:for-each select="$landMasses">
-          <xsl:value-of select="replace(., '.*\|(.*)','$1')"/>
+          <xsl:element name="land-mass">
+            <xsl:value-of select="replace(., '.*\|(.*)','$1')"/>
+          </xsl:element>
       </xsl:for-each>
     </xsl:variable>
 
@@ -70,9 +74,9 @@
     uuid :        '<xsl:value-of select="$uuid"/>'
     organisation: '<xsl:value-of select="$organisation"/>'
     water bodies: '<xsl:value-of select="$waterBodies" separator="', '"/>'
-    water bodies2: '<xsl:value-of select="$waterBodiesTidied" separator="', '"/>'
+    water bodies2: '<xsl:value-of select="$waterBodiesTidied/water-body" separator="', '"/>'
     land masses:  '<xsl:value-of select="$landMasses" separator="', '"/>'
-    land masses2:  '<xsl:value-of select="$landMassesTidied" separator="', '"/>'
+    land masses2:  '<xsl:value-of select="$landMassesTidied/land-mass" separator="', '"/>'
     title:        '<xsl:value-of select="$title" />'
     -->
     <!-- abstract:     '<xsl:value-of select="$abstract" />' -->
@@ -152,7 +156,7 @@
 
     <xsl:variable name="filename">
       <xsl:value-of select="$title" separator="-"/>
-      <xsl:text> </xsl:text>
+      <xsl:text> | </xsl:text>
       <xsl:value-of select="$uniqueParameters/broader" separator="-"/>
       <xsl:text>.html</xsl:text>
     </xsl:variable>
@@ -189,7 +193,7 @@
 
             <xsl:value-of select="$uniqueParameters/broader" separator=", "/>
             <xsl:text> in the oceans, seas and/or atmosphere near </xsl:text>
-            <xsl:value-of select="$landMassesTidied" separator=", "/>
+            <xsl:value-of select="$landMassesTidied/land-mass" separator=", "/>
             <xsl:text> using </xsl:text>
             <xsl:value-of select="$uniquePlatforms/platform" separator=", "/>
             <xsl:text>. </xsl:text>
@@ -224,13 +228,13 @@
             </h1>
     
             <h2>
-              <xsl:value-of select="$waterBodiesTidied" separator=", "/>
+              <xsl:value-of select="$waterBodiesTidied/water-body" separator=", "/>
             </h2>
 
             <!-- TODO: should the header end here? -->
             <h3>
               <xsl:text> Scientific Research Measurement Data recorded off the coast(s) of </xsl:text>
-              <xsl:value-of select="$landMassesTidied" separator=", "/>
+              <xsl:value-of select="$landMassesTidied/land-mass" separator=", "/>
               <xsl:text>. </xsl:text>
             </h3>
 
@@ -239,7 +243,7 @@
               <xsl:text>. This data is collected by a combination of </xsl:text>
               <xsl:value-of select="$uniquePlatforms/platform" separator=", "/>
               <xsl:text> in the </xsl:text>
-              <xsl:value-of select="$waterBodiesTidied" separator=", "/>
+              <xsl:value-of select="$waterBodiesTidied/water-body" separator=", "/>
               <xsl:text> off the coastlines(s) by </xsl:text>
               <xsl:value-of select="$organisation"/>
               <xsl:text>.</xsl:text>
