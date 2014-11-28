@@ -1,0 +1,20 @@
+
+https://10.11.12.13/geonetwork/srv/eng/xml.search.keywordlink?request=broader&thesaurus=external.theme.parameterClassificationScheme&id=http://vocab.nerc.ac.uk/collection/P01/current/PSLTZZ01
+
+----
+
+http://localhost:8080/geonetwork/srv/en/xml.search.keywordlink?request=broader&thesaurus=external.discipline.Simplified__Parameters200912&id=http://resource.wagcoe.ivec.org/classifier/auscope/simplified_parameters/200912/T
+
+
+external.theme.parameterClassificationScheme
+http://vocab.nerc.ac.uk/collection/P01/current/PSLTZZ01
+
+# service exists. 
+http://10.11.12.13/geonetwork/srv/en/xml.search.keywordlink?request=broader&thesaurus=external.theme.parameterClassificationScheme&id=http://vocab.nerc.ac.uk/collection/P01/current/PSLTZZ01 
+
+																					  external.theme.parameterClassificationScheme
+
+WORKs
+Get thesaurus list	http://10.11.12.13/geonetwork/srv/en/xml.thesaurus.getList
+
+
