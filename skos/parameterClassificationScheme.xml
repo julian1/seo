@@ -1,0 +1,2095 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:dcterms="http://purl.org/dc/terms/"
+xmlns:foaf="http://xmlns.com/foaf/0.1/">
+<!-- Generated, 2014-10-16 17:33:17 +1100 -->
+<!-- TODO fix organisation element which is repeated twice -->
+<skos:ConceptScheme rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1">
+  <dc:title>AODN classified vocabulary</dc:title>
+  <dc:description>A classification scheme to support faceted searching across parameter types in the IMOS 123 Portal.</dc:description>
+    <dc:creator>
+      <foaf:Organisation>
+        <foaf:name>Integrated Marine Observing System</foaf:name>
+      </foaf:Organisation>
+    </dc:creator>
+    <dc:publisher>
+      <foaf:Organisation>
+        <foaf:name>Mancini, Sebastien</foaf:name>
+      </foaf:Organisation>
+    </dc:publisher>
+    <dc:publisher>
+      <foaf:Organisation>
+        <foaf:name>Mancini, Sebastien</foaf:name>
+      </foaf:Organisation>
+    </dc:publisher>
+  <dc:rights>Freely Available For Reuse</dc:rights>
+  <dcterms:issued>2014-06-01</dcterms:issued>
+</skos:ConceptScheme>
+<skos:TopConcept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/53">
+    <skos:prefLabel xml:lang="en">Physical-Atmosphere</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing physical atmosphere parameters</skos:definition>
+    <dcterms:issued>2014-06-01</dcterms:issued>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/6"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/7"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/8"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/9"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/10"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/22"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/30"/>
+</skos:TopConcept>
+<skos:TopConcept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/54">
+    <skos:prefLabel xml:lang="en">Chemical</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing chemicalparameters</skos:definition>
+    <dcterms:issued>2014-06-01</dcterms:issued>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/11"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/52"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/27"/>
+</skos:TopConcept>
+<skos:TopConcept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/55">
+    <skos:prefLabel xml:lang="en">Biological</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing biologicalparameters</skos:definition>
+    <dcterms:issued>2014-06-01</dcterms:issued>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/4"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/19"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/26"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/46"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/51"/>
+</skos:TopConcept>
+<skos:TopConcept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/56">
+    <skos:prefLabel xml:lang="en">Physical-Water</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing physical water parameters</skos:definition>
+    <dcterms:issued>2014-06-01</dcterms:issued>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/2"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/3"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/5"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/23"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/25"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/28"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/30"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/32"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/45"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/49"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/50"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/57"/>
+</skos:TopConcept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/1">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:prefLabel xml:lang="en">Water column temperature and salinity</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing water column temperature and salinity parameters</skos:definition>
+    <skos:issued>2014-06-01</skos:issued>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/2">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/56"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/414"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/417"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/412"/>
+    <skos:narrower rdf:resource="http://vocab.nerc.ac.uk/collection/P01/current/GWDRZZ01"/>
+    <skos:narrower rdf:resource="http://vocab.nerc.ac.uk/collection/P01/current/GSPRZZ01"/>
+    <skos:narrower rdf:resource="http://vocab.nerc.ac.uk/collection/P01/current/GSZZXXXX"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/411"/>
+    <skos:narrower rdf:resource="http://vocab.nerc.ac.uk/collection/P01/current/GCMXZZ01"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/413"/>
+    <skos:narrower rdf:resource="http://vocab.nerc.ac.uk/collection/P01/current/GTCAZZ01"/>
+    <skos:prefLabel xml:lang="en">Wave</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing waves parameters</skos:definition>
+    <skos:issued>2014-06-01</skos:issued>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/3">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/56"/>
+    <skos:narrower rdf:resource="http://vocab.nerc.ac.uk/collection/P01/current/LRZAZZZZ"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/640"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/641"/>
+    <skos:narrower rdf:resource="http://vocab.nerc.ac.uk/collection/P01/current/LCDAZZ01"/>
+    <skos:narrower rdf:resource="http://vocab.nerc.ac.uk/collection/P01/current/LCEWZZ01"/>
+    <skos:narrower rdf:resource="http://vocab.nerc.ac.uk/collection/P01/current/LCNSZZ01"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/370"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/383"/>
+    <skos:prefLabel xml:lang="en">Current</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing currents parameters</skos:definition>
+    <skos:issued>2014-06-01</skos:issued>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/4">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/55"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/488"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/407"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/596"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/571"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/570"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/489"/>
+    <skos:prefLabel xml:lang="en">Ocean Biota</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing ocean biota parameters</skos:definition>
+    <skos:issued>2014-06-01</skos:issued>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/5">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/56"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/75"/>
+    <skos:narrower rdf:resource="http://vocab.nerc.ac.uk/collection/P01/current/SVELXXXX"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/597"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/399"/>
+    <skos:prefLabel xml:lang="en">Acoustics</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing acoustics parameters</skos:definition>
+    <skos:issued>2014-06-01</skos:issued>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/6">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/53"/>
+    <skos:narrower rdf:resource="http://vocab.nerc.ac.uk/collection/P01/current/EWDAZZ01"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/406"/>
+    <skos:narrower rdf:resource="http://vocab.nerc.ac.uk/collection/P01/current/ESEWZZXX"/>
+    <skos:narrower rdf:resource="http://vocab.nerc.ac.uk/collection/P01/current/ESNSZZXX"/>
+    <skos:narrower rdf:resource="http://vocab.nerc.ac.uk/collection/P01/current/ERWDZZ01"/>
+    <skos:narrower rdf:resource="http://vocab.nerc.ac.uk/collection/P01/current/ERWSZZ01"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/396"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/395"/>
+    <skos:narrower rdf:resource="http://vocab.nerc.ac.uk/collection/P01/current/ESSAZZ01"/>
+    <skos:prefLabel xml:lang="en">Wind</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing wind parameters</skos:definition>
+    <skos:issued>2014-06-01</skos:issued>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/7">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/53"/>
+    <skos:narrower rdf:resource="http://vocab.nerc.ac.uk/collection/P01/current/CTMPZZ01"/>
+    <skos:prefLabel xml:lang="en">Air temperature</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing air temperature parameters</skos:definition>
+    <skos:issued>2014-06-01</skos:issued>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/8">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/53"/>
+    <skos:narrower rdf:resource="http://vocab.nerc.ac.uk/collection/P01/current/CHUMSS01"/>
+    <skos:narrower rdf:resource="http://vocab.nerc.ac.uk/collection/P01/current/CWETZZ01"/>
+    <skos:narrower rdf:resource="http://vocab.nerc.ac.uk/collection/P01/current/CRELZZ01"/>
+    <skos:narrower rdf:resource="http://vocab.nerc.ac.uk/collection/P01/current/CDEWZZ01"/>
+    <skos:prefLabel xml:lang="en">Humidity</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing atmospheric humidity parameters</skos:definition>
+    <skos:issued>2014-06-01</skos:issued>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/9">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/53"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/405"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/637"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/639"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/94"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/386"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/638"/>
+    <skos:prefLabel xml:lang="en">Precipitation and evaporation</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing precipitation and evaporation parameters</skos:definition>
+    <skos:issued>2014-06-01</skos:issued>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/10">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/53"/>
+    <skos:narrower rdf:resource="http://vocab.nerc.ac.uk/collection/P01/current/CAPHZZ01"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/77"/>
+    <skos:prefLabel xml:lang="en">Air pressure</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing air pressure parameters</skos:definition>
+    <skos:issued>2014-06-01</skos:issued>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/11">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/54"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/84"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/372"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/373"/>
+    <skos:prefLabel xml:lang="en">Oxygen</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing dissolved oxygen parameters</skos:definition>
+    <skos:issued>2014-06-01</skos:issued>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/12">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:prefLabel xml:lang="en">Silicate concentration</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing silicate concentration parameters</skos:definition>
+    <skos:issued>2014-06-01</skos:issued>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/13">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:prefLabel xml:lang="en">Phosphate concentration</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing phosphate concentration parameters</skos:definition>
+    <skos:issued>2014-06-01</skos:issued>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/14">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:prefLabel xml:lang="en">Nitrate concentration</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing nitrate concentration parameters</skos:definition>
+    <skos:issued>2014-06-01</skos:issued>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/15">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:prefLabel xml:lang="en">Horizontal spatial coordinates</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing horizontal spatial coordinates parameters</skos:definition>
+    <skos:issued>2014-06-01</skos:issued>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/16">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:prefLabel xml:lang="en">Platform orientation</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing platform orientation parameters</skos:definition>
+    <skos:issued>2014-06-01</skos:issued>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/17">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:prefLabel xml:lang="en">Partial pressure and fugacity of carbon dioxide</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing partial pressure and fugacity of carbon dioxide parameters</skos:definition>
+    <skos:issued>2014-06-01</skos:issued>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/18">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:prefLabel xml:lang="en">Ammonium concentration</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing ammonium concentration parameters</skos:definition>
+    <skos:issued>2014-06-01</skos:issued>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/19">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/55"/>
+    <skos:narrower rdf:resource="http://vocab.nerc.ac.uk/collection/P01/current/CHLTVOLU"/>
+    <skos:narrower rdf:resource="http://vocab.nerc.ac.uk/collection/P01/current/FLUOZZZZ"/>
+    <skos:narrower rdf:resource="http://vocab.nerc.ac.uk/collection/P01/current/CHLTMASS"/>
+    <skos:prefLabel xml:lang="en">Chlorophyll</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing chlorophyll concentration parameters</skos:definition>
+    <skos:issued>2014-06-01</skos:issued>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/20">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:prefLabel xml:lang="en">Date and Time</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing date and time parameters</skos:definition>
+    <skos:issued>2014-06-01</skos:issued>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/21">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:prefLabel xml:lang="en">ADCP</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing ADCP parameters</skos:definition>
+    <skos:issued>2014-06-01</skos:issued>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/22">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/53"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/397"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/390"/>
+    <skos:prefLabel xml:lang="en">Visibility</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing atmospheric visibility parameters</skos:definition>
+    <skos:issued>2014-06-01</skos:issued>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/23">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/56"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/401"/>
+    <skos:prefLabel xml:lang="en">Density</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing density parameters</skos:definition>
+    <skos:issued>2014-06-01</skos:issued>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/24">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:prefLabel xml:lang="en">Vertical spatial coordinates</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing vertical spatial coordinates parameters</skos:definition>
+    <skos:issued>2014-06-01</skos:issued>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/25">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/56"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/566"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/565"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/569"/>
+    <skos:prefLabel xml:lang="en">Water pressure</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing water pressure parameters</skos:definition>
+    <skos:issued>2014-06-01</skos:issued>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/26">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/55"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/743"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/742"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/741"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/740"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/478"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/736"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/735"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/734"/>
+    <skos:narrower rdf:resource="http://vocab.nerc.ac.uk/collection/P01/current/ALLOXXPX"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/658"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/659"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/660"/>
+    <skos:narrower rdf:resource="http://vocab.nerc.ac.uk/collection/P01/current/PERDXXXX"/>
+    <skos:narrower rdf:resource="http://vocab.nerc.ac.uk/collection/P01/current/FUCXZZZZ"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/738"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/739"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/744"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/737"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/767"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/766"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/753"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/765"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/764"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/763"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/762"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/761"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/760"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/759"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/758"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/757"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/756"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/755"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/754"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/752"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/751"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/750"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/749"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/748"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/747"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/746"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/745"/>
+    <skos:prefLabel xml:lang="en">Pigment</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing pigments concentration parameters</skos:definition>
+    <skos:issued>2014-06-01</skos:issued>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/27">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/54"/>
+    <skos:narrower rdf:resource="http://vocab.nerc.ac.uk/collection/P01/current/MDMAP014"/>
+    <skos:prefLabel xml:lang="en">Alkalinity</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing alkalinity parameters</skos:definition>
+    <skos:issued>2014-06-01</skos:issued>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/28">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/56"/>
+    <skos:narrower rdf:resource="http://vocab.nerc.ac.uk/collection/P01/current/TURBXXXX"/>
+    <skos:prefLabel xml:lang="en">Turbidity</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing turbidity parameters</skos:definition>
+    <skos:issued>2014-06-01</skos:issued>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/30">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/56"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/53"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/576"/>
+    <skos:narrower rdf:resource="http://vocab.nerc.ac.uk/collection/P01/current/LWRDZZ01"/>
+    <skos:prefLabel xml:lang="en">Air-Sea Fluxes</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing Air-Sea Fluxes parameters</skos:definition>
+    <skos:issued>2014-06-01</skos:issued>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/31">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:prefLabel xml:lang="en">Flow rate</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing flow rate parameters</skos:definition>
+    <skos:issued>2014-06-01</skos:issued>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/32">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/56"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/408"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/410"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/409"/>
+    <skos:prefLabel xml:lang="en">Power spectrum</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing power spectrum parameters</skos:definition>
+    <skos:issued>2014-06-01</skos:issued>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/33">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:prefLabel xml:lang="en">Vertical platform movement</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing vertical platform movement parameters</skos:definition>
+    <skos:issued>2014-06-01</skos:issued>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/34">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:prefLabel xml:lang="en">Metadata parameters</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing metadata parameters</skos:definition>
+    <skos:issued>2014-06-01</skos:issued>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/45">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/56"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/729"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/647"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/648"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/572"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/573"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/649"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/653"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/652"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/650"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/651"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/646"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/629"/>
+    <skos:prefLabel xml:lang="en">Optical properties</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing optical properties parameters</skos:definition>
+    <skos:issued>2014-06-01</skos:issued>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/46">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/55"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/655"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/656"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/654"/>
+    <skos:prefLabel xml:lang="en">Suspended particulate material</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing suspended particulate material parameters</skos:definition>
+    <skos:issued>2014-06-01</skos:issued>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/47">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/728"/>
+    <skos:prefLabel xml:lang="en">Backscattering</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing backscattering parameters</skos:definition>
+    <skos:issued>2014-07-10</skos:issued>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/48">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/733"/>
+    <skos:prefLabel xml:lang="en">UV radiation</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing UV radiation parameters</skos:definition>
+    <skos:issued>2014-07-10</skos:issued>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/49">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/56"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/568"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/631"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/97"/>
+    <skos:narrower rdf:resource="http://vocab.nerc.ac.uk/collection/P01/current/TEMPPR01"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/590"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/567"/>
+    <skos:prefLabel xml:lang="en">Temperature</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing temperature parameters</skos:definition>
+    <skos:issued>2014-06-01</skos:issued>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/50">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/56"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/730"/>
+    <skos:narrower rdf:resource="http://vocab.nerc.ac.uk/collection/P01/current/PSLTZZ01"/>
+    <skos:narrower rdf:resource="http://vocab.nerc.ac.uk/collection/P01/current/CNDCZZ01"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/591"/>
+    <skos:prefLabel xml:lang="en">Salinity</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing salinity parameters</skos:definition>
+    <skos:issued>2014-06-01</skos:issued>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/51">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/55"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/375"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/374"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/376"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/377"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/378"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/379"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/380"/>
+    <skos:prefLabel xml:lang="en">Nutrient</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing nutrient parameters</skos:definition>
+    <skos:issued>2014-06-01</skos:issued>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/52">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/54"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/425"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/422"/>
+    <skos:narrower rdf:resource="http://vocab.nerc.ac.uk/collection/P01/current/FCO2WTAT"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/427"/>
+    <skos:narrower rdf:resource="http://vocab.nerc.ac.uk/collection/P01/current/FCO2XXXX"/>
+    <skos:narrower rdf:resource="http://vocab.nerc.ac.uk/collection/P01/current/XCO2WBDY"/>
+    <skos:narrower rdf:resource="http://vocab.nerc.ac.uk/collection/P01/current/XCO2DRAT"/>
+    <skos:prefLabel xml:lang="en">Carbon</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing carbon parameters</skos:definition>
+    <skos:issued>2014-06-01</skos:issued>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/53">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/6"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/7"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/8"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/9"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/10"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/22"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/30"/>
+    <skos:prefLabel xml:lang="en">Physical-Atmosphere</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing physical atmosphere parameters</skos:definition>
+    <skos:issued>2014-06-01</skos:issued>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/54">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/11"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/52"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/27"/>
+    <skos:prefLabel xml:lang="en">Chemical</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing chemicalparameters</skos:definition>
+    <skos:issued>2014-06-01</skos:issued>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/55">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/4"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/19"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/26"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/46"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/51"/>
+    <skos:prefLabel xml:lang="en">Biological</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing biologicalparameters</skos:definition>
+    <skos:issued>2014-06-01</skos:issued>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/56">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/2"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/3"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/5"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/23"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/25"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/28"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/30"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/32"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/45"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/49"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/50"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/57"/>
+    <skos:prefLabel xml:lang="en">Physical-Water</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing physical water parameters</skos:definition>
+    <skos:issued>2014-06-01</skos:issued>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/57">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/56"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/643"/>
+    <skos:narrower rdf:resource="http://vocab.aodn.org.au/def/parameter/642"/>
+    <skos:prefLabel xml:lang="en">Sea surface height</skos:prefLabel>
+    <skos:definition>This category contains vocabulary terms describing sea surface height parameters</skos:definition>
+    <skos:issued>2014-06-01</skos:issued>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/411">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/2"/>
+    <skos:prefLabel xml:lang="en">Significant height of waves on the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/412">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/2"/>
+    <skos:prefLabel xml:lang="en">Average height of waves on the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/401">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/23"/>
+    <skos:prefLabel xml:lang="en">Density of the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/405">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/9"/>
+    <skos:prefLabel xml:lang="en">Precipitation duration (liquid water equivalent) in the atmosphere</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/406">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/6"/>
+    <skos:prefLabel xml:lang="en">Wind stress on the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/407">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/4"/>
+    <skos:prefLabel xml:lang="en">Phytoplankton Colour Index</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.nerc.ac.uk/collection/P01/current/GCMXZZ01">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/2"/>
+    <skos:prefLabel xml:lang="en">Maximum height of waves on the water body</skos:prefLabel>
+    <skos:definition>The maximum vertical distance between a wave crest and the immediately preceding or following through during a specified observation period.</skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.nerc.ac.uk/collection/P01/current/GTCAZZ01">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/2"/>
+    <skos:prefLabel xml:lang="en">Average crest period of waves on the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/417">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/2"/>
+    <skos:prefLabel xml:lang="en">Average zero crossing period of the highest 1/3rd of waves on the water body</skos:prefLabel>
+    <skos:definition>The average period of the highest 1/3 of waves measured during a recording burst</skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.nerc.ac.uk/collection/P01/current/GWDRZZ01">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/2"/>
+    <skos:prefLabel xml:lang="en">Direction of waves on the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.nerc.ac.uk/collection/P01/current/GSPRZZ01">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/2"/>
+    <skos:prefLabel xml:lang="en">Directional spreading of waves on the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.nerc.ac.uk/collection/P01/current/GSZZXXXX">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/2"/>
+    <skos:prefLabel xml:lang="en">Period of swell waves on the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.nerc.ac.uk/collection/P01/current/XCO2DRAT">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/52"/>
+    <skos:prefLabel xml:lang="en">Mole fraction of carbon dioxide (dry air) in the atmosphere</skos:prefLabel>
+    <skos:definition>The proportion as a ratio of quantity of matter of CO2 in a sample of atmosphere expressed on a dry air basis</skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/422">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/52"/>
+    <skos:prefLabel xml:lang="en">Partial pressure of carbon dioxide in the atmosphere</skos:prefLabel>
+    <skos:definition>The partial pressure of carbon dioxide in air</skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.nerc.ac.uk/collection/P01/current/FCO2WTAT">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/52"/>
+    <skos:prefLabel xml:lang="en">Fugacity of carbon dioxide (at 100% humidity) in the atmosphere</skos:prefLabel>
+    <skos:definition>The fugacity (effective partial pressure allowing for non-ideal gas) of carbon dioxide in the atmosphere assuming a humidity of 100 per cent.</skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.nerc.ac.uk/collection/P01/current/XCO2WBDY">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/52"/>
+    <skos:prefLabel xml:lang="en">Mole fraction of carbon dioxide (dry air) in the equilibrated marine sample</skos:prefLabel>
+    <skos:definition>The proportion as a ratio of quantity of matter of CO2 in a sample of air equilibrated with seawater expressed on a dry air basis</skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.nerc.ac.uk/collection/P01/current/CNDCZZ01">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/50"/>
+    <skos:prefLabel xml:lang="en">Electrical conductivity of the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.nerc.ac.uk/collection/P01/current/LCDAZZ01">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/3"/>
+    <skos:prefLabel xml:lang="en">Current direction in the water body</skos:prefLabel>
+    <skos:definition>The direction towards which Eulerian current in the water column is flowing.</skos:definition>
+    <dc:source>(P011) BODC Parameter Usage Vocabulary</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-04-11</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/390">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/22"/>
+    <skos:prefLabel xml:lang="en">Horizontal visibility in the atmosphere</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.nerc.ac.uk/collection/P01/current/CAPHZZ01">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/10"/>
+    <skos:prefLabel xml:lang="en">Pressure (measured variable) exerted by the atmosphere</skos:prefLabel>
+    <skos:definition>Measurement as a phenomenon (as opposed to a co-ordinate) of the force per unit area exerted by the atmosphere determined in-situ at a known altitude.</skos:definition>
+    <dc:source>(P011) BODC Parameter Usage Vocabulary</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-04-11</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/413">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/2"/>
+    <skos:prefLabel xml:lang="en">Root mean square height of waves on the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/75">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/5"/>
+    <skos:prefLabel xml:lang="en">Acceptable proportion of signal returns</skos:prefLabel>
+    <skos:definition>Pings received as a percentage of pings sent</skos:definition>
+    <dc:source>(P011) BODC Parameter Usage Vocabulary</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-04-11</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/77">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/10"/>
+    <skos:prefLabel xml:lang="en">Pressure (measured variable) exerted by the atmosphere and correction to sea level</skos:prefLabel>
+    <skos:definition>Measurement as a phenomenon (as opposed to a co-ordinate) of the force per unit area exerted by the atmosphere determined in-situ at a known altitude and converted to the value at sea level assuming an isothermal layer.</skos:definition>
+    <dc:source>(P011) BODC Parameter Usage Vocabulary</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-04-11</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.nerc.ac.uk/collection/P01/current/CTMPZZ01">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/7"/>
+    <skos:prefLabel xml:lang="en">Temperature of the atmosphere</skos:prefLabel>
+    <skos:definition>The degree of hotness of the atmosphere expressed against a standard scale.  Includes both IPTS-68 and ITS-90 scales.</skos:definition>
+    <dc:source>(P011) BODC Parameter Usage Vocabulary</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2103-04-11</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.nerc.ac.uk/collection/P01/current/CDEWZZ01">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/8"/>
+    <skos:prefLabel xml:lang="en">Dew point temperature of the atmosphere</skos:prefLabel>
+    <skos:definition>The temperature to which air must cool to become saturated with water vapour</skos:definition>
+    <dc:source>(P011) BODC Parameter Usage Vocabulary</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-04-11</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.nerc.ac.uk/collection/P01/current/LCEWZZ01">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/3"/>
+    <skos:prefLabel xml:lang="en">Eastward current velocity in the water body</skos:prefLabel>
+    <skos:definition>Speed of Eulerian current flow towards due east.</skos:definition>
+    <dc:source>(P011) BODC Parameter Usage Vocabulary</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-04-11</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.nerc.ac.uk/collection/P01/current/ESEWZZXX">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/6"/>
+    <skos:prefLabel xml:lang="en">Eastward wind velocity in the atmosphere</skos:prefLabel>
+    <skos:definition>The component of the wind blowing towards true east. The value could result from any kind of measurement or prediction.</skos:definition>
+    <dc:source>(P011) BODC Parameter Usage Vocabulary</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-04-17</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/84">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/11"/>
+    <skos:prefLabel xml:lang="en">Saturation of oxygen {O2} in the water body [dissolved phase]</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>(P011) BODC Parameter Usage Vocabulary</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-04-17</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.nerc.ac.uk/collection/P01/current/CHLTVOLU">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/19"/>
+    <skos:prefLabel xml:lang="en">Concentration of chlorophyll per unit volume of the water body</skos:prefLabel>
+    <skos:definition>The mass of all types of chlorophyll per unit volume of the water column held in particles of any size</skos:definition>
+    <dc:source>(P011) BODC Parameter Usage Vocabulary</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-04-17</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.nerc.ac.uk/collection/P01/current/LCNSZZ01">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/3"/>
+    <skos:prefLabel xml:lang="en">Northward current velocity in the water body</skos:prefLabel>
+    <skos:definition>Speed of Eulerian current flow towards true north</skos:definition>
+    <dc:source>(P011) BODC Parameter Usage Vocabulary</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-04-11</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.nerc.ac.uk/collection/P01/current/ESNSZZXX">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/6"/>
+    <skos:prefLabel xml:lang="en">Northward wind velocity in the atmosphere</skos:prefLabel>
+    <skos:definition>The component of the wind blowing towards true north. The value could result from any kind of measurement or prediction.</skos:definition>
+    <dc:source>(P011) BODC Parameter Usage Vocabulary</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-04-17</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/94">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/9"/>
+    <skos:prefLabel xml:lang="en">Precipitation rate (liquid water equivalent) in the atmosphere</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>(P011) BODC Parameter Usage Vocabulary</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-04-17</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.nerc.ac.uk/collection/P01/current/CRELZZ01">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/8"/>
+    <skos:prefLabel xml:lang="en">Relative humidity of the atmosphere</skos:prefLabel>
+    <skos:definition>The ratio of the amount of water vapour in the air compared to the maximum amount of water vapour that can theoretically be held at the air's temperature</skos:definition>
+    <dc:source>(P011) BODC Parameter Usage Vocabulary</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-04-17</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.nerc.ac.uk/collection/P01/current/PSLTZZ01">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/50"/>
+    <skos:prefLabel xml:lang="en">Practical salinity of the water body</skos:prefLabel>
+    <skos:definition>The quantity of dissolved ions (predominantly salt in seawater) expressed on a scale (PSS-78) based on the conductivity ratio of a seawater sample to a standard KCl solution.</skos:definition>
+    <dc:source>(P011) BODC Parameter Usage Vocabulary</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-04-17</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/97">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/49"/>
+    <skos:prefLabel xml:lang="en">Skin temperature of the water body</skos:prefLabel>
+    <skos:definition>Skin temperature of the water body measure by Advanced Very High Resolution Radiometer (AVHRR)</skos:definition>
+    <dc:source>(P011) BODC Parameter Usage Vocabulary</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2103-04-17</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.nerc.ac.uk/collection/P01/current/TEMPPR01">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/49"/>
+    <skos:prefLabel xml:lang="en">Temperature of the water body</skos:prefLabel>
+    <skos:definition>The degree of hotness of the water column expressed against a standard scale.  Includes both IPTS-68 and ITS-90 scales.</skos:definition>
+    <dc:source>(P011) BODC Parameter Usage Vocabulary</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-04-17</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/414">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/2"/>
+    <skos:prefLabel xml:lang="en">Average height of the highest 1/10th of waves on the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/408">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/32"/>
+    <skos:prefLabel xml:lang="en">Height of left Bragg peak in power spectrum</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.nerc.ac.uk/collection/P01/current/LRZAZZZZ">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/3"/>
+    <skos:prefLabel xml:lang="en">Upward current velocity in the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/425">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/52"/>
+    <skos:prefLabel xml:lang="en">Partial pressure of carbon dioxide in the water body</skos:prefLabel>
+    <skos:definition>The partial pressure of carbon dioxide in air in equilibrium with a water sample</skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/409">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/32"/>
+    <skos:prefLabel xml:lang="en">Height of right Bragg peak in power spectrum</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/370">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/3"/>
+    <skos:prefLabel xml:lang="en">Current velocity error in the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/410">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/32"/>
+    <skos:prefLabel xml:lang="en">Power spectrum signal to noise ratio</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.nerc.ac.uk/collection/P01/current/CHLTMASS">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/19"/>
+    <skos:prefLabel xml:lang="en">Concentration of chlorophyll per unit mass of the water body</skos:prefLabel>
+    <skos:definition>The mass of all types of chlorophyll per unit mass of the water column held in particles of any size</skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/372">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/11"/>
+    <skos:prefLabel xml:lang="en">Concentration of oxygen {O2} per unit volume of the water body</skos:prefLabel>
+    <skos:definition>Concentration of dissolved oxygen per unit volume of the water column. Oxygen may be expressed in terms of mass, volume or quantity of substance.</skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/373">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/11"/>
+    <skos:prefLabel xml:lang="en">Concentration of oxygen {O2} per unit mass of the water body</skos:prefLabel>
+    <skos:definition>Concentration of dissolved oxygen per unit mass of the water column. Oxygen may be expressed in terms of mass, volume or quantity of substance.</skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/374">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/51"/>
+    <skos:prefLabel xml:lang="en">Concentration of nitrate {NO3} per unit volume of the water body</skos:prefLabel>
+    <skos:definition>Concentration of nitrate per unit volume of the water column. Nitrate may be expressed in terms of mass or quantity of substance.</skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/375">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/51"/>
+    <skos:prefLabel xml:lang="en">Concentration of nitrate {NO3} per unit mass of the water body</skos:prefLabel>
+    <skos:definition>Concentration (moles or mass) of nitrogen as nitrate per unit mass of the water column</skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/376">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/51"/>
+    <skos:prefLabel xml:lang="en">Concentration of silicate {SiO4} per unit volume of the water body</skos:prefLabel>
+    <skos:definition>Concentration of silicate per unit volume of the water column. Silicate may be expressed in terms of mass or quantity of substance.</skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/377">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/51"/>
+    <skos:prefLabel xml:lang="en">Concentration of ammonium {NH4} per unit volume of the water body</skos:prefLabel>
+    <skos:definition>Concentration of ammonium per unit volume of the water column. Ammonium may be expressed in terms of mass or quantity of substance.</skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/378">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/51"/>
+    <skos:prefLabel xml:lang="en">Concentration of silicate {SiO4} per unit mass of the water body</skos:prefLabel>
+    <skos:definition>Concentration (moles or mass) of silicon as silicate per unit mass of the water column</skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/379">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/51"/>
+    <skos:prefLabel xml:lang="en">Concentration of phosphate {PO4} per unit volume of the water body</skos:prefLabel>
+    <skos:definition>Concentration of phosphate per unit volume of the water column. Phosphate may be expressed in terms of mass or quantity of substance</skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/380">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/51"/>
+    <skos:prefLabel xml:lang="en">Concentration of phosphate {PO4} per unit mass of the water body</skos:prefLabel>
+    <skos:definition>Concentration of phosphate dissolved per unit mass of the water column. Solute may be expressed in terms of mass, volume or quantity of substance</skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/383">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/3"/>
+    <skos:prefLabel xml:lang="en">Current speed in the water body</skos:prefLabel>
+    <skos:definition>The speed of Eulerian flow in the water column</skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.nerc.ac.uk/collection/P01/current/CHUMSS01">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/8"/>
+    <skos:prefLabel xml:lang="en">Specific humidity of the atmosphere</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.nerc.ac.uk/collection/P01/current/SVELXXXX">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/5"/>
+    <skos:prefLabel xml:lang="en">Sound velocity in the water body</skos:prefLabel>
+    <skos:definition>The rate at which sound travels through the water column</skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/386">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/9"/>
+    <skos:prefLabel xml:lang="en">Thickness of precipitation amount (liquid water equivalent) in the atmosphere</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.nerc.ac.uk/collection/P01/current/TURBXXXX">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/28"/>
+    <skos:prefLabel xml:lang="en">Turbidity of the water body</skos:prefLabel>
+    <skos:definition>Estimate of suspended sediment concentration based on the proportion of a light transmission in the water column that is reflected back to a co-located receiver.</skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.nerc.ac.uk/collection/P01/current/CWETZZ01">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/8"/>
+    <skos:prefLabel xml:lang="en">Wet bulb temperature of the atmosphere</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.nerc.ac.uk/collection/P01/current/EWDAZZ01">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/6"/>
+    <skos:prefLabel xml:lang="en">Wind from direction in the atmosphere</skos:prefLabel>
+    <skos:definition>Direction relative to true north from which the wind is blowing</skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.nerc.ac.uk/collection/P01/current/ESSAZZ01">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/6"/>
+    <skos:prefLabel xml:lang="en">Wind speed in the atmosphere</skos:prefLabel>
+    <skos:definition>Sustained speed of the wind (distance moved per unit time by a parcel of air) parallel to the ground at a given place and time</skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/395">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/6"/>
+    <skos:prefLabel xml:lang="en">Wind speed of gust in the atmosphere</skos:prefLabel>
+    <skos:definition>Maximum speed of the wind (distance moved per unit time by a parcel of air) parallel to the ground during a gust event (generally regarded as an increase over sustained speed of more than 5m/s lasting less than 20 seconds).</skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/396">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/6"/>
+    <skos:prefLabel xml:lang="en">Wind to direction in the atmosphere</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/397">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/22"/>
+    <skos:prefLabel xml:lang="en">Present weather in the atmosphere</skos:prefLabel>
+    <skos:definition>Visual observation using WMO code table 4677 or 4501</skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.nerc.ac.uk/collection/P01/current/MDMAP014">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/27"/>
+    <skos:prefLabel xml:lang="en">Total alkalinity per unit mass of the water body</skos:prefLabel>
+    <skos:definition>Concentration (moles or mass) of acid-neutralising bases per unit mass of the water column</skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/399">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/5"/>
+    <skos:prefLabel xml:lang="en">Acoustic signal return amplitude from the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.nerc.ac.uk/collection/P01/current/FCO2XXXX">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/52"/>
+    <skos:prefLabel xml:lang="en">Fugacity of carbon dioxide (at 100% humidity) in the water body</skos:prefLabel>
+    <skos:definition>Fugacity (partial pressure corrected for non-ideality of gases) of carbon dioxide in air that is in equilibrium with a seawater sample</skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/427">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/52"/>
+    <skos:prefLabel xml:lang="en">Fugacity anomaly (water - air) of carbon dioxide in the water body</skos:prefLabel>
+    <skos:definition>The difference in the CO2 fugacity (effective partial pressure allowing for non-ideal gas) between air in equilibrium with seawater and the atmosphere</skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-18</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/478">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/26"/>
+    <skos:prefLabel xml:lang="en">concentration of echinenone per unit mass of the water body</skos:prefLabel>
+    <skos:definition>The amount (mass or moles) of the specified pigment determined by HPLC assay of a sample collected by dissolution in acteone of the residue collected by GF/F filtration of a known volume of any water body. The quoted value either results from a single determination or the average of replicate determinations</skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-07-30</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/488">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/4"/>
+    <skos:prefLabel xml:lang="en">Abundance of biota</skos:prefLabel>
+    <skos:definition>The relative representation of flora and fauna in a particular sample or region. </skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-09-09</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/489">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/4"/>
+    <skos:prefLabel xml:lang="en">Biotic taxonomic identification</skos:prefLabel>
+    <skos:definition>The identification of the biotic elements to the relevant scientific classification group (taxa), e.g. genus or species.</skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-09-09</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/566">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/25"/>
+    <skos:prefLabel xml:lang="en">Pressure (measured variable) in the water body exerted by overlying sea water only</skos:prefLabel>
+    <skos:definition>The force per unit area exerted by the overlying sea water on a sensor located in the water column. Excludes the pressure due to sea ice, air and any other medium that may be present.</skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-11-05</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.nerc.ac.uk/collection/P01/current/LWRDZZ01">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/30"/>
+    <skos:prefLabel xml:lang="en">Downwelling vector irradiance as energy (longwave) in the atmosphere</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-11-05</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/576">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/30"/>
+    <skos:prefLabel xml:lang="en">Downwelling vector irradiance as energy (solar (300-3000nm) wavelengths) in the atmosphere</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-11-05</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/565">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/25"/>
+    <skos:prefLabel xml:lang="en">Pressure (measured variable) in the water body exerted by overlying sea water and any medium above it</skos:prefLabel>
+    <skos:definition>The force per unit area exerted by the overlying sea water, sea ice, air and any other medium that may be present on a sensor located in the water column.</skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-11-05</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/567">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/49"/>
+    <skos:prefLabel xml:lang="en">Temperature of oxygen determination</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-11-05</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/568">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/49"/>
+    <skos:prefLabel xml:lang="en">Temperature for the equilibrated marine sample</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-11-05</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/569">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/25"/>
+    <skos:prefLabel xml:lang="en">Pressure for the equilibrated marine sample</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-11-05</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/570">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/4"/>
+    <skos:prefLabel xml:lang="en">Dry weight biomass per unit volume of the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-11-05</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/571">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/4"/>
+    <skos:prefLabel xml:lang="en">Wet weight biomass per unit volume of the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-11-05</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/572">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/45"/>
+    <skos:prefLabel xml:lang="en">Downwelling vector irradiance as photons (PAR wavelengths) in the atmosphere</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-11-05</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/573">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/45"/>
+    <skos:prefLabel xml:lang="en">Downwelling vector irradiance as photons (PAR wavelengths) in the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-11-05</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.nerc.ac.uk/collection/P01/current/ERWSZZ01">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/6"/>
+    <skos:prefLabel xml:lang="en">Wind speed (relative to moving platform) in the atmosphere</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-11-05</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.nerc.ac.uk/collection/P01/current/ERWDZZ01">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/6"/>
+    <skos:prefLabel xml:lang="en">Wind direction (relative to moving platform) in the atmosphere</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2013-11-05</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/590">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/49"/>
+    <skos:prefLabel xml:lang="en">Temperature anomaly of the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-01-20</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/591">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/50"/>
+    <skos:prefLabel xml:lang="en">Practical salinity anomaly of the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-01-20</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/596">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/4"/>
+    <skos:prefLabel xml:lang="en">Detection of acoustic tag</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-01-23</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/597">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/5"/>
+    <skos:prefLabel xml:lang="en">Sound recorded in the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-01-23</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.nerc.ac.uk/collection/P01/current/FLUOZZZZ">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/19"/>
+    <skos:prefLabel xml:lang="en">Fluorescence of the water body</skos:prefLabel>
+    <skos:definition>The amount of radiation generated in the water column in response to higher energy radiation transmission expressed relative to an unspecified baseline</skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-03-21</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/646">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/45"/>
+    <skos:prefLabel xml:lang="en">Water-leaving radiance from the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-03-21</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/629">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/45"/>
+    <skos:prefLabel xml:lang="en">Colored Dissolved Organic Matter</skos:prefLabel>
+    <skos:definition>The amount of colored organic compounds (sometimes called yellow substance or gelbstoff) dissolved in a specified amount of water from any body of fresh or salt water</skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-03-21</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/631">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/49"/>
+    <skos:prefLabel xml:lang="en">Ocean heat content</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-03-21</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/637">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/9"/>
+    <skos:prefLabel xml:lang="en">Hail duration in the atmosphere</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-03-21</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/638">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/9"/>
+    <skos:prefLabel xml:lang="en">Thickness of hail amount in the atmosphere</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-03-21</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/639">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/9"/>
+    <skos:prefLabel xml:lang="en">Hail intensity in the atmosphere</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-03-21</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/640">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/3"/>
+    <skos:prefLabel xml:lang="en">Eastward geostrophic current velocity in the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-03-21</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/641">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/3"/>
+    <skos:prefLabel xml:lang="en">Northward geostrophic current velocity in the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-03-21</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/642">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/57"/>
+    <skos:prefLabel xml:lang="en">Sea surface height anomaly</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-03-21</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/643">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/57"/>
+    <skos:prefLabel xml:lang="en">Sea surface height above geoid</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-03-21</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/647">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/45"/>
+    <skos:prefLabel xml:lang="en">Water-leaving radiance from the water body corrected for viewing angle dependance</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-03-21</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/648">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/45"/>
+    <skos:prefLabel xml:lang="en">Normalised water-leaving radiance from the water body determined from Lw</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-03-21</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/649">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/45"/>
+    <skos:prefLabel xml:lang="en">Normalised water-leaving radiance from the water body determined from Lw_Q</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-03-21</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/650">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/45"/>
+    <skos:prefLabel xml:lang="en">Downwelling vector irradiance as energy in the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-03-21</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/651">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/45"/>
+    <skos:prefLabel xml:lang="en">Downwelling vector irradiance as energy in the atmosphere</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-03-21</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/652">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/45"/>
+    <skos:prefLabel xml:lang="en">Sky radiance as energy in the atmosphere</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-03-21</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/653">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/45"/>
+    <skos:prefLabel xml:lang="en">Upwelling radiance as energy in the atmosphere</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-03-21</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/654">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/46"/>
+    <skos:prefLabel xml:lang="en">Concentration of suspended particulate material per unit volume of the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-03-21</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/655">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/46"/>
+    <skos:prefLabel xml:lang="en">Concentration of suspended particulate material (organic) per unit volume of the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-03-21</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/656">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/46"/>
+    <skos:prefLabel xml:lang="en">Concentration of suspended particulate material (inorganic) per unit volume of the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-03-21</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.nerc.ac.uk/collection/P01/current/ALLOXXPX">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/26"/>
+    <skos:prefLabel xml:lang="en">Concentration of alloxanthin per unit volume of the water body</skos:prefLabel>
+    <skos:definition>Concentration of the carotenoid pigment alloxanthin per unit volume of a water body.  The pigment is contained in suspended particles of unspecified size</skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-03-21</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/658">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/26"/>
+    <skos:prefLabel xml:lang="en">Concentration of antheraxanthin per unit volume of the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-03-21</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/659">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/26"/>
+    <skos:prefLabel xml:lang="en">Concentration of canthaxanthin per unit volume of the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-03-21</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/660">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/26"/>
+    <skos:prefLabel xml:lang="en">Concentration of lutein per unit volume of the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-03-21</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.nerc.ac.uk/collection/P01/current/PERDXXXX">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/26"/>
+    <skos:prefLabel xml:lang="en">Concentration of peridinin per unit volume of the water body</skos:prefLabel>
+    <skos:definition>Concentration of the carotenoid pigment peridinin per unit volume of a water body.  The pigment is contained in suspended particles of unspecified size</skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-03-21</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.nerc.ac.uk/collection/P01/current/FUCXZZZZ">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/26"/>
+    <skos:prefLabel xml:lang="en">Concentration of fucoxanthin per unit volume of the water body</skos:prefLabel>
+    <skos:definition>Concentration of the carotenoid pigment fucoxanthin per unit volume of a water body.  The pigment is contained in suspended particles of unspecified size</skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-03-21</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/737">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/26"/>
+    <skos:prefLabel xml:lang="en">Concentration of astaxanthin per unit volume of the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-07-10</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/738">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/26"/>
+    <skos:prefLabel xml:lang="en">Concentration of dinoxanthin per unit volume of the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-07-10</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/744">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/26"/>
+    <skos:prefLabel xml:lang="en">Concentration of diadinochrome per unit volume of the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-07-10</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/753">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/26"/>
+    <skos:prefLabel xml:lang="en">Concentration of chlorophyll-b plus divinyl chlorophyll-b per unit volume of the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-07-10</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/739">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/26"/>
+    <skos:prefLabel xml:lang="en">Concentration of diatoxanthin per unit volume of the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-07-10</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/728">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/47"/>
+    <skos:prefLabel xml:lang="en">Volume backscattering coefficient</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-07-10</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/729">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/45"/>
+    <skos:prefLabel xml:lang="en">Secchi depth</skos:prefLabel>
+    <skos:definition>Estimate of the transparency of the surface water based upon the distance below the ship at which a standard black and white disk becomes visible.</skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-07-10</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/730">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/50"/>
+    <skos:prefLabel xml:lang="en">Specific electrical conductivity of the water body</skos:prefLabel>
+    <skos:definition>Conductance is a temperature corrected value, and approximates what the AC (Actual Conductivity) of a solution would be at 25 degrees Celsisus.</skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-07-10</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/733">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/48"/>
+    <skos:prefLabel xml:lang="en">Downwelling vector irradiance as energy (ultra-violet wavelengths) in the atmosphere</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-07-10</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/734">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/26"/>
+    <skos:prefLabel xml:lang="en">Concentration of neoxanthin per unit volume of the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-07-10</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/735">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/26"/>
+    <skos:prefLabel xml:lang="en">Concentration of prasinoxanthin per unit volume of the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-07-10</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/736">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/26"/>
+    <skos:prefLabel xml:lang="en">Concentration of violaxanthin per unit volume of the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-07-10</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/740">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/26"/>
+    <skos:prefLabel xml:lang="en">Concentration of zeaxanthin per unit volume of the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-07-10</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/741">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/26"/>
+    <skos:prefLabel xml:lang="en">Concentration of lycopene per unit volume of the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-07-10</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/742">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/26"/>
+    <skos:prefLabel xml:lang="en">Concentration of diadinoxanthin per unit volume of the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-07-10</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/743">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/26"/>
+    <skos:prefLabel xml:lang="en">Concentration of gyroxanthin diester per unit volume of the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-07-10</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/745">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/26"/>
+    <skos:prefLabel xml:lang="en">Concentration of chlorophyll-b per unit volume of the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-07-10</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/746">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/26"/>
+    <skos:prefLabel xml:lang="en">Concentration of divinyl chlorophyll-b per unit volume of the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-07-10</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/747">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/26"/>
+    <skos:prefLabel xml:lang="en">Concentration of 19-hexanoyloxyfucoxanthin per unit volume of the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-07-10</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/748">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/26"/>
+    <skos:prefLabel xml:lang="en">Concentration of pheophytin-a per unit volume of the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-07-10</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/749">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/26"/>
+    <skos:prefLabel xml:lang="en">Concentration of pheophytin-b per unit volume of the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-07-10</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/750">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/26"/>
+    <skos:prefLabel xml:lang="en">Concentration of chlorophyll-a per unit volume of the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-07-10</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/751">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/26"/>
+    <skos:prefLabel xml:lang="en">Concentration of pyropheophytin-a per unit volume of the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-07-10</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/752">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/26"/>
+    <skos:prefLabel xml:lang="en">Concentration of chlorophyll-a plus divinyl chlorophyll-a per unit volume of the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-07-10</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/754">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/26"/>
+    <skos:prefLabel xml:lang="en">Concentration of divinyl chlorophyll-a per unit volume of the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-07-10</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/755">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/26"/>
+    <skos:prefLabel xml:lang="en">Concentration of pyropheophorbide-a per unit volume of the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-07-10</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/756">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/26"/>
+    <skos:prefLabel xml:lang="en">Concentration of pheophorbide-a per unit volume of the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-07-10</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/757">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/26"/>
+    <skos:prefLabel xml:lang="en">Concentration of chlorophyllide-a per unit volume of the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-07-10</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/758">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/26"/>
+    <skos:prefLabel xml:lang="en">Concentration of chlorophyll-c2 per unit volume of the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-07-10</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/759">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/26"/>
+    <skos:prefLabel xml:lang="en">Concentration of chlorophyll-c1 per unit volume of the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-07-10</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/760">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/26"/>
+    <skos:prefLabel xml:lang="en">Concentration of chlorophyll-c1c2 per unit volume of the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-07-10</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/761">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/26"/>
+    <skos:prefLabel xml:lang="en">Concentration of chlorophyll-c3 per unit volume of the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-07-10</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/762">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/26"/>
+    <skos:prefLabel xml:lang="en">Concentration of 19-butanoyloxyfucoxanthin per unit volume of the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-07-10</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/763">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/26"/>
+    <skos:prefLabel xml:lang="en">Concentration of 4-keto-19-hexanoyloxyfucoxanthin per unit volume of the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-07-10</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/764">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/26"/>
+    <skos:prefLabel xml:lang="en">Concentration of alpha-carotene per unit volume of the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-07-10</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/765">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/26"/>
+    <skos:prefLabel xml:lang="en">Concentration of beta-carotene per unit volume of the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-07-10</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/766">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/26"/>
+    <skos:prefLabel xml:lang="en">Concentration of alpha-carotene and beta-carotene per unit volume of the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-07-10</skos:created>
+</skos:Concept>
+<skos:Concept rdf:about="http://vocab.aodn.org.au/def/parameter/767">
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/parameter"/>
+    <skos:inScheme rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1"/>
+    <skos:broader rdf:resource="http://vocab.aodn.org.au/def/ClassScheme/parameter1/Category/26"/>
+    <skos:prefLabel xml:lang="en">Concentration of Mg-2,4-divinyl pheoporphyrin a5 monomethyl ester per unit volume of the water body</skos:prefLabel>
+    <skos:definition></skos:definition>
+    <dc:source>Australian Ocean Data Network parameter register</dc:source>
+    <dc:publisher>eMarine Information Infrastructure</dc:publisher>
+    <skos:created>2014-07-10</skos:created>
+</skos:Concept>
+</rdf:RDF>
