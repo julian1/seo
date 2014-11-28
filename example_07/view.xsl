@@ -97,6 +97,15 @@
       </xsl:for-each-group>
     </xsl:variable>
 
+    <!-- Group unique broader parameters -->
+    <xsl:variable name="uniqueParameters">
+      <xsl:for-each-group select="$parameterList" group-by="broader">
+        <xsl:element name="broader">
+          <xsl:value-of select="current-grouping-key()"/>
+        </xsl:element>
+      </xsl:for-each-group>
+    </xsl:variable>
+
 
     <xsl:variable name="filename">
       <xsl:value-of select="$parameterList/broader" separator="-"/>
@@ -107,21 +116,23 @@
     <xsl:text>&#xa;      filename &#xa;</xsl:text> 
     <xsl:value-of select="$filename"/>
 
-    <!-- 
     <xsl:text>&#xa;      broader      &#xa;</xsl:text> 
-    <xsl:value of select="$parameterList/broader" separator=", "/>
+    <xsl:value-of select="$parameterList/broader" separator=", "/>
 
     <xsl:text>&#xa;      longName      &#xa;</xsl:text> 
-    <xsl:value of select="$parameterList/longName" separator=", "/>
+    <xsl:value-of select="$parameterList/longName" separator=", "/>
 
     <xsl:text>&#xa;      platform      &#xa;</xsl:text> 
-    <xsl:value of select="$parameterList/platform" separator=", "/>
+    <xsl:value-of select="$parameterList/platform" separator=", "/>
 
     <xsl:text>&#xa;       uniquePlatforms       &#xa;</xsl:text> 
-    <xsl:value of select="$uniquePlatforms/platform" separator=", "/>
+    <xsl:value-of select="$uniquePlatforms/platform" separator=", "/>
 
+    <xsl:text>&#xa;       uniqueParameters      &#xa;</xsl:text> 
+    <xsl:value-of select="$uniqueParameters/broader" separator=", "/>
+
+   
     <xsl:text>&#xa;</xsl:text> 
-    -->
 
 
     <xsl:result-document method="xml" href="output/{ encode-for-uri( $filename)}">
