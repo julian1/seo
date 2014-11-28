@@ -87,7 +87,7 @@
     </gmd:CI_ResponsibleParty>
   </gmd:contact>
   <gmd:dateStamp>
-    <gco:DateTime>2014-08-08T17:10:31</gco:DateTime>
+    <gco:DateTime>2014-11-28T14:13:29</gco:DateTime>
   </gmd:dateStamp>
   <gmd:metadataStandardName>
     <gco:CharacterString>Australian Marine Community Profile of ISO 19115:2005/19139</gco:CharacterString>
@@ -369,9 +369,6 @@ The ROT area of coverage has a small overlap of commonly observed ocean with the
             <gco:CharacterString>IMOS Site | ROT | Rottnest Shelf HF ocean radar site</gco:CharacterString>
           </gmd:keyword>
           <gmd:keyword>
-            <gco:CharacterString>Marine Features (Australia) | Rottnest Island, WA</gco:CharacterString>
-          </gmd:keyword>
-          <gmd:keyword>
             <gco:CharacterString>Marine Features (Australia) | Leeuwin Current</gco:CharacterString>
           </gmd:keyword>
           <gmd:keyword>
@@ -422,47 +419,58 @@ The ROT area of coverage has a small overlap of commonly observed ocean with the
         </gmd:MD_Keywords>
       </gmd:descriptiveKeywords>
       <gmd:descriptiveKeywords>
-        <gmd:MD_Keywords>
+        <gmd:MD_Keywords xmlns:srv="http://www.isotc211.org/2005/srv">
           <gmd:keyword>
             <gco:CharacterString>Global / Oceans | Indian Ocean</gco:CharacterString>
           </gmd:keyword>
-          <gmd:keyword>
-            <gco:CharacterString>States, Territories (Australia) | Western Australia</gco:CharacterString>
-          </gmd:keyword>
-          <gmd:keyword>
-            <gco:CharacterString>Coastal Cities / Towns (Australia) | Perth, WA</gco:CharacterString>
-          </gmd:keyword>
           <gmd:type>
-            <gmd:MD_KeywordTypeCode codeList="http://schemas.aodn.org.au/mcp-2.0/schema/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="theme">theme</gmd:MD_KeywordTypeCode>
+            <gmd:MD_KeywordTypeCode codeList="http://schemas.aodn.org.au/mcp-2.0/schema/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="place">place</gmd:MD_KeywordTypeCode>
           </gmd:type>
           <gmd:thesaurusName>
             <gmd:CI_Citation>
               <gmd:title>
-                <gco:CharacterString>Marine Community Profile of ISO19115 v1.4 Geographic Extent Vocabulary (Annex C.1.2)</gco:CharacterString>
+                <gco:CharacterString>water-bodies</gco:CharacterString>
               </gmd:title>
-              <gmd:alternateTitle>
-                <gco:CharacterString>MCP</gco:CharacterString>
-              </gmd:alternateTitle>
-              <gmd:date>
-                <gmd:CI_Date>
-                  <gmd:date>
-                    <gco:Date>2008-10-30</gco:Date>
-                  </gmd:date>
-                  <gmd:dateType>
-                    <gmd:CI_DateTypeCode codeList="http://schemas.aodn.org.au/mcp-2.0/schema/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="" />
-                  </gmd:dateType>
-                </gmd:CI_Date>
-              </gmd:date>
-              <gmd:citedResponsibleParty>
-                <gmd:CI_ResponsibleParty>
-                  <gmd:organisationName>
-                    <gco:CharacterString>Australian Ocean Data Centre Joint Facility (AODCJF)</gco:CharacterString>
-                  </gmd:organisationName>
-                  <gmd:role>
-                    <gmd:CI_RoleCode codeList="http://schemas.aodn.org.au/mcp-2.0/schema/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="owner">owner</gmd:CI_RoleCode>
-                  </gmd:role>
-                </gmd:CI_ResponsibleParty>
-              </gmd:citedResponsibleParty>
+              <gmd:identifier>
+                <gmd:MD_Identifier>
+                  <gmd:code>
+                    <gmx:Anchor xlink:href="https://catalogue-123.aodn.org.au/geonetwork/srv/en/thesaurus.download?ref=local.theme.water-bodies">geonetwork.thesaurus.local.theme.water-bodies</gmx:Anchor>
+                  </gmd:code>
+                </gmd:MD_Identifier>
+              </gmd:identifier>
+            </gmd:CI_Citation>
+          </gmd:thesaurusName>
+        </gmd:MD_Keywords>
+      </gmd:descriptiveKeywords>
+      <gmd:descriptiveKeywords>
+        <gmd:MD_Keywords xmlns:srv="http://www.isotc211.org/2005/srv">
+          <gmd:keyword>
+            <gco:CharacterString>Coastal Cities / Towns (Australia) | Perth, WA</gco:CharacterString>
+          </gmd:keyword>
+          <gmd:keyword>
+            <gco:CharacterString>Countries | Australia</gco:CharacterString>
+          </gmd:keyword>
+          <gmd:keyword>
+            <gco:CharacterString>Marine Features (Australia) | Rottnest Island, WA</gco:CharacterString>
+          </gmd:keyword>
+          <gmd:keyword>
+            <gco:CharacterString>States, Territories (Australia) | Western Australia</gco:CharacterString>
+          </gmd:keyword>
+          <gmd:type>
+            <gmd:MD_KeywordTypeCode codeList="http://schemas.aodn.org.au/mcp-2.0/schema/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="place">place</gmd:MD_KeywordTypeCode>
+          </gmd:type>
+          <gmd:thesaurusName>
+            <gmd:CI_Citation>
+              <gmd:title>
+                <gco:CharacterString>land-masses</gco:CharacterString>
+              </gmd:title>
+              <gmd:identifier>
+                <gmd:MD_Identifier>
+                  <gmd:code>
+                    <gmx:Anchor xlink:href="https://catalogue-123.aodn.org.au/geonetwork/srv/en/thesaurus.download?ref=local.theme.land-masses">geonetwork.thesaurus.local.theme.land-masses</gmx:Anchor>
+                  </gmd:code>
+                </gmd:MD_Identifier>
+              </gmd:identifier>
             </gmd:CI_Citation>
           </gmd:thesaurusName>
         </gmd:MD_Keywords>
@@ -634,7 +642,7 @@ The ROT area of coverage has a small overlap of commonly observed ocean with the
               <mcp:platform>
                 <mcp:DP_Term>
                   <mcp:term>
-                    <gco:CharacterString>land/onshore structure</gco:CharacterString>
+                    <gco:CharacterString>WERA beam forming HF radar</gco:CharacterString>
                   </mcp:term>
                   <mcp:type>
                     <mcp:DP_TypeCode codeList="http://schemas.aodn.org.au/mcp-2.0/schema/resources/Codelist/gmxCodelists.xml#DP_TypeCode" codeListValue="longName">longName</mcp:DP_TypeCode>
@@ -645,7 +653,7 @@ The ROT area of coverage has a small overlap of commonly observed ocean with the
                         <mcp:DP_RelationshipTypeCode codeList="http://schemas.aodn.org.au/mcp-2.0/schema/resources/Codelist/gmxCodelists.xml#DP_RelationshipTypeCode" codeListValue="skos:exactMatch">skos:exactMatch</mcp:DP_RelationshipTypeCode>
                       </mcp:relationshipType>
                       <mcp:vocabularyTermURL>
-                        <gmd:URL>http://vocab.nerc.ac.uk/collection/L06/current/14</gmd:URL>
+                        <gmd:URL>http://vocab.aodn.org.au/def/platform/726</gmd:URL>
                       </mcp:vocabularyTermURL>
                     </mcp:DP_VocabularyRelationship>
                   </mcp:vocabularyRelationship>
@@ -724,7 +732,7 @@ The ROT area of coverage has a small overlap of commonly observed ocean with the
               <mcp:platform>
                 <mcp:DP_Term>
                   <mcp:term>
-                    <gco:CharacterString>land/onshore structure</gco:CharacterString>
+                    <gco:CharacterString>WERA beam forming HF radar</gco:CharacterString>
                   </mcp:term>
                   <mcp:type>
                     <mcp:DP_TypeCode codeList="http://schemas.aodn.org.au/mcp-2.0/schema/resources/Codelist/gmxCodelists.xml#DP_TypeCode" codeListValue="longName">longName</mcp:DP_TypeCode>
@@ -735,7 +743,7 @@ The ROT area of coverage has a small overlap of commonly observed ocean with the
                         <mcp:DP_RelationshipTypeCode codeList="http://schemas.aodn.org.au/mcp-2.0/schema/resources/Codelist/gmxCodelists.xml#DP_RelationshipTypeCode" codeListValue="skos:exactMatch">skos:exactMatch</mcp:DP_RelationshipTypeCode>
                       </mcp:relationshipType>
                       <mcp:vocabularyTermURL>
-                        <gmd:URL>http://vocab.nerc.ac.uk/collection/L06/current/14</gmd:URL>
+                        <gmd:URL>http://vocab.aodn.org.au/def/platform/726</gmd:URL>
                       </mcp:vocabularyTermURL>
                     </mcp:DP_VocabularyRelationship>
                   </mcp:vocabularyRelationship>
@@ -808,7 +816,7 @@ The ROT area of coverage has a small overlap of commonly observed ocean with the
               <mcp:platform>
                 <mcp:DP_Term>
                   <mcp:term>
-                    <gco:CharacterString>land/onshore structure</gco:CharacterString>
+                    <gco:CharacterString>WERA beam forming HF radar</gco:CharacterString>
                   </mcp:term>
                   <mcp:type>
                     <mcp:DP_TypeCode codeList="http://schemas.aodn.org.au/mcp-2.0/schema/resources/Codelist/gmxCodelists.xml#DP_TypeCode" codeListValue="longName">longName</mcp:DP_TypeCode>
@@ -819,7 +827,7 @@ The ROT area of coverage has a small overlap of commonly observed ocean with the
                         <mcp:DP_RelationshipTypeCode codeList="http://schemas.aodn.org.au/mcp-2.0/schema/resources/Codelist/gmxCodelists.xml#DP_RelationshipTypeCode" codeListValue="skos:exactMatch">skos:exactMatch</mcp:DP_RelationshipTypeCode>
                       </mcp:relationshipType>
                       <mcp:vocabularyTermURL>
-                        <gmd:URL>http://vocab.nerc.ac.uk/collection/L06/current/14</gmd:URL>
+                        <gmd:URL>http://vocab.aodn.org.au/def/platform/726</gmd:URL>
                       </mcp:vocabularyTermURL>
                     </mcp:DP_VocabularyRelationship>
                   </mcp:vocabularyRelationship>
@@ -892,7 +900,7 @@ The ROT area of coverage has a small overlap of commonly observed ocean with the
               <mcp:platform>
                 <mcp:DP_Term>
                   <mcp:term>
-                    <gco:CharacterString>land/onshore structure</gco:CharacterString>
+                    <gco:CharacterString>WERA beam forming HF radar</gco:CharacterString>
                   </mcp:term>
                   <mcp:type>
                     <mcp:DP_TypeCode codeList="http://schemas.aodn.org.au/mcp-2.0/schema/resources/Codelist/gmxCodelists.xml#DP_TypeCode" codeListValue="longName">longName</mcp:DP_TypeCode>
@@ -903,7 +911,7 @@ The ROT area of coverage has a small overlap of commonly observed ocean with the
                         <mcp:DP_RelationshipTypeCode codeList="http://schemas.aodn.org.au/mcp-2.0/schema/resources/Codelist/gmxCodelists.xml#DP_RelationshipTypeCode" codeListValue="skos:exactMatch">skos:exactMatch</mcp:DP_RelationshipTypeCode>
                       </mcp:relationshipType>
                       <mcp:vocabularyTermURL>
-                        <gmd:URL>http://vocab.nerc.ac.uk/collection/L06/current/14</gmd:URL>
+                        <gmd:URL>http://vocab.aodn.org.au/def/platform/726</gmd:URL>
                       </mcp:vocabularyTermURL>
                     </mcp:DP_VocabularyRelationship>
                   </mcp:vocabularyRelationship>
@@ -932,7 +940,7 @@ The ROT area of coverage has a small overlap of commonly observed ocean with the
           <gmd:onLine>
             <gmd:CI_OnlineResource>
               <gmd:linkage>
-                <gmd:URL>http://catalogue-123.aodn.org.au/geonetwork/srv/en/metadata.show?uuid=028b9801-279f-427c-964b-0ffcdf310b59</gmd:URL>
+                <gmd:URL>https://catalogue-123.aodn.org.au/geonetwork/srv/en/metadata.show?uuid=028b9801-279f-427c-964b-0ffcdf310b59</gmd:URL>
               </gmd:linkage>
               <gmd:protocol>
                 <gco:CharacterString>WWW:LINK-1.0-http--metadata-URL</gco:CharacterString>
@@ -1075,7 +1083,7 @@ The ROT area of coverage has a small overlap of commonly observed ocean with the
     </gmd:MD_Distribution>
   </gmd:distributionInfo>
   <mcp:revisionDate>
-    <gco:DateTime>2014-08-08T17:10:31</gco:DateTime>
+    <gco:DateTime>2014-11-28T14:13:29</gco:DateTime>
   </mcp:revisionDate>
 </mcp:MD_Metadata>
 
