@@ -86,7 +86,7 @@
     <xsl:variable name="thesaurus" select="'external.theme.parameterClassificationScheme'"/>
 
 
-    <!-- Create an intermediate node with values we'll use in more than once --> 
+    <!-- Create a node with associated 2nd level category parameter names, and platform --> 
     <xsl:variable name="parameterList">
       <xsl:for-each select="$parameters" >
 
@@ -133,7 +133,7 @@
 
 
 
-	<!-- --> 
+	  <!-- 
     <xsl:text>&#xa;      broader      &#xa;</xsl:text> 
     <xsl:value-of select="$parameterList/broader" separator=", "/>
 
@@ -150,8 +150,7 @@
     <xsl:value-of select="$uniqueParameters/broader" separator=", "/>
 
     <xsl:text>&#xa;</xsl:text> 
-	<!-- --> 
-
+	  --> 
 
 
     <xsl:variable name="filename">
@@ -160,7 +159,6 @@
       <xsl:value-of select="$uniqueParameters/broader" separator="-"/>
       <xsl:text>.html</xsl:text>
     </xsl:variable>
-
 
 
     <xsl:result-document method="xml" href="output/{ encode-for-uri( $filename)}">
