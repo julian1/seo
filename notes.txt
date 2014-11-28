@@ -1,5 +1,27 @@
 
 
+Get thesaurus list	http://10.11.12.13/geonetwork/srv/en/xml.thesaurus.getList
+
+wget --no-check-certificate  'http://10.11.12.13/geonetwork/srv/en/xml.thesaurus.getList' -O - 2> /dev/null
+
+
+-- works!! 
+
+wget --no-check-certificate  'http://10.11.12.13/geonetwork/srv/en/xml.search.keywordlink?request=broader&thesaurus=external.theme.parameterClassificationScheme&id=http://vocab.nerc.ac.uk/collection/P01/current/PSLTZZ01' -O - 2> /dev/null
+
+
+http://10.11.12.13/geonetwork/srv/en/xml.search.keywordlink?request=broader&thesaurus=external.theme.parameterClassificationScheme&id=http://vocab.nerc.ac.uk/collection/P01/current/PSLTZZ01 
+
+---
+
+
+https://10.11.12.13/geonetwork/srv/eng/xml.user.metadata
+
+seems to list all metadata records - and could perhaps be used. 
+
+
+----
+
 list of all uuids (using search)
     list of all parameters in uuid (very similar to existing page)
         formated landing page
