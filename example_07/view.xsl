@@ -107,15 +107,8 @@
     </xsl:variable>
 
 
-    <xsl:variable name="filename">
-      <xsl:value-of select="$parameterList/broader" separator="-"/>
-      <xsl:text>.html</xsl:text>
-    </xsl:variable>
 
-
-    <xsl:text>&#xa;      filename &#xa;</xsl:text> 
-    <xsl:value-of select="$filename"/>
-
+	<!-- --> 
     <xsl:text>&#xa;      broader      &#xa;</xsl:text> 
     <xsl:value-of select="$parameterList/broader" separator=", "/>
 
@@ -131,8 +124,18 @@
     <xsl:text>&#xa;       uniqueParameters      &#xa;</xsl:text> 
     <xsl:value-of select="$uniqueParameters/broader" separator=", "/>
 
-   
     <xsl:text>&#xa;</xsl:text> 
+	<!-- --> 
+
+
+
+    <xsl:variable name="filename">
+      <xsl:value-of select="$title" separator="-"/>
+      <xsl:text> </xsl:text>
+      <xsl:value-of select="$uniqueParameters/broader" separator="-"/>
+      <xsl:text>.html</xsl:text>
+    </xsl:variable>
+
 
 
     <xsl:result-document method="xml" href="output/{ encode-for-uri( $filename)}">
@@ -149,7 +152,7 @@
 
         <!-- Page Meta Title -->
         <title>
-          <xsl:value-of select="$parameterList/broader" separator=", "/>
+          <xsl:value-of select="$uniqueParameters/broader" separator=", "/>
           <xsl:text> | Seas Oceans Atmosphere | </xsl:text>
           <xsl:value-of select="$uniquePlatforms/platform" separator=", "/>
           <xsl:text> | IMOS Scientific Research Data </xsl:text>
@@ -163,7 +166,7 @@
         <meta name="description">
           <xsl:attribute name="content">
 
-            <xsl:value-of select="$parameterList/broader" separator=", "/>
+            <xsl:value-of select="$uniqueParameters/broader" separator=", "/>
             <xsl:text> in the oceans, seas and/or atmosphere near </xsl:text>
             <xsl:value-of select="$landMasses" separator=", "/>
             <xsl:text> using </xsl:text>
@@ -195,7 +198,7 @@
           <header>
             <!-- Page Content -->
             <h1>
-              <xsl:value-of select="$parameterList/broader" separator=", "/>
+              <xsl:value-of select="$uniqueParameters/broader" separator=", "/>
               <xsl:text> | Oceans Seas Atmosphere</xsl:text>
             </h1>
     
@@ -224,7 +227,7 @@
 
           <div>
             <xsl:text>The </xsl:text>
-            <xsl:value-of select="$parameterList/broader" separator=", "/>
+            <xsl:value-of select="$uniqueParameters/broader" separator=", "/>
             <xsl:text> data sets are useful for scientific and/or academic research and are free to download from the IMOS Portal.</xsl:text>
           </div>
 
@@ -233,7 +236,7 @@
             <div class="col-md-4">
 
               <h2>
-                <xsl:value-of select="$parameterList/broader" separator=", "/>
+                <xsl:value-of select="$uniqueParameters/broader" separator=", "/>
                 <xsl:text> Data Collection Map</xsl:text>
               </h2>
 
@@ -262,7 +265,7 @@
 
 
                   <xsl:value-of select="'Download a '"/>
-                  <xsl:value-of select="$parameterList/broader" separator=", "/>
+                  <xsl:value-of select="$uniqueParameters/broader" separator=", "/>
                   <xsl:value-of select="' Data Set'"/>
                 </xsl:element>
               </div>
