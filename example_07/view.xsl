@@ -66,16 +66,16 @@
     </xsl:variable>
 
 
-
-    <!-- -->
-      uuid :        '<xsl:value-of select="$uuid"/>'
-      organisation: '<xsl:value-of select="$organisation"/>'
-      water bodies: '<xsl:value-of select="$waterBodies" separator="', '"/>'
-      water bodies2: '<xsl:value-of select="$waterBodiesTidied" separator="', '"/>'
-      land masses:  '<xsl:value-of select="$landMasses" separator="', '"/>'
-      land masses2:  '<xsl:value-of select="$landMassesTidied" separator="', '"/>'
-      title:        '<xsl:value-of select="$title" />'
-      <!-- abstract:     '<xsl:value-of select="$abstract" />' -->
+    <!-- 
+    uuid :        '<xsl:value-of select="$uuid"/>'
+    organisation: '<xsl:value-of select="$organisation"/>'
+    water bodies: '<xsl:value-of select="$waterBodies" separator="', '"/>'
+    water bodies2: '<xsl:value-of select="$waterBodiesTidied" separator="', '"/>'
+    land masses:  '<xsl:value-of select="$landMasses" separator="', '"/>'
+    land masses2:  '<xsl:value-of select="$landMassesTidied" separator="', '"/>'
+    title:        '<xsl:value-of select="$title" />'
+    -->
+    <!-- abstract:     '<xsl:value-of select="$abstract" />' -->
 
 
     <xsl:variable name="geonetworkUrl" select="'http://10.11.12.13'"/>
@@ -116,6 +116,7 @@
         </xsl:element>
       </xsl:for-each-group>
     </xsl:variable>
+
 
     <!-- Group unique broader parameters -->
     <xsl:variable name="uniqueParameters">
