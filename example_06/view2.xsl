@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- java -jar ../saxon9he.jar  ../records/argo_with_wb_and_lm.xml view.xsl -->
+<!-- java -jar ../saxon9he.jar  ../records/argo_with_wb_and_lm.xml view2.xsl -->
 
 <!-- 
 	Note that Saxon - doesn't like the SSL self-signed certificate when running in vagrant instance
