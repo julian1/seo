@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsl:stylesheet version="2.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:mcp="http://schemas.aodn.org.au/mcp-2.0"
+  xmlns:gco="http://www.isotc211.org/2005/gco"
+  xmlns:gmd="http://www.isotc211.org/2005/gmd"
+  xmlns:gmx="http://www.isotc211.org/2005/gmx"
+
+  exclude-result-prefixes="xsl mcp gco gmd gmx"
+>
+
+<!-- 
+	<xsl:include href="translate_newlines.xsl" />
+	<xsl:output method="html" indent="yes" omit-xml-declaration="yes" encoding="UTF-8" />
+
+	https://10.11.12.13/geonetwork/srv/eng/xml.search.imos?fast=index
+
+<xsl:variable name="request" select="string-join(($geonetworkUrl, '/geonetwork/srv/en/xml.search.keywordlink?request=broader&amp;thesaurus=', $thesaurus, '&amp;id=', $term ),'')" />
+<xsl:variable name="request" select="'https://10.11.12.13/geonetwork/srv/eng/xml.search.imos?fast=index'"/>
+-->
+
+<xsl:variable name="request" select="'https://catalogue-123.aodn.org.au/geonetwork/srv/eng/xml.search.imos?fast=index'"/>
+
+<xsl:template match="mcp:MD_Metadata">
+	<xsl:value-of select="document($request)" />
+
+</xsl:template>
+
+
+</xsl:stylesheet>
+
