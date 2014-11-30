@@ -29,17 +29,14 @@
 
 	<xsl:for-each select="document($request)/response/metadata" >
 
-
 		<xsl:text>&#xa;</xsl:text> 
+
+    <!-- 
 		<xsl:value-of select="title" />
-
 		<xsl:text>,  </xsl:text> 
-		<!-- xsl:value-of select="../geonet:info/uuid" /-->
-
 		<xsl:value-of select="responsibleParty" />
-
-
-		<!-- geonet:info xmlns:geonet="http://www.fao.org/geonetwork" -->
+		<xsl:text>,  </xsl:text> 
+    -->
 		<xsl:value-of select="geonet:info/uuid"/>
 
 	</xsl:for-each>
