@@ -18,12 +18,22 @@
 
 <xsl:variable name="request" select="string-join(($geonetworkUrl, '/geonetwork/srv/en/xml.search.keywordlink?request=broader&amp;thesaurus=', $thesaurus, '&amp;id=', $term ),'')" />
 <xsl:variable name="request" select="'https://10.11.12.13/geonetwork/srv/eng/xml.search.imos?fast=index'"/>
+
+	dd  <xsl:for-each select="$waterBodies">
 -->
 
 <xsl:variable name="request" select="'https://catalogue-123.aodn.org.au/geonetwork/srv/eng/xml.search.imos?fast=index'"/>
 
 <xsl:template match="/">
-	<xsl:value-of select="document($request)/response/metadata/source" />
+
+	<xsl:for-each select="document($request)/response/metadata/source" >
+
+
+		<xsl:text>&#xa;</xsl:text> 
+		<xsl:value-of select="." />
+
+	</xsl:for-each>
+
 
 </xsl:template>
 
