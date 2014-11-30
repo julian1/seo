@@ -22,8 +22,8 @@
 
 <xsl:variable name="request" select="'https://catalogue-123.aodn.org.au/geonetwork/srv/eng/xml.search.imos?fast=index'"/>
 
-<xsl:template match="mcp:MD_Metadata">
-	<xsl:value-of select="document($request)" />
+<xsl:template match="/">
+	<xsl:value-of select="document($request)/response/metadata/source" />
 
 </xsl:template>
 
