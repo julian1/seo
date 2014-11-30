@@ -6,7 +6,6 @@
   xmlns:gco="http://www.isotc211.org/2005/gco"
   xmlns:gmd="http://www.isotc211.org/2005/gmd"
   xmlns:gmx="http://www.isotc211.org/2005/gmx"
-
   xmlns:geonet="http://www.fao.org/geonetwork"
 
   exclude-result-prefixes="xsl mcp gco gmd gmx"
@@ -41,7 +40,7 @@
 
 
 		<!-- geonet:info xmlns:geonet="http://www.fao.org/geonetwork" -->
-		<xsl:value-of select="geonet:info"/>
+		<xsl:value-of select="geonet:info/uuid"/>
 
 	</xsl:for-each>
 
