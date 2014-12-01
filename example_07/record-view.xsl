@@ -12,7 +12,7 @@
   exclude-result-prefixes="xsl mcp gco gmd gmx"
 >
 
-  <xsl:include href="translate_newlines.xsl" />
+  <xsl:include href="whitespace-format.xsl" />
 
     
   <xsl:output method="html" indent="yes" omit-xml-declaration="yes" encoding="UTF-8" />

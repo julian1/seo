@@ -12,7 +12,7 @@
 >
 
 
-<xsl:include href="view.xsl" />
+<xsl:include href="record-view.xsl" />
 
 
 <xsl:variable name="geonetworkUrl" select="'https://catalogue-123.aodn.org.au'"/>
