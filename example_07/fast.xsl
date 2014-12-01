@@ -12,18 +12,18 @@
 >
 
 
-<!-- xsl:include href="view.xsl" / -->
+<xsl:include href="view.xsl" />
 
 
 <xsl:variable name="geonetworkUrl" select="'https://catalogue-123.aodn.org.au'"/>
 
 <!-- this thing ought to match the original file -->
 
-<xsl:template match="mcp:MD_Metadata">
+<!--xsl:template match="mcp:MD_Metadata">
 
       <xsl:value-of select="'WHOOT!!!'" />
 
-</xsl:template>
+</xsl:template-->
 
 
 

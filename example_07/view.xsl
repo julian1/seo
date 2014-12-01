@@ -7,10 +7,12 @@
   xmlns:gmd="http://www.isotc211.org/2005/gmd"
   xmlns:gmx="http://www.isotc211.org/2005/gmx"
 
+  xmlns:geonet="http://www.fao.org/geonetwork"
+
   exclude-result-prefixes="xsl mcp gco gmd gmx"
 >
 
-<xsl:include href="translate_newlines.xsl" />
+  <xsl:include href="translate_newlines.xsl" />
 
     
   <xsl:output method="html" indent="yes" omit-xml-declaration="yes" encoding="UTF-8" />
@@ -21,7 +23,7 @@
 
     <!-- Data identification is a common root and should be factored -->
     <xsl:variable name="waterBodies" select="gmd:identificationInfo/mcp:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:thesaurusName//gmx:Anchor[text() = 'geonetwork.thesaurus.local.theme.water-bodies' ]/ancestor::gmd:MD_Keywords/gmd:keyword/gco:CharacterString" />
-
+/va
     <xsl:variable name="landMasses" select="gmd:identificationInfo/mcp:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:thesaurusName//gmx:Anchor[text() = 'geonetwork.thesaurus.local.theme.land-masses' ]/ancestor::gmd:MD_Keywords/gmd:keyword/gco:CharacterString" />
 
     <xsl:variable name="parameters" select="gmd:identificationInfo/mcp:MD_DataIdentification/mcp:dataParameters/mcp:DP_DataParameters/mcp:dataParameter/mcp:DP_DataParameter" />
@@ -319,7 +321,7 @@
 
 
     <!-- output an index file -->
-    <xsl:result-document method="xml" href="output/index.html">
+    <!-- xsl:result-document method="xml" href="output/index.html">
       <xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html></xsl:text>
       <xsl:text>&#xa;</xsl:text>
       <html>
@@ -339,7 +341,7 @@
 
         </body>
       </html>
-    </xsl:result-document>
+    </xsl:result-document -->
 
   </xsl:template>
 </xsl:stylesheet>
