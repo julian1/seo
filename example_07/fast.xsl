@@ -50,17 +50,18 @@
     <xsl:variable name="schema" select="geonet:info/schema"/>
 
 		<xsl:value-of select="$schema" />
-		<xsl:text>,  </xsl:text> 
+    <xsl:value-of select="', '" />
 
-		<xsl:variable name="uuid" select="geonet:info/uuid"/>
-
-		<xsl:value-of select="$uuid" />
-
-		<xsl:variable name="uuid" select="geonet:info/uuid"/>
+    <xsl:value-of select="position()"/>
+    <xsl:value-of select="', '" />
 
      <xsl:if test="$schema = 'iso19139.mcp-2.0'">
 
 		    <xsl:value-of select="'*'" />
+        <xsl:variable name="uuid" select="geonet:info/uuid"/>
+        <xsl:value-of select="$uuid" />
+
+
 
      </xsl:if>
 
