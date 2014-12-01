@@ -11,27 +11,26 @@
   exclude-result-prefixes="xsl mcp gco gmd gmx"
 >
 
-<!-- 
-	<xsl:include href="translate_newlines.xsl" />
-	<xsl:output method="html" indent="yes" omit-xml-declaration="yes" encoding="UTF-8" />
 
-	https://10.11.12.13/geonetwork/srv/eng/xml.search.imos?fast=index
+<!-- xsl:include href="view.xsl" / -->
 
-<xsl:variable name="request" select="string-join(($geonetworkUrl, '/geonetwork/srv/en/xml.search.keywordlink?request=broader&amp;thesaurus=', $thesaurus, '&amp;id=', $term ),'')" />
-<xsl:variable name="request" select="'https://10.11.12.13/geonetwork/srv/eng/xml.search.imos?fast=index'"/>
-
-  <xsl:for-each select="$waterBodies">
-
-  
-  https://catalogue-123.aodn.org.au/geonetwork/srv/eng/xml.metadata.get?uuid=c8350207-49b1-458f-a648-59107815bd3d
-
--->
 
 <xsl:variable name="geonetworkUrl" select="'https://catalogue-123.aodn.org.au'"/>
 
-<xsl:variable name="request" select="'https://catalogue-123.aodn.org.au/geonetwork/srv/eng/xml.search.imos?fast=index'"/>
 
 
+<xsl:template match="mcp:MD_Metadata">
+
+      <xsl:value-of select="'WHOOT!!!'" />
+
+</xsl:template>
+
+
+
+
+<xsl:variable name="request" select="concat($geonetworkUrl, '/geonetwork/srv/eng/xml.search.imos?fast=index')"/>
+
+  <!-- TODO: we don't need to match on an empty document -->
   <xsl:template match="/">
     <xsl:for-each select="document($request)/response/metadata" >
 
@@ -46,14 +45,9 @@
 
       <xsl:variable name="schema" select="geonet:info/schema"/>
 
-      <xsl:value-of select="$schema" />
-      <xsl:value-of select="', '" />
+      <xsl:value-of select="concat( $schema, ', ', position(), ', ' )" />
 
-      <xsl:value-of select="position()"/>
-      <xsl:value-of select="', '" />
-
-
-      <xsl:if test="$schema = 'iso19139.mcp-2.0' and position() &lt; 3">
+      <xsl:if test="$schema = 'iso19139.mcp-2.0' and position() &lt; 5">
 
         <xsl:value-of select="'*'" />
         <xsl:variable name="uuid" select="geonet:info/uuid"/>
@@ -64,8 +58,9 @@
         <xsl:variable name="request" select="concat($geonetworkUrl, '/geonetwork/srv/eng/xml.metadata.get?uuid=', $uuid)" />
         <xsl:value-of select="$request"/>
 
+        <!-- xsl:value-of select="document($request)/mcp:MD_Metadata/gmd:fileIdentifier"/ -->
 
-        <xsl:value-of select="document($request)/mcp:MD_Metadata/gmd:fileIdentifier"/>
+        <!-- xsl:apply-templates select="document($request)"/ -->
 
       </xsl:if>
     </xsl:for-each>
