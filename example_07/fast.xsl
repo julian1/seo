@@ -64,6 +64,9 @@
         <xsl:variable name="request" select="concat($geonetworkUrl, '/geonetwork/srv/eng/xml.metadata.get?uuid=', $uuid)" />
         <xsl:value-of select="$request"/>
 
+
+        <xsl:value-of select="document($request)/mcp:MD_Metadata/gmd:fileIdentifier"/>
+
       </xsl:if>
     </xsl:for-each>
 
