@@ -20,7 +20,7 @@
 <xsl:variable name="request" select="string-join(($geonetworkUrl, '/geonetwork/srv/en/xml.search.keywordlink?request=broader&amp;thesaurus=', $thesaurus, '&amp;id=', $term ),'')" />
 <xsl:variable name="request" select="'https://10.11.12.13/geonetwork/srv/eng/xml.search.imos?fast=index'"/>
 
-	<xsl:for-each select="$waterBodies">
+  <xsl:for-each select="$waterBodies">
 
   
   https://catalogue-123.aodn.org.au/geonetwork/srv/eng/xml.metadata.get?uuid=c8350207-49b1-458f-a648-59107815bd3d
@@ -32,44 +32,41 @@
 <xsl:variable name="request" select="'https://catalogue-123.aodn.org.au/geonetwork/srv/eng/xml.search.imos?fast=index'"/>
 
 
-<xsl:template match="/">
+  <xsl:template match="/">
+    <xsl:for-each select="document($request)/response/metadata" >
 
-	<xsl:for-each select="document($request)/response/metadata" >
+      <xsl:text>&#xa;</xsl:text> 
 
+      <!-- 
+      <xsl:value-of select="title" />
+      <xsl:text>,  </xsl:text> 
+      <xsl:value-of select="responsibleParty" />
+      <xsl:text>,  </xsl:text> 
+      -->
 
-		<xsl:text>&#xa;</xsl:text> 
+      <xsl:variable name="schema" select="geonet:info/schema"/>
 
-    <!-- 
-		<xsl:value-of select="title" />
-		<xsl:text>,  </xsl:text> 
-		<xsl:value-of select="responsibleParty" />
-		<xsl:text>,  </xsl:text> 
-    -->
+      <xsl:value-of select="$schema" />
+      <xsl:value-of select="', '" />
 
-
-    <xsl:variable name="schema" select="geonet:info/schema"/>
-
-		<xsl:value-of select="$schema" />
-    <xsl:value-of select="', '" />
-
-    <xsl:value-of select="position()"/>
-    <xsl:value-of select="', '" />
+      <xsl:value-of select="position()"/>
+      <xsl:value-of select="', '" />
 
 
-    <xsl:if test="$schema = 'iso19139.mcp-2.0'">
+      <xsl:if test="$schema = 'iso19139.mcp-2.0' and position() &lt; 3">
 
-		    <xsl:value-of select="'*'" />
+        <xsl:value-of select="'*'" />
         <xsl:variable name="uuid" select="geonet:info/uuid"/>
+
         <xsl:value-of select="$uuid" />
 
-     </xsl:if>
-    <!-- xsl:variable name="request" select="string-join(($geonetworkUrl, '/geonetwork/srv/eng/metadata.show?uuid=', $uuid),'')" /-->
-		<!-- xsl:value-of select="$request" /-->
-	</xsl:for-each>
+        <xsl:value-of select="', '" />
+        <xsl:variable name="request" select="concat($geonetworkUrl, '/geonetwork/srv/eng/xml.metadata.get?uuid=', $uuid)" />
+        <xsl:value-of select="$request"/>
 
+      </xsl:if>
+    </xsl:for-each>
 
-</xsl:template>
-
-
+  </xsl:template>
 </xsl:stylesheet>
 
