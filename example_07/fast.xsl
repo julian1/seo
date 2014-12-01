@@ -55,20 +55,16 @@
     <xsl:value-of select="position()"/>
     <xsl:value-of select="', '" />
 
-     <xsl:if test="$schema = 'iso19139.mcp-2.0'">
+
+    <xsl:if test="$schema = 'iso19139.mcp-2.0'">
 
 		    <xsl:value-of select="'*'" />
         <xsl:variable name="uuid" select="geonet:info/uuid"/>
         <xsl:value-of select="$uuid" />
 
-
-
      </xsl:if>
-
     <!-- xsl:variable name="request" select="string-join(($geonetworkUrl, '/geonetwork/srv/eng/metadata.show?uuid=', $uuid),'')" /-->
 		<!-- xsl:value-of select="$request" /-->
-
-
 	</xsl:for-each>
 
 
