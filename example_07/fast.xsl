@@ -17,7 +17,7 @@
 
 <xsl:variable name="geonetworkUrl" select="'https://catalogue-123.aodn.org.au'"/>
 
-
+<!-- this thing ought to match the original file -->
 
 <xsl:template match="mcp:MD_Metadata">
 
@@ -55,12 +55,12 @@
         <xsl:value-of select="$uuid" />
 
         <xsl:value-of select="', '" />
-        <xsl:variable name="request" select="concat($geonetworkUrl, '/geonetwork/srv/eng/xml.metadata.get?uuid=', $uuid)" />
-        <xsl:value-of select="$request"/>
+        <xsl:variable name="request2" select="concat($geonetworkUrl, '/geonetwork/srv/eng/xml.metadata.get?uuid=', $uuid)" />
+        <xsl:value-of select="$request2"/>
 
         <!-- xsl:value-of select="document($request)/mcp:MD_Metadata/gmd:fileIdentifier"/ -->
 
-        <!-- xsl:apply-templates select="document($request)"/ -->
+        <xsl:apply-templates select="document($request2)/mcp:MD_Metadata"/>
 
       </xsl:if>
     </xsl:for-each>
