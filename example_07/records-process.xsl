@@ -19,10 +19,11 @@
 
 
 <xsl:variable name="request" select="concat($geonetworkUrl, '/geonetwork/srv/eng/xml.search.imos?fast=index')"/>
+<xsl:variable name="node" select="document($request)/response/metadata"/>
 
   <!-- TODO: we don't need to match on an empty document -->
   <xsl:template match="/">
-    <xsl:for-each select="document($request)/response/metadata" >
+    <xsl:for-each select="$node" >
 
       <xsl:variable name="schema" select="geonet:info/schema"/>
 
