@@ -17,16 +17,6 @@
 
 <xsl:variable name="geonetworkUrl" select="'https://catalogue-123.aodn.org.au'"/>
 
-<!-- this thing ought to match the original file -->
-
-<!--xsl:template match="mcp:MD_Metadata">
-
-      <xsl:value-of select="'WHOOT!!!'" />
-
-</xsl:template-->
-
-
-
 
 <xsl:variable name="request" select="concat($geonetworkUrl, '/geonetwork/srv/eng/xml.search.imos?fast=index')"/>
 
@@ -34,34 +24,18 @@
   <xsl:template match="/">
     <xsl:for-each select="document($request)/response/metadata" >
 
-      <xsl:text>&#xa;</xsl:text> 
-
-      <!-- 
-      <xsl:value-of select="title" />
-      <xsl:text>,  </xsl:text> 
-      <xsl:value-of select="responsibleParty" />
-      <xsl:text>,  </xsl:text> 
-      -->
-
       <xsl:variable name="schema" select="geonet:info/schema"/>
 
-      <xsl:value-of select="concat( $schema, ', ', position(), ', ' )" />
+      <xsl:value-of select="concat( '&#xa;', $schema, ', ', position(), ', ' )" />
 
       <xsl:if test="$schema = 'iso19139.mcp-2.0' and position() &lt; 5">
 
-        <xsl:value-of select="'*'" />
         <xsl:variable name="uuid" select="geonet:info/uuid"/>
-
-        <xsl:value-of select="$uuid" />
-
-        <xsl:value-of select="', '" />
         <xsl:variable name="request2" select="concat($geonetworkUrl, '/geonetwork/srv/eng/xml.metadata.get?uuid=', $uuid)" />
-        <xsl:value-of select="$request2"/>
 
-        <!-- xsl:value-of select="document($request)/mcp:MD_Metadata/gmd:fileIdentifier"/ -->
+        <xsl:value-of select="concat( $uuid, ', ', position(), ', ', $request2 )" />
 
         <xsl:apply-templates select="document($request2)/mcp:MD_Metadata"/>
-
       </xsl:if>
     </xsl:for-each>
 
