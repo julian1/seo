@@ -20,7 +20,10 @@
 
 
   <xsl:template name="whoot">
-    WHOOT
+    <xsl:param name="node" as="element()" />
+      HERE1
+      <xsl:value-of select="$node/filename"/> 
+      HERE2
   </xsl:template>
 
   <xsl:template match="mcp:MD_Metadata">
@@ -218,7 +221,10 @@
 
       <!-- should expand by applying templates on node -->
       <xsl:result-document method="html" indent="yes" href="output/{ encode-for-uri( $filename)}">
-        <xsl:call-template name="whoot"/>
+        <xsl:call-template name="whoot">
+          <xsl:with-param name="node" select="." />
+        </xsl:call-template>
+
       </xsl:result-document>
 
     </xsl:for-each>
