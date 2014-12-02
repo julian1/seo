@@ -12,11 +12,132 @@
 >
 
 
-
+  <!-- build an intermediate node with everything we'll need 
+		we can actually push this into another file
+		if we want.
+    -->
   <xsl:template match="mcp:MD_Metadata">
 
-    <xsl:element name="uuid"> 
-		<xsl:value-of select="gmd:fileIdentifier/gco:CharacterString"/>
+     <xsl:variable name="uuid" select="gmd:fileIdentifier/gco:CharacterString"/>
+
+    <!-- Data identification is a common root and should be factored -->
+    <xsl:variable name="waterBodies" select="gmd:identificationInfo/mcp:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:thesaurusName//gmx:Anchor[text() = 'geonetwork.thesaurus.local.theme.water-bodies' ]/ancestor::gmd:MD_Keywords/gmd:keyword/gco:CharacterString" />
+/va
+    <xsl:variable name="landMasses" select="gmd:identificationInfo/mcp:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:thesaurusName//gmx:Anchor[text() = 'geonetwork.thesaurus.local.theme.land-masses' ]/ancestor::gmd:MD_Keywords/gmd:keyword/gco:CharacterString" />
+
+    <xsl:variable name="parameters" select="gmd:identificationInfo/mcp:MD_DataIdentification/mcp:dataParameters/mcp:DP_DataParameters/mcp:dataParameter/mcp:DP_DataParameter" />
+
+    <xsl:variable name="title" select="gmd:identificationInfo/mcp:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:title/gco:CharacterString" />
+
+    <xsl:variable name="abstract" select="gmd:identificationInfo/mcp:MD_DataIdentification/gmd:abstract/gco:CharacterString" />
+
+    <xsl:variable name="organisation" select="gmd:contact/gmd:CI_ResponsibleParty/gmd:organisationName/gco:CharacterString" />
+
+    <!-- take the right most element of the land mass separated by | -->
+    <xsl:variable name="waterBodiesTidied">
+      <xsl:for-each select="$waterBodies">
+          <xsl:element name="water-body">
+            <xsl:value-of select="replace(., '.*\|(.*)','$1')"/>
+          </xsl:element>
+      </xsl:for-each>
+    </xsl:variable>
+
+    <!-- take the right most element of the water body separated by | -->
+    <xsl:variable name="landMassesTidied">
+      <xsl:for-each select="$landMasses">
+          <xsl:element name="land-mass">
+            <xsl:value-of select="replace(., '.*\|(.*)','$1')"/>
+          </xsl:element>
+      </xsl:for-each>
+    </xsl:variable>
+
+    <!-- 
+    uuid :        '<xsl:value-of select="$uuid"/>'
+    organisation: '<xsl:value-of select="$organisation"/>'
+    water bodies: '<xsl:value-of select="$waterBodies" separator="', '"/>'
+    water bodies2: '<xsl:value-of select="$waterBodiesTidied/water-body" separator="', '"/>'
+    land masses:  '<xsl:value-of select="$landMasses" separator="', '"/>'
+    land masses2:  '<xsl:value-of select="$landMassesTidied/land-mass" separator="', '"/>'
+    title:        '<xsl:value-of select="$title" />'
+    -->
+    <!-- abstract:     '<xsl:value-of select="$abstract" />' -->
+
+
+    <xsl:variable name="geonetworkUrl" select="'http://10.11.12.13'"/>
+    <xsl:variable name="thesaurus" select="'external.theme.parameterClassificationScheme'"/>
+
+
+    <!-- Create a node with associated 2nd level category parameter names, and platform --> 
+    <xsl:variable name="parameterList">
+      <xsl:for-each select="$parameters" >
+
+        <xsl:element name="longName">
+          <xsl:value-of select="mcp:parameterName/mcp:DP_Term/mcp:type/mcp:DP_TypeCode[text() = 'longName']/../../mcp:term/gco:CharacterString" />
+        </xsl:element>
+
+        <xsl:element name="platform">
+          <xsl:value-of select="mcp:platform/mcp:DP_Term/mcp:term/gco:CharacterString" />
+        </xsl:element>
+
+        <!-- TODO: change so it doesn't go via the long name -->
+        <xsl:variable name="term" select="mcp:parameterName/mcp:DP_Term/mcp:type/mcp:DP_TypeCode[text() = 'longName']/../../mcp:vocabularyRelationship/mcp:DP_VocabularyRelationship/mcp:vocabularyTermURL/gmd:URL" />
+
+        <xsl:variable name="request" select="string-join(($geonetworkUrl, '/geonetwork/srv/en/xml.search.keywordlink?request=broader&amp;thesaurus=', $thesaurus, '&amp;id=', $term ),'')" />
+
+        <xsl:element name="broader">
+          <xsl:value-of select="document($request)/response/narrower/descKeys/keyword/values/value[@language='eng']" />
+        </xsl:element>
+
+      </xsl:for-each>
+    </xsl:variable>
+
+    <!-- Group unique platforms -->
+    <xsl:variable name="uniquePlatforms">
+      <xsl:for-each-group select="$parameterList" group-by="platform">
+        <xsl:element name="platform">
+          <xsl:value-of select="current-grouping-key()"/>
+        </xsl:element>
+      </xsl:for-each-group>
+    </xsl:variable>
+
+    <!-- Group unique broader parameters -->
+    <xsl:variable name="uniqueParameters">
+      <xsl:for-each-group select="$parameterList" group-by="broader">
+        <xsl:element name="broader">
+          <xsl:value-of select="current-grouping-key()"/>
+        </xsl:element>
+      </xsl:for-each-group>
+    </xsl:variable>
+
+	  <!-- 
+    <xsl:text>&#xa;      broader      &#xa;</xsl:text> 
+    <xsl:value-of select="$parameterList/broader" separator=", "/>
+
+    <xsl:text>&#xa;      longName      &#xa;</xsl:text> 
+    <xsl:value-of select="$parameterList/longName" separator=", "/>
+
+    <xsl:text>&#xa;      platform      &#xa;</xsl:text> 
+    <xsl:value-of select="$parameterList/platform" separator=", "/>
+
+    <xsl:text>&#xa;       uniquePlatforms       &#xa;</xsl:text> 
+    <xsl:value-of select="$uniquePlatforms/platform" separator=", "/>
+
+    <xsl:text>&#xa;       uniqueParameters      &#xa;</xsl:text> 
+    <xsl:value-of select="$uniqueParameters/broader" separator=", "/>
+
+    <xsl:text>&#xa;</xsl:text> 
+	  --> 
+
+    <xsl:variable name="filename">
+      <xsl:value-of select="$title" separator="-"/>
+      <xsl:text> | </xsl:text>
+      <xsl:value-of select="$uniqueParameters/broader" separator="-"/>
+      <xsl:text>.html</xsl:text>
+    </xsl:variable>
+
+    <xsl:element name="filename">
+
+      <xsl:value-of select="replace( $filename, ' ', '-')" separator="-"/>
     </xsl:element>
 
   </xsl:template>
@@ -30,7 +151,7 @@
   <xsl:variable name="geonetworkUrl" select="'https://catalogue-123.aodn.org.au'"/>
   <xsl:variable name="request" select="concat($geonetworkUrl, '/geonetwork/srv/eng/xml.search.imos?fast=index')"/>
   <!-- cache the node, to guarantee idempotence --> 
-  <xsl:variable name="node" select="document($request)/response/metadata"/>
+  <xsl:variable name="nodes" select="document($request)/response/metadata"/>
 
 
   <!-- filename generation should be predictable here. 
@@ -41,7 +162,7 @@
   <xsl:template match="/">
 
     <!-- output records -->
-    <xsl:for-each select="$node" >
+    <xsl:for-each select="$nodes" >
 
       <xsl:variable name="schema" select="geonet:info/schema"/>
       <xsl:value-of select="concat( '&#xa;', $schema, ', ', position(), ', ' )" />
@@ -61,13 +182,13 @@
         <!-- xsl:apply-templates select="document($request2)/mcp:MD_Metadata"/ -->
         <!-- xsl:variable name="node" select="document($request2)/mcp:MD_Metadata"/-->
 
+		<!-- build intermediate node -->
         <xsl:variable name="whoot"> 
           <xsl:apply-templates select="document($request2)/mcp:MD_Metadata"/>
         </xsl:variable> 
 
         <xsl:text>here</xsl:text> 
-        <xsl:value-of select="$whoot/uuid"/>
-        <xsl:text>here</xsl:text> 
+        <xsl:value-of select="$whoot/filename"/>
 
       </xsl:if>
     </xsl:for-each>
@@ -86,7 +207,7 @@
         </head>
         <body>
 
-          <xsl:for-each select="$node" >
+          <xsl:for-each select="$nodes" >
 
             <xsl:variable name="xxx" select="'xxx'"/>
 
