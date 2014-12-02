@@ -9,7 +9,7 @@
 
   xmlns:geonet="http://www.fao.org/geonetwork"
 
-  exclude-result-prefixes="xsl mcp gco gmd gmx"
+  exclude-result-prefixes="xsl mcp gco gmd gmx geonet"
 >
 
   <xsl:include href="whitespace-format.xsl" />
