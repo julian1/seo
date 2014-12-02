@@ -12,15 +12,15 @@
 >
 
   <!-- Configuration -->
-  <xsl:variable name="maxRecords" select="10"/> <!-- Note, includes register records -->
+  <xsl:variable name="maxRecords"         select="10"/> <!-- Note, includes register records -->
 
-  <xsl:variable name="geonetworkBaseUrl" select="'https://catalogue-123.aodn.org.au'"/>
-  <xsl:variable name="portalDataBaseUrl" select="'https://imos.aodn.org.au/imos123/home'"/>
+  <xsl:variable name="geonetworkBaseUrl"  select="'https://catalogue-123.aodn.org.au'"/>
+  <xsl:variable name="portalDataBaseUrl"  select="'https://imos.aodn.org.au/imos123/home'"/>
 
-  <xsl:variable name="imosLogoUrl" select="'http://static.emii.org.au/images/logo/IMOS-Ocean-Portal-logo.png'"/>
-  <xsl:variable name="emiiInfoUrl" select="'mailto:info@emii.org.au'"/>
-  <xsl:variable name="emiiTermsUrl" select="'http://imos.org.au/imostermsofuse0.html'"/>
-  <xsl:variable name="portalUrl" select="'https://imos.aodn.org.au/imos123'"/>
+  <xsl:variable name="imosLogoUrl"        select="'http://static.emii.org.au/images/logo/IMOS-Ocean-Portal-logo.png'"/>
+  <xsl:variable name="emiiInfoUrl"        select="'mailto:info@emii.org.au'"/>
+  <xsl:variable name="emiiTermsUrl"       select="'http://imos.org.au/imostermsofuse0.html'"/>
+  <xsl:variable name="portalUrl"          select="'https://imos.aodn.org.au/imos123'"/>
 
 
   <!-- Translate newlines to HTML BR Tags
@@ -297,7 +297,6 @@
           <xsl:for-each select="$processedNodes/node" >
 
             <xsl:variable name="filename" select="filename"/>
-
             <div>
               <h3>
               <xsl:element name="a">
