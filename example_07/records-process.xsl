@@ -18,7 +18,7 @@
     -->
   <xsl:template match="mcp:MD_Metadata">
 
-     <xsl:variable name="uuid" select="gmd:fileIdentifier/gco:CharacterString"/>
+    <xsl:variable name="uuid" select="gmd:fileIdentifier/gco:CharacterString"/>
 
     <!-- Data identification is a common root and should be factored -->
     <xsl:variable name="waterBodies" select="gmd:identificationInfo/mcp:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:thesaurusName//gmx:Anchor[text() = 'geonetwork.thesaurus.local.theme.water-bodies' ]/ancestor::gmd:MD_Keywords/gmd:keyword/gco:CharacterString" />
@@ -135,9 +135,13 @@
       <xsl:text>.html</xsl:text>
     </xsl:variable>
 
+    <!-- now create actual elements representing vars -->
     <xsl:element name="filename">
-
       <xsl:value-of select="replace( $filename, ' ', '-')" separator="-"/>
+    </xsl:element>
+
+    <xsl:element name="uuid">
+      <xsl:value-of select="$uuid"/>
     </xsl:element>
 
   </xsl:template>
@@ -186,7 +190,13 @@
 
 
     <xsl:for-each select="$processedNodes/node" >
+
+      <xsl:text>&#xa;</xsl:text>
       <xsl:value-of select="filename"/>
+      <xsl:text>, </xsl:text>
+      <xsl:value-of select="uuid"/>
+
+
     </xsl:for-each>
 
 
