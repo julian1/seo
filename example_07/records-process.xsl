@@ -161,8 +161,8 @@
   <!-- TODO: we don't need to match on an empty document -->
   <xsl:template match="/">
 
-    <!-- output records -->
 
+    <!-- build intermediate nodes -->
     <xsl:variable name="processedNodes">
       <xsl:for-each select="$nodes" >
 
@@ -171,26 +171,14 @@
 
         <xsl:if test="$schema = 'iso19139.mcp-2.0' and position() &lt; 10">
 
-          <!-- we're going to have to call the template -->
-  <!--        <xsl:variable name="filename">
-            <xsl:call-template name="record-filename" select="document($request2)/mcp:MD_Metadata"/>
-          </xsl:variable>
-  -->
-
           <xsl:variable name="uuid" select="geonet:info/uuid"/>
-          <xsl:variable name="request2" select="concat($geonetworkUrl, '/geonetwork/srv/eng/xml.metadata.get?uuid=', $uuid)" />
-          <xsl:value-of select="concat( $uuid, ', ', position(), ', ', $request2 )" />
-
-          <!-- xsl:apply-templates select="document($request2)/mcp:MD_Metadata"/ -->
-          <!-- xsl:variable name="node" select="document($request2)/mcp:MD_Metadata"/-->
+          <xsl:variable name="recordRequest" select="concat($geonetworkUrl, '/geonetwork/srv/eng/xml.metadata.get?uuid=', $uuid)" />
+          <xsl:value-of select="concat( $uuid, ', ', position(), ', ', $recordRequest )" />
 
           <!-- build intermediate node -->
           <xsl:element name="node"> 
-            <xsl:apply-templates select="document($request2)/mcp:MD_Metadata"/>
+            <xsl:apply-templates select="document($recordRequest)/mcp:MD_Metadata"/>
           </xsl:element> 
-
-          <!-- xsl:text>here</xsl:text--> 
-          <!--xsl:value-of select="$whoot/filename"/-->
 
         </xsl:if>
       </xsl:for-each>
