@@ -303,7 +303,11 @@
                 <xsl:attribute name="href">
                   <xsl:value-of select="encode-for-uri( $filename)"/>
                 </xsl:attribute>
-                <xsl:value-of select="$filename"/>
+
+                <xsl:value-of select="title"/>
+                <xsl:text> | </xsl:text>
+                <xsl:value-of select="uniqueParameters/broader" separator=", "/>
+
               </xsl:element>
 
               </h3>
