@@ -21,9 +21,53 @@
 
   <xsl:template name="record-view">
     <xsl:param name="node" as="element()" />
-      HERE1
-      <xsl:value-of select="$node/filename"/>
-      HERE2
+  
+      <xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html></xsl:text>
+      <xsl:text>&#xa;</xsl:text>
+
+      <html>
+        <head>
+      
+          <!-- Latest compiled and minified Bootstrap CSS -->
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+          <link rel="stylesheet" type="text/css" href="imos.css" />
+
+          <!-- Page Meta Title -->
+          <title>
+            <xsl:value-of select="$node/uniqueParameters/broader" separator=", "/>
+            <xsl:text> | Seas Oceans Atmosphere | </xsl:text>
+            <xsl:value-of select="$node/uniquePlatforms/platform" separator=", "/>
+            <xsl:text> | IMOS Scientific Research Data </xsl:text>
+            <xsl:value-of select="$node/organisation" />
+            <xsl:text> | Integrated Marine Observing System</xsl:text>
+          </title>
+
+          <meta charset="utf-8"/>
+
+          <!-- Page Meta Description -->
+          <meta name="description">
+            <xsl:attribute name="content">
+
+              <xsl:value-of select="$node/uniqueParameters/broader" separator=", "/>
+              <xsl:text> in the oceans, seas and/or atmosphere near </xsl:text>
+              <xsl:value-of select="$node/landMassesTidied/land-mass" separator=", "/>
+              <xsl:text> using </xsl:text>
+              <xsl:value-of select="$node/uniquePlatforms/platform" separator=", "/>
+              <xsl:text>. </xsl:text>
+
+              <xsl:text>The </xsl:text>
+              <xsl:value-of select="$node/organisation"/>
+              <xsl:text> scientific research data sets are accessible through the IMOS Portal.</xsl:text>
+
+            </xsl:attribute>
+          </meta>
+
+
+
+        </head>
+      </html>
+ 
+
   </xsl:template>
 
 
@@ -181,13 +225,12 @@
     </xsl:variable>
 
     <!-- now create actual elements representing vars -->
-    <xsl:element name="filename">
-      <xsl:value-of select="replace( $filename, ' ', '-')" separator="-"/>
-    </xsl:element>
-
-    <xsl:element name="uuid">
-      <xsl:value-of select="$uuid"/>
-    </xsl:element>
+    <xsl:element name="filename"> <xsl:value-of select="replace( $filename, ' ', '-')" separator="-"/> </xsl:element>
+    <xsl:element name="uuid"> <xsl:value-of select="$uuid"/> </xsl:element>
+    <xsl:element name="uniquePlatforms"> <xsl:value-of select="$uniquePlatforms"/> </xsl:element>
+    <xsl:element name="uniqueParameters"> <xsl:copy-of select="$uniqueParameters"/> </xsl:element>
+    <xsl:element name="organisation"> <xsl:value-of select="$organisation"/> </xsl:element>
+    <xsl:element name="landMassesTidied"> <xsl:value-of select="$landMassesTidied"/> </xsl:element>
 
   </xsl:template>
 
@@ -210,19 +253,18 @@
   <!-- TODO: we don't need to match on an empty document -->
   <xsl:template match="/">
 
-
     <!-- build intermediate nodes -->
     <xsl:variable name="processedNodes">
       <xsl:for-each select="$nodes" >
 
         <xsl:variable name="schema" select="geonet:info/schema"/>
-        <xsl:value-of select="concat( '&#xa;', $schema, ', ', position(), ', ' )" />
+        <!-- xsl:value-of select="concat( '&#xa;', $schema, ', ', position(), ', ' )" /-->
 
         <xsl:if test="$schema = 'iso19139.mcp-2.0' and position() &lt; 10">
 
           <xsl:variable name="uuid" select="geonet:info/uuid"/>
           <xsl:variable name="recordRequest" select="concat($geonetworkUrl, '/geonetwork/srv/eng/xml.metadata.get?uuid=', $uuid)" />
-          <xsl:value-of select="concat( $uuid, ', ', position(), ', ', $recordRequest )" />
+          <!-- xsl:value-of select="concat( $uuid, ', ', position(), ', ', $recordRequest )" /-->
 
           <!-- build intermediate node -->
           <xsl:element name="node">
@@ -238,6 +280,7 @@
     <!-- test output some standard fields
       factor into an output
     -->
+    <!-- 
     <xsl:for-each select="$processedNodes/node" >
       <xsl:text>&#xa;</xsl:text>
       <xsl:value-of select="filename"/>
@@ -245,18 +288,17 @@
       <xsl:value-of select="uuid"/>
     </xsl:for-each>
 
+    -->
 
-    <!-- build record view -->
+
+    <!-- build record views -->
     <xsl:for-each select="$processedNodes/node" >
       <xsl:variable name="filename" select="filename"/>
-
-      <!-- should expand by applying templates on node -->
       <xsl:result-document method="html" indent="yes" href="output/{ encode-for-uri( $filename)}">
         <xsl:call-template name="record-view">
           <xsl:with-param name="node" select="." />
         </xsl:call-template>
       </xsl:result-document>
-
     </xsl:for-each>
 
 
@@ -267,43 +309,7 @@
       </xsl:call-template>
     </xsl:result-document>
 
-
-    <!-- output an index file
-      factor into a template.
-      should be the inner stuff independent of the result-document tags .
-    -->
-    <!--xsl:result-document method="html" indent="yes" href="output/index.html">
-
-      <xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html></xsl:text>
-      <xsl:text>&#xa;</xsl:text>
-      <html>
-        <head>
-          <title>List of parameters, The eMarine Information Infrastructure (eMII)</title>
-          <meta charset="utf-8"/>
-          <meta name="description" content="List of parameters, The eMarine Information Infrastructure (eMII)"/>
-        </head>
-        <body>
-
-          <xsl:for-each select="$processedNodes/node" >
-
-            <xsl:variable name="filename" select="filename"/>
-
-            <div>
-            <xsl:element name="a">
-              <xsl:attribute name="href">
-                <xsl:value-of select="encode-for-uri( $filename)"/>
-              </xsl:attribute>
-              <xsl:value-of select="$filename"/>
-            </xsl:element>
-            </div>
-
-           </xsl:for-each>
-
-        </body>
-      </html>
-    </xsl:result-document -->
-
-
+  
   </xsl:template>
 </xsl:stylesheet>
 
