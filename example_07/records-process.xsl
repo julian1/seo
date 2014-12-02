@@ -51,6 +51,7 @@
 
   <xsl:template name="record-view">
     <xsl:param name="node" as="element()" />
+    <xsl:param name="detail" as="document-node()" />
   
     <xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html></xsl:text>
     <xsl:text>&#xa;</xsl:text>
@@ -114,7 +115,7 @@
 
               <img>
                 <xsl:attribute name="src"> 
-                  <xsl:value-of select="$node/imosLogoUrl"/> 
+                  <xsl:value-of select="$detail/imosLogoUrl"/> 
                 </xsl:attribute>
                 <xsl:attribute name="alt">
                   <xsl:text>IMOS logo</xsl:text>
@@ -222,7 +223,13 @@
                   <p>If you've found this information useful, see something wrong, or have a suggestion, please let us
                       know.
                       All feedback is very welcome. For help and information about this site
-                      please contact <a href="mailto:info@emii.org.au">info@emii.org.au</a>
+                      please contact <xsl:element name="a">
+                        <xsl:attribute name="href">
+                          <xsl:value-of select="$detail/emiiInfoUrl"/>
+                        </xsl:attribute>
+                        <!-- eg. strip mailto: prefix-->
+                        <xsl:value-of select="replace( $detail/emiiInfoUrl, '.*:(.*)', '$1' )"/>
+                      </xsl:element>
                   </p>
               </div>
               <div class="col-md-8">
@@ -436,7 +443,6 @@
     <xsl:element name="abstract"> <xsl:value-of select="$abstract"/> </xsl:element>
     <xsl:element name="portalDataUrl"> <xsl:value-of select="$portalDataUrl"/> </xsl:element>
     
-    <xsl:element name="imosLogoUrl"> <xsl:value-of select="$imosLogoUrl"/> </xsl:element>
 
     <xsl:element name="uniquePlatforms"> <xsl:copy-of select="$uniquePlatforms"/> </xsl:element>
     <xsl:element name="uniqueParameters"> <xsl:copy-of select="$uniqueParameters"/> </xsl:element>
@@ -500,6 +506,11 @@
 
     -->
 
+    <xsl:variable name="detail1">
+      <xsl:element name="imosLogoUrl"> <xsl:value-of select="$imosLogoUrl"/> </xsl:element>
+      <xsl:element name="emiiInfoUrl"> <xsl:value-of select="$emiiInfoUrl"/> </xsl:element> 
+      <xsl:element name="emiiTermsUrl"> <xsl:value-of select="$emiiTermsUrl"/> </xsl:element>
+    </xsl:variable>
 
     <!-- record views -->
     <xsl:for-each select="$processedNodes/node" >
@@ -507,6 +518,8 @@
       <xsl:result-document method="html" indent="yes" href="output/{ encode-for-uri( $filename)}">
         <xsl:call-template name="record-view">
           <xsl:with-param name="node" select="." />
+          <xsl:with-param name="detail" select="$detail1" />
+          <!-- xsl:with-param name="detail" select="$detail"/ -->
         </xsl:call-template>
       </xsl:result-document>
     </xsl:for-each>
