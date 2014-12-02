@@ -188,7 +188,9 @@
       </xsl:for-each>
     </xsl:variable>
 
+    <!-- change name node to record ??? -->
 
+    <!-- test output some standard fields -->
     <xsl:for-each select="$processedNodes/node" >
 
       <xsl:text>&#xa;</xsl:text>
@@ -213,16 +215,19 @@
         </head>
         <body>
 
-          <xsl:for-each select="$nodes" >
+          <xsl:for-each select="$processedNodes/node" >
 
-            <xsl:variable name="xxx" select="'xxx'"/>
+            <xsl:variable name="filename" select="filename"/>
 
+            <xsl:text>&#xa;</xsl:text>
+            <div>
             <xsl:element name="a">
               <xsl:attribute name="href">
-                <xsl:value-of select="encode-for-uri( $xxx)"/>
+                <xsl:value-of select="encode-for-uri( $filename)"/>
               </xsl:attribute>
-              <xsl:value-of select="$xxx"/>
+              <xsl:value-of select="$filename"/>
             </xsl:element>
+            </div>
 
            </xsl:for-each>
 
