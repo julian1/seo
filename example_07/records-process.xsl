@@ -22,8 +22,9 @@
   <xsl:variable name="portalDataBaseUrl" select="'https://imos.aodn.org.au/imos123/home'"/>
 
   <!-- want this to be available to the index for styling etc -->
-  <xsl:variable name="portalLogoUrl" select="'http://static.emii.org.au/images/logo/IMOS-Ocean-Portal-logo.png'"/>
-
+  <xsl:variable name="imosLogoUrl" select="'http://static.emii.org.au/images/logo/IMOS-Ocean-Portal-logo.png'"/>
+  <xsl:variable name="emiiInfoUrl" select="'mailto:info@emii.org.au'"/>
+  <xsl:variable name="emiiTermsUrl" select="'http://imos.org.au/imostermsofuse0.html'"/>
 
 
   <!-- Translate newlines to HTML BR Tags
@@ -113,7 +114,7 @@
 
               <img>
                 <xsl:attribute name="src"> 
-                  <xsl:value-of select="$node/portalLogoUrl"/> 
+                  <xsl:value-of select="$node/imosLogoUrl"/> 
                 </xsl:attribute>
                 <xsl:attribute name="alt">
                   <xsl:text>IMOS logo</xsl:text>
@@ -435,7 +436,7 @@
     <xsl:element name="abstract"> <xsl:value-of select="$abstract"/> </xsl:element>
     <xsl:element name="portalDataUrl"> <xsl:value-of select="$portalDataUrl"/> </xsl:element>
     
-    <xsl:element name="portalLogoUrl"> <xsl:value-of select="$portalLogoUrl"/> </xsl:element>
+    <xsl:element name="imosLogoUrl"> <xsl:value-of select="$imosLogoUrl"/> </xsl:element>
 
     <xsl:element name="uniquePlatforms"> <xsl:copy-of select="$uniquePlatforms"/> </xsl:element>
     <xsl:element name="uniqueParameters"> <xsl:copy-of select="$uniqueParameters"/> </xsl:element>
