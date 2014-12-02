@@ -95,7 +95,8 @@
         <div class="imosHeader">
           <div class="container">
           <!-- TODO fix link -->
-          <a  class="btn " role="button" href="https://imos.aodn.org.au/imos123/home?uuid=4402cb50-e20a-44ee-93e6-4728259250d2"><img src="http://static.emii.org.au/images/logo/IMOS-Ocean-Portal-logo.png" alt="IMOS logo"/></a>
+          <!--a  class="btn " role="button" href="https://imos.aodn.org.au/imos123/home?uuid=4402cb50-e20a-44ee-93e6-4728259250d2"><img src="http://static.emii.org.au/images/logo/IMOS-Ocean-Portal-logo.png" alt="IMOS logo"/></a -->
+          <a  class="btn " role="button" href="$node/portalLink"><img src="http://static.emii.org.au/images/logo/IMOS-Ocean-Portal-logo.png" alt="IMOS logo"/></a>
           </div>
         </div>
 
@@ -190,25 +191,25 @@
 
         </div> <!-- container -->
 
-    <div class="jumbotronFooter voffset5">
-      <div class="container">
-        <footer class="row">
-          <div class="col-md-4">
-              <p>If you've found this information useful, see something wrong, or have a suggestion, please let us
-                  know.
-                  All feedback is very welcome. For help and information about this site
-                  please contact <a href="mailto:info@emii.org.au">info@emii.org.au</a>
-              </p>
+        <div class="jumbotronFooter voffset5">
+          <div class="container">
+            <footer class="row">
+              <div class="col-md-4">
+                  <p>If you've found this information useful, see something wrong, or have a suggestion, please let us
+                      know.
+                      All feedback is very welcome. For help and information about this site
+                      please contact <a href="mailto:info@emii.org.au">info@emii.org.au</a>
+                  </p>
+              </div>
+              <div class="col-md-8">
+                  <p>Use of this web site and information available from it is subject to our
+                      <a href="http://imos.org.au/imostermsofuse0.html">Conditions of use</a>
+                  </p>
+                  <p>&#169; 2014 IMOS</p>
+              </div>
+            </footer>
           </div>
-          <div class="col-md-8">
-              <p>Use of this web site and information available from it is subject to our
-                  <a href="http://imos.org.au/imostermsofuse0.html">Conditions of use</a>
-              </p>
-              <p>&#169; 2014 IMOS</p>
-          </div>
-        </footer>
-      </div>
-      </div>
+        </div>
 
 
       </body>
@@ -239,12 +240,12 @@
             <xsl:variable name="filename" select="filename"/>
 
             <div>
-            <xsl:element name="a">
-              <xsl:attribute name="href">
-                <xsl:value-of select="encode-for-uri( $filename)"/>
-              </xsl:attribute>
-              <xsl:value-of select="$filename"/>
-            </xsl:element>
+              <xsl:element name="a">
+                <xsl:attribute name="href">
+                  <xsl:value-of select="encode-for-uri( $filename)"/>
+                </xsl:attribute>
+                <xsl:value-of select="$filename"/>
+              </xsl:element>
             </div>
 
            </xsl:for-each>
@@ -373,6 +374,17 @@
       <xsl:text>.html</xsl:text>
     </xsl:variable>
 
+    <!-- other static content -->
+
+    <!-- a   href="https://imos.aodn.org.au/imos123/home?uuid=4402cb50-e20a-44ee-93e6-4728259250d2"><img src="http://static.emii.org.au/images/logo/IMOS-Ocean-Portal-logo.png" alt="IMOS logo"/ -->
+
+    <xsl:variable name="portalLink">
+      <xsl:value-of select="'https://imos.aodn.org.au/imos123/home?uuid='"/>
+      <xsl:value-of select="$uuid"/>
+    </xsl:variable>
+
+
+
     <!-- 
             <xsl:value-of select="$node/uniqueParameters/broader" separator=", "/>
             <xsl:value-of select="$node/uniquePlatforms/platform" separator=", "/>
@@ -403,6 +415,7 @@
     <xsl:element name="organisation"> <xsl:value-of select="$organisation"/> </xsl:element>
     <xsl:element name="title"> <xsl:value-of select="$title"/> </xsl:element>
     <xsl:element name="abstract"> <xsl:value-of select="$abstract"/> </xsl:element>
+    <xsl:element name="portalLink"> <xsl:value-of select="$portalLink"/> </xsl:element>
 
     <xsl:element name="uniquePlatforms"> <xsl:copy-of select="$uniquePlatforms"/> </xsl:element>
     <xsl:element name="uniqueParameters"> <xsl:copy-of select="$uniqueParameters"/> </xsl:element>
@@ -436,7 +449,7 @@
         <xsl:variable name="schema" select="geonet:info/schema"/>
         <!-- xsl:value-of select="concat( '&#xa;', $schema, ', ', position(), ', ' )" /-->
 
-        <xsl:if test="$schema = 'iso19139.mcp-2.0' and position() &lt; 7">
+        <xsl:if test="$schema = 'iso19139.mcp-2.0' and position() &lt; 10">
 
           <xsl:variable name="uuid" select="geonet:info/uuid"/>
           <xsl:variable name="recordRequest" select="concat($geonetworkUrl, '/geonetwork/srv/eng/xml.metadata.get?uuid=', $uuid)" />
@@ -467,7 +480,7 @@
     -->
 
 
-    <!-- build record views -->
+    <!-- record views -->
     <xsl:for-each select="$processedNodes/node" >
       <xsl:variable name="filename" select="filename"/>
       <xsl:result-document method="html" indent="yes" href="output/{ encode-for-uri( $filename)}">
