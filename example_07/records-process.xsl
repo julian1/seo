@@ -12,19 +12,54 @@
 >
 
 
-  <!-- build an intermediate node with everything we'll need 
+  <!-- build an intermediate node with everything we'll need
 		we can actually push this into another file
 		if we want.
     -->
 
 
 
-  <xsl:template name="whoot">
+  <xsl:template name="record-view">
     <xsl:param name="node" as="element()" />
       HERE1
-      <xsl:value-of select="$node/filename"/> 
+      <xsl:value-of select="$node/filename"/>
       HERE2
   </xsl:template>
+
+
+  <xsl:template name="index-view">
+    <xsl:param name="processedNodes" as="document-node()" />
+ 
+      <xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html></xsl:text>
+      <xsl:text>&#xa;</xsl:text>
+      <html>
+        <head>
+          <title>List of parameters, The eMarine Information Infrastructure (eMII)</title>
+          <meta charset="utf-8"/>
+          <meta name="description" content="List of parameters, The eMarine Information Infrastructure (eMII)"/>
+        </head>
+        <body>
+
+          <xsl:for-each select="$processedNodes/node" >
+
+            <xsl:variable name="filename" select="filename"/>
+
+            <div>
+            <xsl:element name="a">
+              <xsl:attribute name="href">
+                <xsl:value-of select="encode-for-uri( $filename)"/>
+              </xsl:attribute>
+              <xsl:value-of select="$filename"/>
+            </xsl:element>
+            </div>
+
+           </xsl:for-each>
+
+        </body>
+      </html>
+
+  </xsl:template>
+
 
   <xsl:template match="mcp:MD_Metadata">
 
@@ -61,7 +96,7 @@
       </xsl:for-each>
     </xsl:variable>
 
-    <!-- 
+    <!--
     uuid :        '<xsl:value-of select="$uuid"/>'
     organisation: '<xsl:value-of select="$organisation"/>'
     water bodies: '<xsl:value-of select="$waterBodies" separator="', '"/>'
@@ -77,7 +112,7 @@
     <xsl:variable name="thesaurus" select="'external.theme.parameterClassificationScheme'"/>
 
 
-    <!-- Create a node with associated 2nd level category parameter names, and platform --> 
+    <!-- Create a node with associated 2nd level category parameter names, and platform -->
     <xsl:variable name="parameterList">
       <xsl:for-each select="$parameters" >
 
@@ -119,24 +154,24 @@
       </xsl:for-each-group>
     </xsl:variable>
 
-	  <!-- 
-    <xsl:text>&#xa;      broader      &#xa;</xsl:text> 
+	  <!--
+    <xsl:text>&#xa;      broader      &#xa;</xsl:text>
     <xsl:value-of select="$parameterList/broader" separator=", "/>
 
-    <xsl:text>&#xa;      longName      &#xa;</xsl:text> 
+    <xsl:text>&#xa;      longName      &#xa;</xsl:text>
     <xsl:value-of select="$parameterList/longName" separator=", "/>
 
-    <xsl:text>&#xa;      platform      &#xa;</xsl:text> 
+    <xsl:text>&#xa;      platform      &#xa;</xsl:text>
     <xsl:value-of select="$parameterList/platform" separator=", "/>
 
-    <xsl:text>&#xa;       uniquePlatforms       &#xa;</xsl:text> 
+    <xsl:text>&#xa;       uniquePlatforms       &#xa;</xsl:text>
     <xsl:value-of select="$uniquePlatforms/platform" separator=", "/>
 
-    <xsl:text>&#xa;       uniqueParameters      &#xa;</xsl:text> 
+    <xsl:text>&#xa;       uniqueParameters      &#xa;</xsl:text>
     <xsl:value-of select="$uniqueParameters/broader" separator=", "/>
 
-    <xsl:text>&#xa;</xsl:text> 
-	  --> 
+    <xsl:text>&#xa;</xsl:text>
+	  -->
 
     <xsl:variable name="filename">
       <xsl:value-of select="$title" separator="-"/>
@@ -164,11 +199,11 @@
 
   <xsl:variable name="geonetworkUrl" select="'https://catalogue-123.aodn.org.au'"/>
   <xsl:variable name="request" select="concat($geonetworkUrl, '/geonetwork/srv/eng/xml.search.imos?fast=index')"/>
-  <!-- cache the node, to guarantee idempotence --> 
+  <!-- cache the node, to guarantee idempotence -->
   <xsl:variable name="nodes" select="document($request)/response/metadata"/>
 
 
-  <!-- filename generation should be predictable here. 
+  <!-- filename generation should be predictable here.
     so apply templates with param.
   -->
 
@@ -190,9 +225,9 @@
           <xsl:value-of select="concat( $uuid, ', ', position(), ', ', $recordRequest )" />
 
           <!-- build intermediate node -->
-          <xsl:element name="node"> 
+          <xsl:element name="node">
             <xsl:apply-templates select="document($recordRequest)/mcp:MD_Metadata"/>
-          </xsl:element> 
+          </xsl:element>
 
         </xsl:if>
       </xsl:for-each>
@@ -200,7 +235,7 @@
 
     <!-- change name node to record ??? -->
 
-    <!-- test output some standard fields 
+    <!-- test output some standard fields
       factor into an output
     -->
     <xsl:for-each select="$processedNodes/node" >
@@ -215,27 +250,29 @@
     <xsl:for-each select="$processedNodes/node" >
       <xsl:variable name="filename" select="filename"/>
 
-      <xsl:text>&#xa;</xsl:text>
-      <xsl:text>filename is  </xsl:text>
-      <xsl:value-of select="$filename"/>
-
       <!-- should expand by applying templates on node -->
       <xsl:result-document method="html" indent="yes" href="output/{ encode-for-uri( $filename)}">
-        <xsl:call-template name="whoot">
+        <xsl:call-template name="record-view">
           <xsl:with-param name="node" select="." />
         </xsl:call-template>
-
       </xsl:result-document>
 
     </xsl:for-each>
 
 
+    <!-- index view -->
+    <xsl:result-document method="html" indent="yes" href="output/index.html">
+      <xsl:call-template name="index-view">
+        <xsl:with-param name="processedNodes" select="$processedNodes"/>
+      </xsl:call-template>
+    </xsl:result-document>
 
-    <!-- output an index file 
+
+    <!-- output an index file
       factor into a template.
       should be the inner stuff independent of the result-document tags .
     -->
-    <xsl:result-document method="html" indent="yes" href="output/index.html">
+    <!--xsl:result-document method="html" indent="yes" href="output/index.html">
 
       <xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html></xsl:text>
       <xsl:text>&#xa;</xsl:text>
@@ -264,7 +301,7 @@
 
         </body>
       </html>
-    </xsl:result-document>
+    </xsl:result-document -->
 
 
   </xsl:template>
