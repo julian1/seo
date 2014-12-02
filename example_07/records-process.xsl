@@ -15,9 +15,9 @@
 
   <xsl:template match="mcp:MD_Metadata">
 
-    <xsl:element name="mcp:MD_Metadata"> 
-      <xsl:value-of select="."/>
-    </xsl:element> 
+    <xsl:element name="uuid"> 
+		<xsl:value-of select="gmd:fileIdentifier/gco:CharacterString"/>
+    </xsl:element>
 
   </xsl:template>
 
@@ -65,7 +65,9 @@
           <xsl:apply-templates select="document($request2)/mcp:MD_Metadata"/>
         </xsl:variable> 
 
-        <xsl:value-of select="$whoot/mcp:MD_Metadata"/>
+        <xsl:text>here</xsl:text> 
+        <xsl:value-of select="$whoot/uuid"/>
+        <xsl:text>here</xsl:text> 
 
       </xsl:if>
     </xsl:for-each>
