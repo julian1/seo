@@ -18,10 +18,9 @@
     -->
 
   <!-- change name geonetworkBaseUrl? -->
-  <xsl:variable name="geonetworkUrl" select="'https://catalogue-123.aodn.org.au'"/>
-  <xsl:variable name="portalUrl" select="'https://imos.aodn.org.au/imos123/home'"/>
-  
-  <xsl:variable name="portalLogo" select="'http://static.emii.org.au/images/logo/IMOS-Ocean-Portal-logo.png'"/>
+  <xsl:variable name="geonetworkBaseUrl" select="'https://catalogue-123.aodn.org.au'"/>
+  <xsl:variable name="portalDataBaseUrl" select="'https://imos.aodn.org.au/imos123/home'"/>
+  <xsl:variable name="portalLogoUrl" select="'http://static.emii.org.au/images/logo/IMOS-Ocean-Portal-logo.png'"/>
 
 
 
@@ -107,12 +106,12 @@
                 <xsl:text>button</xsl:text>
               </xsl:attribute>
               <xsl:attribute name="href">
-                <xsl:value-of select="$node/portalLink"/>
+                <xsl:value-of select="$node/portalDataUrl"/>
               </xsl:attribute>
 
               <img>
                 <xsl:attribute name="src"> 
-                  <xsl:value-of select="$node/portalLogo"/> 
+                  <xsl:value-of select="$node/portalLogoUrl"/> 
                 </xsl:attribute>
                 <xsl:attribute name="alt">
                   <xsl:text>IMOS logo</xsl:text>
@@ -187,7 +186,7 @@
                 <xsl:element name="a">
 
                   <xsl:attribute name="href">
-                    <xsl:value-of select="$node/portalLink"/>
+                    <xsl:value-of select="$node/portalDataUrl"/>
                   </xsl:attribute>
                   <xsl:attribute name="class">btn btn-primary voffset4</xsl:attribute>
                   <xsl:attribute name="role">button</xsl:attribute>
@@ -337,7 +336,7 @@
         <!-- TODO: change so it doesn't go via the long name -->
         <xsl:variable name="term" select="mcp:parameterName/mcp:DP_Term/mcp:type/mcp:DP_TypeCode[text() = 'longName']/../../mcp:vocabularyRelationship/mcp:DP_VocabularyRelationship/mcp:vocabularyTermURL/gmd:URL" />
 
-        <xsl:variable name="request" select="string-join(($geonetworkUrl, '/geonetwork/srv/en/xml.search.keywordlink?request=broader&amp;thesaurus=', $thesaurus, '&amp;id=', $term ),'')" />
+        <xsl:variable name="request" select="string-join(($geonetworkBaseUrl, '/geonetwork/srv/en/xml.search.keywordlink?request=broader&amp;thesaurus=', $thesaurus, '&amp;id=', $term ),'')" />
 
         <xsl:element name="broader">
           <xsl:value-of select="document($request)/response/narrower/descKeys/keyword/values/value[@language='eng']" />
@@ -394,8 +393,8 @@
 
     <!-- a   href="https://imos.aodn.org.au/imos123/home?uuid=4402cb50-e20a-44ee-93e6-4728259250d2"><img src="http://static.emii.org.au/images/logo/IMOS-Ocean-Portal-logo.png" alt="IMOS logo"/ -->
 
-    <xsl:variable name="portalLink">
-      <xsl:value-of select="$portalUrl"/>
+    <xsl:variable name="portalDataUrl">
+      <xsl:value-of select="$portalDataBaseUrl"/>
       <xsl:value-of select="'?uuid='"/>
       <xsl:value-of select="$uuid"/>
     </xsl:variable>
@@ -432,9 +431,9 @@
     <xsl:element name="organisation"> <xsl:value-of select="$organisation"/> </xsl:element>
     <xsl:element name="title"> <xsl:value-of select="$title"/> </xsl:element>
     <xsl:element name="abstract"> <xsl:value-of select="$abstract"/> </xsl:element>
-    <xsl:element name="portalLink"> <xsl:value-of select="$portalLink"/> </xsl:element>
+    <xsl:element name="portalDataUrl"> <xsl:value-of select="$portalDataUrl"/> </xsl:element>
     
-    <xsl:element name="portalLogo"> <xsl:value-of select="$portalLogo"/> </xsl:element>
+    <xsl:element name="portalLogoUrl"> <xsl:value-of select="$portalLogoUrl"/> </xsl:element>
 
     <xsl:element name="uniquePlatforms"> <xsl:copy-of select="$uniquePlatforms"/> </xsl:element>
     <xsl:element name="uniqueParameters"> <xsl:copy-of select="$uniqueParameters"/> </xsl:element>
@@ -449,7 +448,7 @@
 
   <!-- xsl:include href="record-view.xsl" / -->
 
-  <xsl:variable name="request" select="concat($geonetworkUrl, '/geonetwork/srv/eng/xml.search.imos?fast=index')"/>
+  <xsl:variable name="request" select="concat($geonetworkBaseUrl, '/geonetwork/srv/eng/xml.search.imos?fast=index')"/>
   <!-- cache the node, to guarantee idempotence -->
   <xsl:variable name="nodes" select="document($request)/response/metadata"/>
 
@@ -471,7 +470,7 @@
         <xsl:if test="$schema = 'iso19139.mcp-2.0' and position() &lt; 10">
 
           <xsl:variable name="uuid" select="geonet:info/uuid"/>
-          <xsl:variable name="recordRequest" select="concat($geonetworkUrl, '/geonetwork/srv/eng/xml.metadata.get?uuid=', $uuid)" />
+          <xsl:variable name="recordRequest" select="concat($geonetworkBaseUrl, '/geonetwork/srv/eng/xml.metadata.get?uuid=', $uuid)" />
           <!-- xsl:value-of select="concat( $uuid, ', ', position(), ', ', $recordRequest )" /-->
 
           <!-- build intermediate node -->
