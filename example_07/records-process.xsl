@@ -233,8 +233,12 @@
                   </p>
               </div>
               <div class="col-md-8">
-                  <p>Use of this web site and information available from it is subject to our
-                      <a href="http://imos.org.au/imostermsofuse0.html">Conditions of use</a>
+                  <p>Use of this web site and information available from it is subject to our <xsl:element name="a">
+                      <xsl:attribute name="href">
+                        <xsl:value-of select="$detail/emiiTermsUrl"/>
+                      </xsl:attribute>
+                      Conditions of use
+                    </xsl:element>
                   </p>
                   <p>&#169; 2014 IMOS</p>
               </div>
