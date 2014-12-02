@@ -99,32 +99,26 @@
 
         <div class="imosHeader">
           <div class="container">
-          <!-- TODO fix link -->
-          <!--a  class="btn " role="button" href="https://imos.aodn.org.au/imos123/home?uuid=4402cb50-e20a-44ee-93e6-4728259250d2"><img src="http://static.emii.org.au/images/logo/IMOS-Ocean-Portal-logo.png" alt="IMOS logo"/></a 
-
-          class="btn " role="button" href="$node/portalLink"><img src="$node/portalLogo" alt="IMOS logo"/>
-        -->
-
-          <a>  
-            <xsl:attribute name="class">
-              <xsl:text>btn</xsl:text>
-            </xsl:attribute>
-            <xsl:attribute name="role">
-              <xsl:text>button</xsl:text>
-            </xsl:attribute>
-            <xsl:attribute name="href">
-              <xsl:value-of select="$node/portalLink"/>
-            </xsl:attribute>
-
-            <img>
-              <xsl:attribute name="src"> 
-                <xsl:value-of select="$node/portalLogo"/> 
+            <a>  
+              <xsl:attribute name="class">
+                <xsl:text>btn</xsl:text>
               </xsl:attribute>
-              <xsl:attribute name="alt">
-                <xsl:text>IMOS logo</xsl:text>
+              <xsl:attribute name="role">
+                <xsl:text>button</xsl:text>
               </xsl:attribute>
-            </img>
-          </a>
+              <xsl:attribute name="href">
+                <xsl:value-of select="$node/portalLink"/>
+              </xsl:attribute>
+
+              <img>
+                <xsl:attribute name="src"> 
+                  <xsl:value-of select="$node/portalLogo"/> 
+                </xsl:attribute>
+                <xsl:attribute name="alt">
+                  <xsl:text>IMOS logo</xsl:text>
+                </xsl:attribute>
+              </img>
+            </a>
 
           </div>
         </div>
@@ -193,11 +187,10 @@
                 <xsl:element name="a">
 
                   <xsl:attribute name="href">
-                    <xsl:value-of select="concat('https://imos.aodn.org.au/imos123/home?uuid=', $node/uuid)"/>
+                    <xsl:value-of select="$node/portalLink"/>
                   </xsl:attribute>
                   <xsl:attribute name="class">btn btn-primary voffset4</xsl:attribute>
                   <xsl:attribute name="role">button</xsl:attribute>
-
 
                   <xsl:value-of select="'Download a '"/>
                   <xsl:value-of select="$node/uniqueParameters/broader" separator=", "/>
