@@ -190,21 +190,39 @@
 
     <!-- change name node to record ??? -->
 
-    <!-- test output some standard fields -->
+    <!-- test output some standard fields 
+      factor into an output
+    -->
     <xsl:for-each select="$processedNodes/node" >
-
       <xsl:text>&#xa;</xsl:text>
       <xsl:value-of select="filename"/>
       <xsl:text>, </xsl:text>
       <xsl:value-of select="uuid"/>
+    </xsl:for-each>
 
+
+    <!-- build record view -->
+    <xsl:for-each select="$processedNodes/node" >
+      <xsl:variable name="filename" select="filename"/>
+
+      <xsl:text>&#xa;</xsl:text>
+      <xsl:text>filename is  </xsl:text>
+      <xsl:value-of select="$filename"/>
+
+      <xsl:result-document method="html" indent="yes" href="output/{ encode-for-uri( $filename)}">
+        WHOOT
+      </xsl:result-document>
 
     </xsl:for-each>
 
 
 
-    <!-- output an index file -->
-    <xsl:result-document method="xml" href="output/index.html">
+    <!-- output an index file 
+      factor into a template.
+      should be the inner stuff independent of the result-document tags .
+    -->
+    <xsl:result-document method="html" indent="yes" href="output/index.html">
+
       <xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html></xsl:text>
       <xsl:text>&#xa;</xsl:text>
       <html>
@@ -219,7 +237,6 @@
 
             <xsl:variable name="filename" select="filename"/>
 
-            <xsl:text>&#xa;</xsl:text>
             <div>
             <xsl:element name="a">
               <xsl:attribute name="href">
