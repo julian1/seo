@@ -18,6 +18,8 @@
     -->
 
   <xsl:variable name="geonetworkUrl" select="'https://catalogue-123.aodn.org.au'"/>
+  <xsl:variable name="portalUrl" select="'https://imos.aodn.org.au/imos123/home'"/>
+
 
 
   <!-- Translate newlines to HTML BR Tags
@@ -379,7 +381,8 @@
     <!-- a   href="https://imos.aodn.org.au/imos123/home?uuid=4402cb50-e20a-44ee-93e6-4728259250d2"><img src="http://static.emii.org.au/images/logo/IMOS-Ocean-Portal-logo.png" alt="IMOS logo"/ -->
 
     <xsl:variable name="portalLink">
-      <xsl:value-of select="'https://imos.aodn.org.au/imos123/home?uuid='"/>
+      <xsl:value-of select="$portalUrl"/>
+      <xsl:value-of select="'?uuid='"/>
       <xsl:value-of select="$uuid"/>
     </xsl:variable>
 
