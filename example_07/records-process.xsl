@@ -11,17 +11,12 @@
   exclude-result-prefixes="xsl mcp gco gmd gmx geonet"
 >
 
+  <!-- Configuration -->
+  <xsl:variable name="maxRecords" select="10"/> <!-- Note, includes register records -->
 
-  <!-- build an intermediate node with everything we'll need
-		we can actually push this into another file
-		if we want.
-    -->
-
-  <!-- change name geonetworkBaseUrl? -->
   <xsl:variable name="geonetworkBaseUrl" select="'https://catalogue-123.aodn.org.au'"/>
   <xsl:variable name="portalDataBaseUrl" select="'https://imos.aodn.org.au/imos123/home'"/>
 
-  <!-- want this to be available to the index for styling etc -->
   <xsl:variable name="imosLogoUrl" select="'http://static.emii.org.au/images/logo/IMOS-Ocean-Portal-logo.png'"/>
   <xsl:variable name="emiiInfoUrl" select="'mailto:info@emii.org.au'"/>
   <xsl:variable name="emiiTermsUrl" select="'http://imos.org.au/imostermsofuse0.html'"/>
@@ -48,7 +43,7 @@
 
 
 
-
+  <!-- The record view -->
   <xsl:template name="record-view">
     <xsl:param name="node" as="element()" />
     <xsl:param name="detail" as="document-node()" />
@@ -251,6 +246,7 @@
   </xsl:template>
 
 
+  <!-- The index view -->
   <xsl:template name="index-view">
     <xsl:param name="processedNodes" as="document-node()" />
  
@@ -285,6 +281,7 @@
   </xsl:template>
 
 
+  <!-- Builds an intermediate representation from the record used as input for the record view -->
   <xsl:template match="mcp:MD_Metadata">
 
     <xsl:variable name="uuid" select="gmd:fileIdentifier/gco:CharacterString"/>
@@ -403,9 +400,6 @@
       <xsl:text>.html</xsl:text>
     </xsl:variable>
 
-    <!-- other static content -->
-
-    <!-- a   href="https://imos.aodn.org.au/imos123/home?uuid=4402cb50-e20a-44ee-93e6-4728259250d2"><img src="http://static.emii.org.au/images/logo/IMOS-Ocean-Portal-logo.png" alt="IMOS logo"/ -->
 
     <xsl:variable name="portalDataUrl">
       <xsl:value-of select="$portalDataBaseUrl"/>
@@ -413,33 +407,7 @@
       <xsl:value-of select="$uuid"/>
     </xsl:variable>
 
-
-
-    <!-- 
-            <xsl:value-of select="$node/uniqueParameters/broader" separator=", "/>
-            <xsl:value-of select="$node/uniquePlatforms/platform" separator=", "/>
-            <xsl:value-of select="$node/organisation" />
-              <xsl:value-of select="$node/uniqueParameters/broader" separator=", "/>
-              <xsl:value-of select="$node/landMassesTidied/land-mass" separator=", "/>
-              <xsl:value-of select="$node/uniquePlatforms/platform" separator=", "/>
-              <xsl:value-of select="$node/organisation"/>
-              <xsl:value-of select="$node/uniqueParameters/broader" separator=", "/>
-              <xsl:value-of select="$node/waterBodiesTidied/water-body" separator=", "/>
-              <xsl:value-of select="$node/landMassesTidied/land-mass" separator=", "/>
-              <xsl:value-of select="$node/title" />
-              <xsl:value-of select="$node/uniquePlatforms/platform" separator=", "/>
-              <xsl:value-of select="$node/waterBodiesTidied/water-body" separator=", "/>
-              <xsl:value-of select="$node/organisation"/>
-            <xsl:value-of select="$node/uniqueParameters/broader" separator=", "/>
-                <xsl:value-of select="$node/uniqueParameters/broader" separator=", "/>
-                    <xsl:value-of select="concat('https://imos.aodn.org.au/imos123/home?uuid=', $node/uuid)"/>
-                  <xsl:value-of select="$node/uniqueParameters/broader" separator=", "/>
-                <xsl:value-of select="string-join(('About the ', $node/title, ' Data Set'), '')"/>
-                  <xsl:with-param name="string" select="$node/abstract"/>
-  -->
-
-
-    <!-- now create actual elements representing vars -->
+    <!-- Create actual elements for the vars -->
     <xsl:element name="filename"> <xsl:value-of select="replace( $filename, ' ', '-')" separator="-"/> </xsl:element>
     <xsl:element name="uuid"> <xsl:value-of select="$uuid"/> </xsl:element>
     <xsl:element name="organisation"> <xsl:value-of select="$organisation"/> </xsl:element>
@@ -447,7 +415,6 @@
     <xsl:element name="abstract"> <xsl:value-of select="$abstract"/> </xsl:element>
     <xsl:element name="portalDataUrl"> <xsl:value-of select="$portalDataUrl"/> </xsl:element>
     
-
     <xsl:element name="uniquePlatforms"> <xsl:copy-of select="$uniquePlatforms"/> </xsl:element>
     <xsl:element name="uniqueParameters"> <xsl:copy-of select="$uniqueParameters"/> </xsl:element>
     <xsl:element name="landMassesTidied"> <xsl:copy-of select="$landMassesTidied"/> </xsl:element>
@@ -480,7 +447,7 @@
         <xsl:variable name="schema" select="geonet:info/schema"/>
         <!-- xsl:value-of select="concat( '&#xa;', $schema, ', ', position(), ', ' )" /-->
 
-        <xsl:if test="$schema = 'iso19139.mcp-2.0' and position() &lt; 10">
+        <xsl:if test="$schema = 'iso19139.mcp-2.0' and position() &lt; $maxRecords">
 
           <xsl:variable name="uuid" select="geonet:info/uuid"/>
           <xsl:variable name="recordRequest" select="concat($geonetworkBaseUrl, '/geonetwork/srv/eng/xml.metadata.get?uuid=', $uuid)" />
