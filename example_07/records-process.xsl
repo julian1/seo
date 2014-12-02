@@ -162,35 +162,43 @@
   <xsl:template match="/">
 
     <!-- output records -->
-    <xsl:for-each select="$nodes" >
 
-      <xsl:variable name="schema" select="geonet:info/schema"/>
-      <xsl:value-of select="concat( '&#xa;', $schema, ', ', position(), ', ' )" />
+    <xsl:variable name="processedNodes">
+      <xsl:for-each select="$nodes" >
 
-      <xsl:if test="$schema = 'iso19139.mcp-2.0' and position() &lt; 5">
+        <xsl:variable name="schema" select="geonet:info/schema"/>
+        <xsl:value-of select="concat( '&#xa;', $schema, ', ', position(), ', ' )" />
 
-        <!-- we're going to have to call the template -->
-<!--        <xsl:variable name="filename">
-          <xsl:call-template name="record-filename" select="document($request2)/mcp:MD_Metadata"/>
-        </xsl:variable>
--->
+        <xsl:if test="$schema = 'iso19139.mcp-2.0' and position() &lt; 10">
 
-        <xsl:variable name="uuid" select="geonet:info/uuid"/>
-        <xsl:variable name="request2" select="concat($geonetworkUrl, '/geonetwork/srv/eng/xml.metadata.get?uuid=', $uuid)" />
-        <xsl:value-of select="concat( $uuid, ', ', position(), ', ', $request2 )" />
+          <!-- we're going to have to call the template -->
+  <!--        <xsl:variable name="filename">
+            <xsl:call-template name="record-filename" select="document($request2)/mcp:MD_Metadata"/>
+          </xsl:variable>
+  -->
 
-        <!-- xsl:apply-templates select="document($request2)/mcp:MD_Metadata"/ -->
-        <!-- xsl:variable name="node" select="document($request2)/mcp:MD_Metadata"/-->
+          <xsl:variable name="uuid" select="geonet:info/uuid"/>
+          <xsl:variable name="request2" select="concat($geonetworkUrl, '/geonetwork/srv/eng/xml.metadata.get?uuid=', $uuid)" />
+          <xsl:value-of select="concat( $uuid, ', ', position(), ', ', $request2 )" />
 
-		<!-- build intermediate node -->
-        <xsl:variable name="whoot"> 
-          <xsl:apply-templates select="document($request2)/mcp:MD_Metadata"/>
-        </xsl:variable> 
+          <!-- xsl:apply-templates select="document($request2)/mcp:MD_Metadata"/ -->
+          <!-- xsl:variable name="node" select="document($request2)/mcp:MD_Metadata"/-->
 
-        <xsl:text>here</xsl:text> 
-        <xsl:value-of select="$whoot/filename"/>
+          <!-- build intermediate node -->
+          <xsl:element name="node"> 
+            <xsl:apply-templates select="document($request2)/mcp:MD_Metadata"/>
+          </xsl:element> 
 
-      </xsl:if>
+          <!-- xsl:text>here</xsl:text--> 
+          <!--xsl:value-of select="$whoot/filename"/-->
+
+        </xsl:if>
+      </xsl:for-each>
+    </xsl:variable>
+
+
+    <xsl:for-each select="$processedNodes/node" >
+      <xsl:value-of select="filename"/>
     </xsl:for-each>
 
 
