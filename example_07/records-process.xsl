@@ -16,6 +16,13 @@
 		we can actually push this into another file
 		if we want.
     -->
+
+
+
+  <xsl:template name="whoot">
+    WHOOT
+  </xsl:template>
+
   <xsl:template match="mcp:MD_Metadata">
 
     <xsl:variable name="uuid" select="gmd:fileIdentifier/gco:CharacterString"/>
@@ -209,8 +216,9 @@
       <xsl:text>filename is  </xsl:text>
       <xsl:value-of select="$filename"/>
 
+      <!-- should expand by applying templates on node -->
       <xsl:result-document method="html" indent="yes" href="output/{ encode-for-uri( $filename)}">
-        WHOOT
+        <xsl:call-template name="whoot"/>
       </xsl:result-document>
 
     </xsl:for-each>
