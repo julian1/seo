@@ -17,8 +17,11 @@
 		if we want.
     -->
 
+  <!-- change name geonetworkBaseUrl? -->
   <xsl:variable name="geonetworkUrl" select="'https://catalogue-123.aodn.org.au'"/>
   <xsl:variable name="portalUrl" select="'https://imos.aodn.org.au/imos123/home'"/>
+  
+  <xsl:variable name="portalLogo" select="'http://static.emii.org.au/images/logo/IMOS-Ocean-Portal-logo.png'"/>
 
 
 
@@ -97,8 +100,32 @@
         <div class="imosHeader">
           <div class="container">
           <!-- TODO fix link -->
-          <!--a  class="btn " role="button" href="https://imos.aodn.org.au/imos123/home?uuid=4402cb50-e20a-44ee-93e6-4728259250d2"><img src="http://static.emii.org.au/images/logo/IMOS-Ocean-Portal-logo.png" alt="IMOS logo"/></a -->
-          <a  class="btn " role="button" href="$node/portalLink"><img src="http://static.emii.org.au/images/logo/IMOS-Ocean-Portal-logo.png" alt="IMOS logo"/></a>
+          <!--a  class="btn " role="button" href="https://imos.aodn.org.au/imos123/home?uuid=4402cb50-e20a-44ee-93e6-4728259250d2"><img src="http://static.emii.org.au/images/logo/IMOS-Ocean-Portal-logo.png" alt="IMOS logo"/></a 
+
+          class="btn " role="button" href="$node/portalLink"><img src="$node/portalLogo" alt="IMOS logo"/>
+        -->
+
+          <a>  
+            <xsl:attribute name="class">
+              <xsl:text>btn</xsl:text>
+            </xsl:attribute>
+            <xsl:attribute name="role">
+              <xsl:text>button</xsl:text>
+            </xsl:attribute>
+            <xsl:attribute name="href">
+              <xsl:value-of select="$node/portalLink"/>
+            </xsl:attribute>
+
+            <img>
+              <xsl:attribute name="src"> 
+                <xsl:value-of select="$node/portalLogo"/> 
+              </xsl:attribute>
+              <xsl:attribute name="alt">
+                <xsl:text>IMOS logo</xsl:text>
+              </xsl:attribute>
+            </img>
+          </a>
+
           </div>
         </div>
 
@@ -213,14 +240,8 @@
           </div>
         </div>
 
-
       </body>
-
     </html>
-
-
- 
-
   </xsl:template>
 
 
@@ -419,6 +440,8 @@
     <xsl:element name="title"> <xsl:value-of select="$title"/> </xsl:element>
     <xsl:element name="abstract"> <xsl:value-of select="$abstract"/> </xsl:element>
     <xsl:element name="portalLink"> <xsl:value-of select="$portalLink"/> </xsl:element>
+    
+    <xsl:element name="portalLogo"> <xsl:value-of select="$portalLogo"/> </xsl:element>
 
     <xsl:element name="uniquePlatforms"> <xsl:copy-of select="$uniquePlatforms"/> </xsl:element>
     <xsl:element name="uniqueParameters"> <xsl:copy-of select="$uniqueParameters"/> </xsl:element>
