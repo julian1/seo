@@ -20,6 +20,7 @@
   <xsl:variable name="imosLogoUrl" select="'http://static.emii.org.au/images/logo/IMOS-Ocean-Portal-logo.png'"/>
   <xsl:variable name="emiiInfoUrl" select="'mailto:info@emii.org.au'"/>
   <xsl:variable name="emiiTermsUrl" select="'http://imos.org.au/imostermsofuse0.html'"/>
+  <xsl:variable name="portalUrl" select="'https://imos.aodn.org.au/imos123'"/>
 
 
   <!-- Translate newlines to HTML BR Tags
@@ -107,7 +108,6 @@
               <xsl:attribute name="href">
                 <xsl:value-of select="$node/portalDataUrl"/>
               </xsl:attribute>
-
               <img>
                 <xsl:attribute name="src"> 
                   <xsl:value-of select="$detail/imosLogoUrl"/> 
@@ -117,7 +117,6 @@
                 </xsl:attribute>
               </img>
             </a>
-
           </div>
         </div>
 
@@ -249,34 +248,104 @@
   <!-- The index view -->
   <xsl:template name="index-view">
     <xsl:param name="processedNodes" as="document-node()" />
+    <xsl:param name="detail" as="document-node()" />
  
-      <xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html></xsl:text>
-      <xsl:text>&#xa;</xsl:text>
-      <html>
-        <head>
-          <title>List of parameters, The eMarine Information Infrastructure (eMII)</title>
-          <meta charset="utf-8"/>
-          <meta name="description" content="List of parameters, The eMarine Information Infrastructure (eMII)"/>
-        </head>
-        <body>
+    <xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html></xsl:text>
+    <xsl:text>&#xa;</xsl:text>
+    <html>
+      <head>
+        <!-- Latest compiled and minified Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="imos.css" />
 
+        <title>List of parameters, The eMarine Information Infrastructure (eMII)</title>
+        <meta charset="utf-8"/>
+        <meta name="description" content="List of parameters, The eMarine Information Infrastructure (eMII)"/>
+
+        <!-- use xsl:text to prevent xsl from closing tags, which isn't valid html 5 -->
+        <style type="text/css" media="screen"><xsl:text> </xsl:text></style>
+
+      </head>
+      <body>
+
+        <div class="imosHeader">
+          <div class="container">
+            <a>  
+              <xsl:attribute name="class">
+                <xsl:text>btn</xsl:text>
+              </xsl:attribute>
+              <xsl:attribute name="role">
+                <xsl:text>button</xsl:text>
+              </xsl:attribute>
+              <xsl:attribute name="href">
+                <xsl:value-of select="$detail/portalUrl"/>
+              </xsl:attribute>
+              <img>
+                <xsl:attribute name="src"> 
+                  <!-- differs from record view -->
+                  <xsl:value-of select="$detail/imosLogoUrl"/> 
+                </xsl:attribute>
+                <xsl:attribute name="alt">
+                  <xsl:text>IMOS logo</xsl:text>
+                </xsl:attribute>
+              </img>
+            </a>
+          </div>
+        </div>
+
+        <div class="container">
           <xsl:for-each select="$processedNodes/node" >
 
             <xsl:variable name="filename" select="filename"/>
 
             <div>
+              <h3>
               <xsl:element name="a">
                 <xsl:attribute name="href">
                   <xsl:value-of select="encode-for-uri( $filename)"/>
                 </xsl:attribute>
                 <xsl:value-of select="$filename"/>
               </xsl:element>
+
+              </h3>
             </div>
 
            </xsl:for-each>
+        </div>
+  
+        <!-- this is repeated in record view and should perhaps be factored -->
+        <div class="jumbotronFooter voffset5">
+          <div class="container">
+            <footer class="row">
+              <div class="col-md-4">
+                  <p>If you've found this information useful, see something wrong, or have a suggestion, please let us
+                      know.
+                      All feedback is very welcome. For help and information about this site
+                      please contact <xsl:element name="a">
+                        <xsl:attribute name="href">
+                          <xsl:value-of select="$detail/emiiInfoUrl"/>
+                        </xsl:attribute>
+                        <!-- eg. strip mailto: prefix-->
+                        <xsl:value-of select="replace( $detail/emiiInfoUrl, '.*:(.*)', '$1' )"/>
+                      </xsl:element>
+                  </p>
+              </div>
+              <div class="col-md-8">
+                  <p>Use of this web site and information available from it is subject to our <xsl:element name="a">
+                      <xsl:attribute name="href">
+                        <xsl:value-of select="$detail/emiiTermsUrl"/>
+                      </xsl:attribute>
+                      Conditions of use
+                    </xsl:element>
+                  </p>
+                  <p>&#169; 2014 IMOS</p>
+              </div>
+            </footer>
+          </div>
+        </div>
 
-        </body>
-      </html>
+      </body>
+    </html>
 
   </xsl:template>
 
@@ -481,6 +550,7 @@
       <xsl:element name="imosLogoUrl"> <xsl:value-of select="$imosLogoUrl"/> </xsl:element>
       <xsl:element name="emiiInfoUrl"> <xsl:value-of select="$emiiInfoUrl"/> </xsl:element> 
       <xsl:element name="emiiTermsUrl"> <xsl:value-of select="$emiiTermsUrl"/> </xsl:element>
+      <xsl:element name="portalUrl"> <xsl:value-of select="$portalUrl"/> </xsl:element>
     </xsl:variable>
 
     <!-- record views -->
@@ -500,6 +570,7 @@
     <xsl:result-document method="html" indent="yes" href="output/index.html">
       <xsl:call-template name="index-view">
         <xsl:with-param name="processedNodes" select="$processedNodes"/>
+        <xsl:with-param name="detail" select="$detail1" />
       </xsl:call-template>
     </xsl:result-document>
 
