@@ -20,6 +20,8 @@
   <!-- change name geonetworkBaseUrl? -->
   <xsl:variable name="geonetworkBaseUrl" select="'https://catalogue-123.aodn.org.au'"/>
   <xsl:variable name="portalDataBaseUrl" select="'https://imos.aodn.org.au/imos123/home'"/>
+
+  <!-- want this to be available to the index for styling etc -->
   <xsl:variable name="portalLogoUrl" select="'http://static.emii.org.au/images/logo/IMOS-Ocean-Portal-logo.png'"/>
 
 
@@ -49,50 +51,50 @@
   <xsl:template name="record-view">
     <xsl:param name="node" as="element()" />
   
-      <xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html></xsl:text>
-      <xsl:text>&#xa;</xsl:text>
+    <xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html></xsl:text>
+    <xsl:text>&#xa;</xsl:text>
 
-      <html>
-        <head>
-      
-          <!-- Latest compiled and minified Bootstrap CSS -->
-          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
-          <link rel="stylesheet" type="text/css" href="imos.css" />
+    <html>
+      <head>
+    
+        <!-- Latest compiled and minified Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="imos.css" />
 
-          <!-- Page Meta Title -->
-          <title>
+        <!-- Page Meta Title -->
+        <title>
+          <xsl:value-of select="$node/uniqueParameters/broader" separator=", "/>
+          <xsl:text> | Seas Oceans Atmosphere | </xsl:text>
+          <xsl:value-of select="$node/uniquePlatforms/platform" separator=", "/>
+          <xsl:text> | IMOS Scientific Research Data </xsl:text>
+          <xsl:value-of select="$node/organisation" />
+          <xsl:text> | Integrated Marine Observing System</xsl:text>
+        </title>
+
+        <meta charset="utf-8"/>
+
+        <!-- Page Meta Description -->
+        <meta name="description">
+          <xsl:attribute name="content">
+
             <xsl:value-of select="$node/uniqueParameters/broader" separator=", "/>
-            <xsl:text> | Seas Oceans Atmosphere | </xsl:text>
+            <xsl:text> in the oceans, seas and/or atmosphere near </xsl:text>
+            <xsl:value-of select="$node/landMassesTidied/land-mass" separator=", "/>
+            <xsl:text> using </xsl:text>
             <xsl:value-of select="$node/uniquePlatforms/platform" separator=", "/>
-            <xsl:text> | IMOS Scientific Research Data </xsl:text>
-            <xsl:value-of select="$node/organisation" />
-            <xsl:text> | Integrated Marine Observing System</xsl:text>
-          </title>
+            <xsl:text>. </xsl:text>
 
-          <meta charset="utf-8"/>
+            <xsl:text>The </xsl:text>
+            <xsl:value-of select="$node/organisation"/>
+            <xsl:text> scientific research data sets are accessible through the IMOS Portal.</xsl:text>
 
-          <!-- Page Meta Description -->
-          <meta name="description">
-            <xsl:attribute name="content">
+          </xsl:attribute>
+        </meta>
 
-              <xsl:value-of select="$node/uniqueParameters/broader" separator=", "/>
-              <xsl:text> in the oceans, seas and/or atmosphere near </xsl:text>
-              <xsl:value-of select="$node/landMassesTidied/land-mass" separator=", "/>
-              <xsl:text> using </xsl:text>
-              <xsl:value-of select="$node/uniquePlatforms/platform" separator=", "/>
-              <xsl:text>. </xsl:text>
+        <!-- use xsl:text to prevent xsl from closing tags, which isn't valid html 5 -->
+        <style type="text/css" media="screen"><xsl:text> </xsl:text></style>
 
-              <xsl:text>The </xsl:text>
-              <xsl:value-of select="$node/organisation"/>
-              <xsl:text> scientific research data sets are accessible through the IMOS Portal.</xsl:text>
-
-            </xsl:attribute>
-          </meta>
-
-          <!-- use xsl:text to prevent xsl from closing tags, which isn't valid html 5 -->
-          <style type="text/css" media="screen"><xsl:text> </xsl:text></style>
- 
-        </head>
+      </head>
 
       <body>
 
