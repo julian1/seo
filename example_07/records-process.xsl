@@ -428,21 +428,27 @@
       </xsl:for-each>
     </xsl:variable>
 
+
     <!-- Group unique platforms -->
     <xsl:variable name="uniquePlatforms">
       <xsl:for-each-group select="$parameterList" group-by="platform">
-        <xsl:element name="platform">
-          <xsl:value-of select="current-grouping-key()"/>
-        </xsl:element>
+        <xsl:variable name="val" select="normalize-space( current-grouping-key())"/>
+        <xsl:if test="$val != ''">
+          <xsl:element name="platform">
+            <xsl:value-of select="$val"/>
+          </xsl:element>
+        </xsl:if>
       </xsl:for-each-group>
     </xsl:variable>
+
 
     <!-- Group unique broader parameters -->
     <xsl:variable name="uniqueParameters">
       <xsl:for-each-group select="$parameterList" group-by="broader">
-        <xsl:if test="current-grouping-key() != ''">
+        <xsl:variable name="val" select="normalize-space( current-grouping-key())"/>
+        <xsl:if test="$val != ''">
           <xsl:element name="broader">
-            <xsl:value-of select="current-grouping-key()"/>
+            <xsl:value-of select="$val"/>
           </xsl:element>
         </xsl:if>
       </xsl:for-each-group>
