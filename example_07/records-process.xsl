@@ -440,9 +440,11 @@
     <!-- Group unique broader parameters -->
     <xsl:variable name="uniqueParameters">
       <xsl:for-each-group select="$parameterList" group-by="broader">
-        <xsl:element name="broader">
-          <xsl:value-of select="current-grouping-key()"/>
-        </xsl:element>
+        <xsl:if test="current-grouping-key() != ''">
+          <xsl:element name="broader">
+            <xsl:value-of select="current-grouping-key()"/>
+          </xsl:element>
+        </xsl:if>
       </xsl:for-each-group>
     </xsl:variable>
 
@@ -546,7 +548,7 @@
     </xsl:for-each>
     -->
 
-    <xsl:variable name="detail1">
+    <xsl:variable name="detail">
       <xsl:element name="imosLogoUrl"> <xsl:value-of select="$imosLogoUrl"/> </xsl:element>
       <xsl:element name="emiiInfoUrl"> <xsl:value-of select="$emiiInfoUrl"/> </xsl:element> 
       <xsl:element name="emiiTermsUrl"> <xsl:value-of select="$emiiTermsUrl"/> </xsl:element>
@@ -559,7 +561,7 @@
       <xsl:result-document method="html" indent="yes" href="output/{ encode-for-uri( $filename)}">
         <xsl:call-template name="record-view">
           <xsl:with-param name="node" select="." />
-          <xsl:with-param name="detail" select="$detail1" />
+          <xsl:with-param name="detail" select="$detail" />
           <!-- xsl:with-param name="detail" select="$detail"/ -->
         </xsl:call-template>
       </xsl:result-document>
@@ -570,7 +572,7 @@
     <xsl:result-document method="html" indent="yes" href="output/index.html">
       <xsl:call-template name="index-view">
         <xsl:with-param name="processedNodes" select="$processedNodes"/>
-        <xsl:with-param name="detail" select="$detail1" />
+        <xsl:with-param name="detail" select="$detail" />
       </xsl:call-template>
     </xsl:result-document>
 
