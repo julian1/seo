@@ -402,7 +402,8 @@
     <xsl:variable name="waterBodiesTidied">
       <xsl:for-each select="$waterBodies">
           <xsl:element name="water-body">
-            <xsl:value-of select="replace(., '.*\|(.*)','$1')"/>
+            <!--xsl:value-of select="replace(., '.*\|(.*)','$1')"/ -->
+            <xsl:value-of select="replace( replace(., '.*\|(.*)','$1'), ',', '')"/>
           </xsl:element>
       </xsl:for-each>
     </xsl:variable>
