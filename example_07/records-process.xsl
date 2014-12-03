@@ -22,6 +22,20 @@
   <xsl:variable name="emiiTermsUrl"       select="'http://imos.org.au/imostermsofuse0.html'"/>
   <xsl:variable name="portalUrl"          select="'https://imos.aodn.org.au/imos123'"/>
 
+  <xsl:variable name="gaScript">
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-54091417-1', 'auto');
+        ga('require', 'displayfeatures');
+        ga('send', 'pageview');
+    </script>
+  </xsl:variable>
+
+
 
   <!-- Translate newlines to HTML BR Tags
   http://stackoverflow.org/wiki/Translate_newlines_to_HTML_BR_Tags
@@ -271,7 +285,12 @@
         <meta name="description" content="List of parameters, The eMarine Information Infrastructure (eMII)"/>
 
         <!-- use xsl:text to prevent xsl from closing tags, which isn't valid html 5 -->
+
+        <xsl:text>&#xa;</xsl:text>
         <style type="text/css" media="screen"><xsl:text> </xsl:text></style>
+
+        <xsl:text>&#xa;</xsl:text>
+        <xsl:copy-of select="$detail/gaScript/*"/>
 
       </head>
       <body>
@@ -377,7 +396,9 @@
 
     <xsl:variable name="organisation" select="gmd:contact/gmd:CI_ResponsibleParty/gmd:organisationName/gco:CharacterString" />
 
-    <!-- take the right most element of the land mass separated by | -->
+    <!-- take the right most element of the land mass separated by | 
+      and remove commas
+    -->
     <xsl:variable name="waterBodiesTidied">
       <xsl:for-each select="$waterBodies">
           <xsl:element name="water-body">
@@ -386,7 +407,9 @@
       </xsl:for-each>
     </xsl:variable>
 
-    <!-- take the right most element of the water body separated by | -->
+    <!-- take the right most element of the water body separated by | 
+      and remove commas
+    -->
     <xsl:variable name="landMassesTidied">
       <xsl:for-each select="$landMasses">
           <xsl:element name="land-mass">
@@ -438,10 +461,10 @@
     <!-- Group unique platforms -->
     <xsl:variable name="uniquePlatforms">
       <xsl:for-each-group select="$parameterList" group-by="platform">
-        <xsl:variable name="val" select="normalize-space( current-grouping-key())"/>
-        <xsl:if test="$val != ''">
+        <xsl:variable name="elt" select="normalize-space( current-grouping-key())"/>
+        <xsl:if test="$elt != ''">
           <xsl:element name="platform">
-            <xsl:value-of select="$val"/>
+            <xsl:value-of select="$elt"/>
           </xsl:element>
         </xsl:if>
       </xsl:for-each-group>
@@ -451,10 +474,10 @@
     <!-- Group unique broader parameters -->
     <xsl:variable name="uniqueParameters">
       <xsl:for-each-group select="$parameterList" group-by="broader">
-        <xsl:variable name="val" select="normalize-space( current-grouping-key())"/>
-        <xsl:if test="$val != ''">
+        <xsl:variable name="elt" select="normalize-space( current-grouping-key())"/>
+        <xsl:if test="$elt != ''">
           <xsl:element name="broader">
-            <xsl:value-of select="$val"/>
+            <xsl:value-of select="$elt"/>
           </xsl:element>
         </xsl:if>
       </xsl:for-each-group>
@@ -521,9 +544,9 @@
   <!-- TODO: we shouldn't have to match on a dummy document -->
   <xsl:template match="/">
 
-    <xsl:variable name="request" select="concat($geonetworkBaseUrl, '/geonetwork/srv/eng/xml.search.imos?fast=index')"/>
+    <xsl:variable name="allRecordsRequest" select="concat($geonetworkBaseUrl, '/geonetwork/srv/eng/xml.search.imos?fast=index')"/>
     <!-- cache the node, to guarantee idempotence -->
-    <xsl:variable name="nodes" select="document($request)/response/metadata"/>
+    <xsl:variable name="nodes" select="document($allRecordsRequest)/response/metadata"/>
 
 
     <!-- build intermediate nodes -->
@@ -562,12 +585,15 @@
     </xsl:for-each>
     -->
 
+    <!-- node with common values --> 
     <xsl:variable name="detail">
       <xsl:element name="imosLogoUrl"> <xsl:value-of select="$imosLogoUrl"/> </xsl:element>
       <xsl:element name="emiiInfoUrl"> <xsl:value-of select="$emiiInfoUrl"/> </xsl:element> 
       <xsl:element name="emiiTermsUrl"> <xsl:value-of select="$emiiTermsUrl"/> </xsl:element>
       <xsl:element name="portalUrl"> <xsl:value-of select="$portalUrl"/> </xsl:element>
+      <xsl:element name="gaScript"> <xsl:copy-of select="$gaScript"/> </xsl:element>
     </xsl:variable>
+
 
     <!-- record views -->
     <xsl:for-each select="$processedNodes/node" >
