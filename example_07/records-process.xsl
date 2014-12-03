@@ -304,9 +304,9 @@
                   <xsl:value-of select="$filename"/>
                 </xsl:attribute>
 
-                <xsl:value-of select="title"/>
-                <xsl:text> | </xsl:text>
                 <xsl:value-of select="uniqueParameters/broader" separator=", "/>
+                <xsl:text> | </xsl:text>
+                <xsl:value-of select="title"/>
               </xsl:element>
               </h3>
             </div>
@@ -472,9 +472,9 @@
 	  -->
 
     <xsl:variable name="filename">
-      <xsl:value-of select="replace( $title, ' - ', ' ')"/>
-      <xsl:text> | </xsl:text>
       <xsl:value-of select="$uniqueParameters/broader" separator=" "/>
+      <xsl:text> | </xsl:text>
+      <xsl:value-of select="replace( $title, ' - ', ' ')"/>
       <xsl:text>.html</xsl:text>
     </xsl:variable>
 
