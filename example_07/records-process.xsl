@@ -12,7 +12,7 @@
 >
 
   <!-- Configuration -->
-  <xsl:variable name="maxRecords"         select="10"/> <!-- Note, includes register records -->
+  <xsl:variable name="maxRecords"         select="10"/> <!-- Useful to limit when testing. Careful, includes register records -->
 
   <xsl:variable name="geonetworkBaseUrl"  select="'https://catalogue-123.aodn.org.au'"/>
   <xsl:variable name="portalDataBaseUrl"  select="'https://imos.aodn.org.au/imos123/home'"/>
@@ -301,15 +301,13 @@
               <h3>
               <xsl:element name="a">
                 <xsl:attribute name="href">
-                  <xsl:value-of select="encode-for-uri( $filename)"/>
+                  <xsl:value-of select="$filename"/>
                 </xsl:attribute>
 
                 <xsl:value-of select="title"/>
                 <xsl:text> | </xsl:text>
                 <xsl:value-of select="uniqueParameters/broader" separator=", "/>
-
               </xsl:element>
-
               </h3>
             </div>
 
@@ -474,9 +472,9 @@
 	  -->
 
     <xsl:variable name="filename">
-      <xsl:value-of select="$title" separator="-"/>
+      <xsl:value-of select="replace( $title, ' - ', ' ')"/>
       <xsl:text> | </xsl:text>
-      <xsl:value-of select="$uniqueParameters/broader" separator="-"/>
+      <xsl:value-of select="$uniqueParameters/broader" separator=" "/>
       <xsl:text>.html</xsl:text>
     </xsl:variable>
 
@@ -488,7 +486,9 @@
     </xsl:variable>
 
     <!-- Create actual elements for the vars -->
-    <xsl:element name="filename"> <xsl:value-of select="replace( $filename, ' ', '-')" separator="-"/> </xsl:element>
+    <xsl:element name="filename"> 
+       <xsl:value-of select="encode-for-uri(replace( normalize-space( $filename), ' ', '-'))"/> 
+    </xsl:element>
     <xsl:element name="uuid"> <xsl:value-of select="$uuid"/> </xsl:element>
     <xsl:element name="organisation"> <xsl:value-of select="$organisation"/> </xsl:element>
     <xsl:element name="title"> <xsl:value-of select="$title"/> </xsl:element>
@@ -564,7 +564,7 @@
     <!-- record views -->
     <xsl:for-each select="$processedNodes/node" >
       <xsl:variable name="filename" select="filename"/>
-      <xsl:result-document method="html" indent="yes" href="output/{ encode-for-uri( $filename)}">
+      <xsl:result-document method="html" indent="yes" href="output/{ $filename}">
         <xsl:call-template name="record-view">
           <xsl:with-param name="node" select="." />
           <xsl:with-param name="detail" select="$detail" />
