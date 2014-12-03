@@ -353,7 +353,7 @@
   </xsl:template>
 
 
-  <!-- Builds an intermediate representation from the record used as input for the record view -->
+  <!-- Build an intermediate representation from the record used as input for the record view -->
   <xsl:template match="mcp:MD_Metadata">
 
     <xsl:variable name="uuid" select="gmd:fileIdentifier/gco:CharacterString"/>
@@ -498,19 +498,17 @@
 
 
 
-  <!-- xsl:include href="record-view.xsl" / -->
-
-  <xsl:variable name="request" select="concat($geonetworkBaseUrl, '/geonetwork/srv/eng/xml.search.imos?fast=index')"/>
-  <!-- cache the node, to guarantee idempotence -->
-  <xsl:variable name="nodes" select="document($request)/response/metadata"/>
-
-
   <!-- filename generation should be predictable here.
     so apply templates with param.
   -->
 
-  <!-- TODO: we don't need to match on an empty document -->
+  <!-- TODO: we shouldn't have to match on a dummy document -->
   <xsl:template match="/">
+
+    <xsl:variable name="request" select="concat($geonetworkBaseUrl, '/geonetwork/srv/eng/xml.search.imos?fast=index')"/>
+    <!-- cache the node, to guarantee idempotence -->
+    <xsl:variable name="nodes" select="document($request)/response/metadata"/>
+
 
     <!-- build intermediate nodes -->
     <xsl:variable name="processedNodes">
@@ -546,7 +544,6 @@
       <xsl:text>, </xsl:text>
       <xsl:value-of select="uuid"/>
     </xsl:for-each>
-
     -->
 
     <xsl:variable name="detail1">
@@ -577,7 +574,7 @@
       </xsl:call-template>
     </xsl:result-document>
 
-  
   </xsl:template>
+
 </xsl:stylesheet>
 
