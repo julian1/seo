@@ -12,7 +12,8 @@
 >
 
   <!-- Configuration -->
-  <xsl:variable name="maxRecords"         select="1000"/> <!-- Useful to limit when testing. Careful, includes register records -->
+  <!-- xsl:variable name="maxRecords"         select="1000"/ --> <!-- Useful to limit when testing. Careful, includes register records -->
+  <xsl:variable name="maxRecords"         select="7"/> <!-- Useful to limit when testing. Careful, includes register records -->
 
   <xsl:variable name="geonetworkBaseUrl"  select="'https://catalogue-123.aodn.org.au'"/>
   <xsl:variable name="portalDataBaseUrl"  select="'https://imos.aodn.org.au/imos123/home'"/>
@@ -513,7 +514,7 @@
     <xsl:variable name="filename">
       <xsl:value-of select="$uniqueParameters/broader" separator=" "/>
       <xsl:text> | </xsl:text>
-      <xsl:value-of select="replace( $title, ' - ', ' ')"/>
+      <xsl:value-of select="replace( replace( $title, ' - ', ' '), '\(|\)', '')"/>
       <xsl:text>.html</xsl:text>
     </xsl:variable>
 
