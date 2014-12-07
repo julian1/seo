@@ -12,7 +12,7 @@
 >
 
   <!-- Configuration -->
-  <xsl:variable name="maxRecords"         select="10"/> <!-- Useful to limit when testing. Careful, includes register records -->
+  <xsl:variable name="maxRecords"         select="1000"/> <!-- Useful to limit when testing. Careful, includes register records -->
 
   <xsl:variable name="geonetworkBaseUrl"  select="'https://catalogue-123.aodn.org.au'"/>
   <xsl:variable name="portalDataBaseUrl"  select="'https://imos.aodn.org.au/imos123/home'"/>
@@ -106,6 +106,9 @@
         <!-- use xsl:text to prevent xsl from closing tags, which isn't valid html 5 -->
         <style type="text/css" media="screen"><xsl:text> </xsl:text></style>
 
+        <xsl:text>&#xa;</xsl:text>
+        <xsl:copy-of select="$detail/gaScript/*"/>
+
       </head>
 
       <body>
@@ -122,6 +125,7 @@
               <xsl:attribute name="href">
                 <xsl:value-of select="$node/portalDataUrl"/>
               </xsl:attribute>
+              <xsl:attribute name="onclick">ga('send', 'event', 'Landing Page',  'Logo Image', 'second level parameter')</xsl:attribute>
               <img>
                 <xsl:attribute name="src"> 
                   <xsl:value-of select="$detail/imosLogoUrl"/> 
@@ -186,6 +190,7 @@
                   <xsl:attribute name="href">
                     <xsl:value-of select="$node/portalDataUrl"/>
                   </xsl:attribute>
+                  <xsl:attribute name="onclick">ga('send', 'event', 'Landing Page',  'Map Image', 'second level parameter')</xsl:attribute>
 
                   <xsl:element name="img">
                     <xsl:attribute name="src">
@@ -210,6 +215,8 @@
                   </xsl:attribute>
                   <xsl:attribute name="class">btn btn-primary voffset4</xsl:attribute>
                   <xsl:attribute name="role">button</xsl:attribute>
+
+                  <xsl:attribute name="onclick">ga('send', 'event', 'Landing Page',  'Download Button', 'second level parameter')</xsl:attribute>
 
                   <xsl:value-of select="'Download a '"/>
                   <xsl:value-of select="$node/uniqueParameters/broader" separator=", "/>
