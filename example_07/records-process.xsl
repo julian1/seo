@@ -618,7 +618,7 @@
 
 
     <!-- index view -->
-    <xsl:result-document method="html" indent="yes" href="output/index.html">
+    <xsl:result-document method="html" indent="yes" href="output/data_collections.html">
       <xsl:call-template name="index-view">
         <xsl:with-param name="processedNodes" select="$processedNodes"/>
         <xsl:with-param name="detail" select="$detail" />
