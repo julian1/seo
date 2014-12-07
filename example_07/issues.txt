@@ -1,0 +1,29 @@
+
+issues
+
+can't show the google analytics, because I'm not authorized. 
+
+able to run in geonetwork - as a view over the metadata 
+	(hack to pass parameters)
+	- this has the advantage that whenever the metadata changes (eg. because a harvester
+	runs and changes the spatial extent) it's immediately updated.
+	- and there's no static maintenance issues. 
+
+on the fly translation (hitting geonetwork service) of metadata parameters to 2nd level categories
+
+actually a lot of reformatting of titles and cleaning up with regexs
+
+bootstrap for css styling (phil)
+
+work with Natalia to get the land masses and water bodies into geonetwork 
+
+hacks/fixes to geonetwork
+	- to expose url parameters down to the xslt processor 
+	- to fix geonetwork parameter classifier service, which was broken
+
+the intial template designed by our SEO John Cuthbertson didn't really work so well . 
+	long lists of water-bodies etc. and needed a lot of coordination and changes
+
+trying to find a service that could generate the map. looked at geoserver, google maps, openlayers. 
+	google maps api.
+
