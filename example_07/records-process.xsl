@@ -12,8 +12,8 @@
 >
 
   <!-- Configuration -->
-  <!-- xsl:variable name="maxRecords"         select="1000"/ --> <!-- Useful to limit when testing. Careful, includes register records -->
-  <xsl:variable name="maxRecords"         select="7"/> <!-- Useful to limit when testing. Careful, includes register records -->
+  <xsl:variable name="maxRecords"         select="1000"/> <!-- Useful to limit when testing. Careful, includes register records -->
+  <!--xsl:variable name="maxRecords"         select="7"/--> 
 
   <xsl:variable name="geonetworkBaseUrl"  select="'https://catalogue-123.aodn.org.au'"/>
   <xsl:variable name="portalDataBaseUrl"  select="'https://imos.aodn.org.au/imos123/home'"/>
@@ -63,6 +63,14 @@
   <xsl:template name="record-view">
     <xsl:param name="node" as="element()" />
     <xsl:param name="detail" as="document-node()" />
+
+    <!-- put here rather than intermediate model, because it's more formatting -->
+    <xsl:variable name="gaTag">
+        <xsl:value-of select="$node/uniqueParameters/broader" separator=", "/>     
+        <xsl:text> | </xsl:text>
+        <xsl:value-of select="$node/title"/>     
+    </xsl:variable>
+
   
     <xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html></xsl:text>
     <xsl:text>&#xa;</xsl:text>
@@ -112,6 +120,7 @@
 
       </head>
 
+
       <body>
 
         <div class="imosHeader">
@@ -126,7 +135,7 @@
               <xsl:attribute name="href">
                 <xsl:value-of select="$node/portalDataUrl"/>
               </xsl:attribute>
-              <xsl:attribute name="onclick">ga('send', 'event', 'Landing Page',  'Logo Image', 'second level parameter')</xsl:attribute>
+              <xsl:attribute name="onclick">ga('send', 'event', 'Landing Page',  'Logo Image', '<xsl:value-of select="$gaTag"/>')</xsl:attribute>
               <img>
                 <xsl:attribute name="src"> 
                   <xsl:value-of select="$detail/imosLogoUrl"/> 
@@ -191,7 +200,7 @@
                   <xsl:attribute name="href">
                     <xsl:value-of select="$node/portalDataUrl"/>
                   </xsl:attribute>
-                  <xsl:attribute name="onclick">ga('send', 'event', 'Landing Page',  'Map Image', 'second level parameter')</xsl:attribute>
+                  <xsl:attribute name="onclick">ga('send', 'event', 'Landing Page',  'Map Image', '<xsl:value-of select="$gaTag"/>')</xsl:attribute>
 
                   <xsl:element name="img">
                     <xsl:attribute name="src">
@@ -217,7 +226,7 @@
                   <xsl:attribute name="class">btn btn-primary voffset4</xsl:attribute>
                   <xsl:attribute name="role">button</xsl:attribute>
 
-                  <xsl:attribute name="onclick">ga('send', 'event', 'Landing Page',  'Download Button', 'second level parameter')</xsl:attribute>
+                  <xsl:attribute name="onclick">ga('send', 'event', 'Landing Page',  'Download Button', '<xsl:value-of select="$gaTag"/>')</xsl:attribute>
 
                   <xsl:value-of select="'Download a '"/>
                   <xsl:value-of select="$node/uniqueParameters/broader" separator=", "/>
